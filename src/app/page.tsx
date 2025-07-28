@@ -224,7 +224,7 @@ export default function Home() {
               <iframe
                 width="500"
                 height="300"
-                src="https://www.youtube.com/embed/WDXPrvTS7ww?si=PUu2k2RifBt-KnHJ"
+                src="https://www.youtube.com/embed/W2YDWzCsP7c?si=YlAYGXaJvxtaGviR"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -235,7 +235,7 @@ export default function Home() {
             </div>
             <div className="flex-1">
               <p className="text-lg text-gray-100 text-left">
-                Founded in 2014, Formula Slug was founded on the premise of electric vehicles and renewable energy projects. This led to our first vehicle, FS-0. While it didn't go to competition, it served as the springboard for the team.
+               THE DOCUMENTARY DOESN"T LOAD Founded in 2014, Formula Slug was founded on the premise of electric vehicles and renewable energy projects. This led to our first vehicle, FS-0. While it didn't go to competition, it served as the springboard for the team.
               </p>
             </div>
           </div>
