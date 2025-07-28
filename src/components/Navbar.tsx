@@ -1,5 +1,16 @@
 'use client';
 
+{
+  /* 
+  NEEDS ATTENTION
+  -----------
+  Need to smooth out transition between states on desktop
+  Shifts over on mobile on scroll down
+  Need different offsets for mobile and desktop
+  No duplicate slide off animations when you drag your mouse across the elements in hamburger mode
+  */
+}
+
 import Image from "next/image";
 import React from "react";
 
@@ -8,7 +19,7 @@ interface NavbarProps {
 }
 
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const navLinks = [
   { href: '/', label: 'About' },
@@ -20,14 +31,25 @@ const navLinks = [
 
 const Navbar: React.FC<NavbarProps> = ({ textColor = 'var(--text-color)' }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 100); // Show hamburger after scrolling 100px
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
     <header
-      className="w-auto flex justify-end items-center absolute top-0 right-0 z-50 px-8 py-4"
+      className="w-auto flex justify-end items-center fixed top-0 right-0 z-50 px-8 py-4"
       style={{ backgroundColor: 'var(--background-primary)', zIndex: 10, right: 10, top: 50 }}
     >
-      {/* Hamburger icon for mobile */}
+      {/* Hamburger icon for mobile and when scrolled */}
       <button
-        className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
+        className={`${isScrolled ? 'flex' : 'md:hidden'} flex-col justify-center items-center w-10 h-10 focus:outline-none`}
         aria-label="Open navigation menu"
         onClick={() => setMenuOpen((open) => !open)}
         style={{ background: 'transparent', border: 'none', padding: 0, marginRight: 8 }}
@@ -38,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = ({ textColor = 'var(--text-color)' }) => {
       </button>
 
       {/* Desktop nav */}
-      <nav className="hidden md:block">
+      <nav className={`${isScrolled ? 'hidden' : 'hidden md:block'}`}>
         <ul className="flex gap-8 text-lg font-medium" style={{ color: textColor }}>
           {navLinks.map(({ href, label }) => (
             <li key={label} className="relative overflow-hidden">
@@ -56,7 +78,7 @@ const Navbar: React.FC<NavbarProps> = ({ textColor = 'var(--text-color)' }) => {
 
       {/* Mobile dropdown menu */}
       {menuOpen && (
-        <nav className="absolute top-full right-0 mt-2 w-48 bg-[#181c2a] bg-opacity-95 rounded-lg shadow-lg md:hidden animate-fade-in z-50">
+        <nav className={`absolute top-full right-0 mt-2 w-48 bg-[#181c2a] bg-opacity-95 rounded-lg shadow-lg ${isScrolled ? 'block' : 'md:hidden'} animate-fade-in z-50`}>
           <ul className="flex flex-col gap-2 py-4 px-4 text-lg font-medium" style={{ color: textColor }}>
             {navLinks.map(({ href, label }) => (
               <li key={label} className="relative">

@@ -1,5 +1,9 @@
 "use client";
 
+/*
+  Need all that fancy social media trash that those kids like
+*/
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import { colors } from "@/config/colors";

@@ -1,4 +1,14 @@
 "use client";
+/*
+  Need updated sponsor list
+  bottom looks bad, not sure which approach to take
+
+  Would it be cool to have photos of each sponsor's logo centerfront on the car?
+    Maybe cheesy
+
+  
+
+ */
 
 import React from "react";
 import Image from "next/image";

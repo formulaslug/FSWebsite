@@ -1,5 +1,14 @@
 "use client";
 
+/*
+  Need finance/outreach in team section
+  Also need to make them vertical on mobile (with un-blur on scroll section)
+  Why does the front page look like shit?
+    Two different buttons look yucky
+
+
+*/
+
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
@@ -115,20 +124,24 @@ export default function Home() {
             <button
               className="ml-6 px-6 py-2 rounded-full text-white font-semibold shadow transition-colors duration-200"
               style={{ 
-                backgroundColor: colors.electricBlue,
-                border: `2px solid ${colors.slugYellow}`,
+              backgroundColor: colors.electricBlue,
+              border: `2px solid ${colors.slugYellow}`,
               }}
-              onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
-              /* this is terrible and I forgot why standard hover doesn't work :( */
+              onClick={() => {
+              const aboutSection = document.querySelector('section');
+              if (aboutSection) {
+                aboutSection.scrollIntoView({ behavior: 'smooth' });
+              }
+              }}
               onMouseEnter={e => {
-                e.currentTarget.style.backgroundColor = colors.slugYellow;
-                e.currentTarget.style.color = colors.electricBlue;
-                e.currentTarget.style.border = `2px solid ${colors.electricBlue}`;
+              e.currentTarget.style.backgroundColor = colors.slugYellow;
+              e.currentTarget.style.color = colors.electricBlue;
+              e.currentTarget.style.border = `2px solid ${colors.electricBlue}`;
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.backgroundColor = colors.electricBlue;
-                e.currentTarget.style.color = 'white';
-                e.currentTarget.style.border = `2px solid ${colors.slugYellow}`;
+              e.currentTarget.style.backgroundColor = colors.electricBlue;
+              e.currentTarget.style.color = 'white';
+              e.currentTarget.style.border = `2px solid ${colors.slugYellow}`;
               }}
             >
               Read More
@@ -207,6 +220,7 @@ export default function Home() {
         </div>
       </div>
 
+{ /* History section, this might be better in descending order of years */}
 
       <section className="w-full  mx-0 mt-0 mb-16 px-4 py-10 bg-[#181c2a] bg-opacity-90  shadow-lg flex flex-col items-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-yellow-300 mb-4">About Us</h2>
@@ -244,7 +258,35 @@ export default function Home() {
 
             <div className="flex-1">
               <p className="text-lg text-gray-100 text-left">
-                Founded in 2014, Formula Slug was founded on the premise of electric vehicles and renewable energy projects. This led to our first vehicle, FS-0. While it didn't go to competition, it served as the springboard for the team.
+                Story of FS-1, the prev website got it wrong, need to ask Sam. Anyway. FS-1 drove (haha) us closer to our goals of competition...
+              </p>
+            </div>
+            <div className="flex-1 flex items-center justify-center">
+              <div className="w-full max-w-xl aspect-video rounded-lg shadow-lg overflow-hidden">
+              <img src="/photos/FS1.jpg" alt="Placeholder" />
+              </div>
+            </div>
+          </div>
+          
+          <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mx-auto mb-8 gap-8">
+            <div className="flex-1 flex items-center justify-center">
+              <div className="w-full max-w-xl aspect-video rounded-lg shadow-lg overflow-hidden">
+              <img src="/photos/FS2AtComp.jpg" alt="FS2AtComp" />
+              </div>
+            </div>
+            <div className="flex-1">
+              <p className="text-lg text-gray-100 text-left">
+                {/* we need the official account to post the pov videos */}
+                FS2 ABSULUTELY RIPPING IT AT BLUE MAX KART CLUB LINKED ON THE LEFT FS-2 was our first car to make it to the FSAE michigan competition, while we didn't pass EV inspection we did pass mechanical inspection. This was a huge step for the team, and propelled us to our next car.
+              </p>
+            </div>
+          </div>
+
+            <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mx-auto mb-8 gap-8">
+            <div className="flex-1">
+              <p className="text-lg text-gray-100 text-left">
+                CALEB SHIN EDITED SICK AS SHIT VIDEO LINKED TO THE RIGHT This last year in 2025 we brought our car FS-3 to FSAE Michigan. It blew through mechanical, HV, EV active, rain, tilt, and brake inspections. 
+                Our cumulative score from dynamic and static events placed us 18th out of the 79 teams who were on site. 
               </p>
             </div>
             <div className="flex-1 flex items-center justify-center">
@@ -254,18 +296,8 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mx-auto mb-8 gap-8">
-            <div className="flex-1 flex items-center justify-center">
-              <div className="w-full max-w-xl aspect-video rounded-lg shadow-lg overflow-hidden">
-              <img src="https://via.placeholder.com/500x300" alt="Placeholder" />
-              </div>
-            </div>
-            <div className="flex-1">
-              <p className="text-lg text-gray-100 text-left">
-                Founded in 2014, Formula Slug was founded on the premise of electric vehicles and renewable energy projects. This led to our first vehicle, FS-0. While it didn't go to competition, it served as the springboard for the team.
-              </p>
-            </div>
-          </div>
+
+
           <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos praesentium at quasi cum enim expedita minus atque, accusantium, deleniti exercitationem recusandae possimus sunt excepturi! Vel nam error distinctio molestiae quae.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem consectetur enim fuga excepturi itaque placeat quas repellendus incidunt, earum suscipit exercitationem, perferendis cum. Eum sapiente rem voluptate quo ab reprehenderit.
@@ -275,7 +307,7 @@ export default function Home() {
       </section>
       
       
-      
+      { /* Animation shit that I spent too much of my time on */}
       <style jsx>{`
         @keyframes fall-in {
           0% {

@@ -1,5 +1,12 @@
 "use client";
 
+/*
+  I'm really not sure how to make this look good,
+  I want big high quality photos of every subteam doing their work and a small photo of the subteam leader.
+  Each team needs a blurb, no call to action, that's what the join team is for
+  Front page links need to have seperate anchor tags here, we also need outreach/finance on front page
+*/
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import { colors } from "@/config/colors";

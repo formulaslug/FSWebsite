@@ -1,4 +1,12 @@
 "use client";
+
+/*
+  Need to implement adapted loading
+  Once we have a large number of pictures we're gonna need a speedup
+
+  
+*/
+
 import { useEffect, useRef, useState } from "react";
 
 export default function AutoScrollOnIdle({ children }: { children: React.ReactNode }) {
