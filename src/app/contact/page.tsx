@@ -79,7 +79,7 @@ export default function ContactPage() {
                     style={{ backgroundColor: colors.primary }}
                   >
                   </div>
-                  <span>shipping address</span>
+                  <span>1156 high street, baskin rm 40, Santa Cruz, CA 95064</span>
                 </div>
               </div>
             </div>

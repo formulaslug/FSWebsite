@@ -13,28 +13,71 @@ import { colors } from "@/config/colors";
 
 
 export default function TeamPage() {
-
-    const subteamCard = ({ subteam, Leaderphoto, teamPhoto, blurb }: { subteam: any, Leaderphoto: string, teamPhoto: string, blurb: string }) => (
-        <div className="flex"style={{
-            backgroundColor: colors.background.card,
-            padding: "0",
-            width: "100vw",
-            height: "25vh",
-        }}>
-            <h2 className="text-xl font-semibold mb-2">{subteam}</h2>
-            <div className="w-20vh h-full">
-            <img 
-                src={`/leaders/${Leaderphoto}`} 
-                alt={`${subteam} Leader`} 
-                className=" h-full m-0"
-            />
-            </div>
-            <p className="text-gray-400">Team Photo: {teamPhoto}</p>
-            <p className="text-gray-400">Blurb: {blurb}</p>
-
-        </div>
+  const subteamCard = ({
+    subteam,
+    Leaderphoto,
+    teamPhoto,
+    blurb,
+    leftPhoto,
+  }: {
+    subteam: any;
+    Leaderphoto: string;
+    teamPhoto: string;
+    blurb: string;
+    leftPhoto: boolean;
+  }) => {
+    const photoElement = (
+      <div className="flex items-center justify-center w-2/3 p-4">
+        <img
+          src={`/photos/${teamPhoto}`}
+          alt={`${subteam} Team Photo`}
+          className="w-full h-full object-cover"
+          style={{ margin: "4vw" }}
+        />
+      </div>
     );
 
+    const textElement = (
+      <div className="h-full flex-col justify-center items-center w-1/3 p-4">
+        <h2
+          className="text-5xl font-semibold mb-2 text-center"
+          style={{
+            marginTop: "5vh",
+            color: colors.slugYellow,
+            textShadow: `2px 2px 0px ${colors.electricBlue}`,
+          }}
+        >
+          {subteam}
+        </h2>
+        <p className="text-gray-400 text-center">{blurb}</p>
+      </div>
+    );
+
+    return (
+      <div
+        className="flex"
+        style={{
+          padding: "0",
+          width: "100vw",
+          height: "50vh",
+        }}
+      >
+        <div className="flex w-full h-full">
+          {leftPhoto ? (
+            <>
+              {photoElement}
+              {textElement}
+            </>
+          ) : (
+            <>
+              {textElement}
+              {photoElement}
+            </>
+          )}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <main className="min-h-screen text-white" style={{ backgroundColor: colors.background.primary }}>
@@ -51,11 +94,11 @@ export default function TeamPage() {
             Meet the Team
           </h1>
           
-          <div className="flex">
-
-            {subteamCard({ subteam: "Aerodynamics", Leaderphoto: "Megh.jpeg", teamPhoto: "team1.jpg", blurb: "Building the future." })}
-
-          </div>
+            <div className="flex flex-col">
+            {subteamCard({ subteam: "Aerodynamics", Leaderphoto: "Megh.jpeg", teamPhoto: "airfoilCFD.png", blurb: "wings wings wings wings.", leftPhoto: true })}
+            {subteamCard({ subteam: "Aerodynamics", Leaderphoto: "Megh.jpeg", teamPhoto: "airfoilCFD.png", blurb: "Building the future.", leftPhoto: false })}
+            {subteamCard({ subteam: "Aerodynamics", Leaderphoto: "Megh.jpeg", teamPhoto: "airfoilCFD.png", blurb: "Building the future.", leftPhoto: true })}
+            </div>
         </div>
       </div>
     </main>
