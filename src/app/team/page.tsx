@@ -20,12 +20,13 @@ export default function TeamPage() {
   const OutreachBlurb = "The Outreach Team at Formula Slug is responsible for both internal and external promotion, helping to shape and maintain the team’s image and brand. Through social media, partnerships with industry and academia, and engaging storytelling, the team connects with supporters, potential sponsors, and new talent. By showcasing the daily innovations and the collaboration behind every project, Outreach highlights Formula Slug not just as a team that engineers a car, but as a supportive, hands-on community dedicated to excellence both on and off the track."
   const FinanceBlurb = "The finance team is an amazing opportunity to gain experience understanding how different parts of an organization come together to make financial decisions. We work directly with subteams to create budgets and track expenses, while also coordinating fundraising efforts and developing financial proposals."
   const AerodynamicsBlurb = "The aerodynamics subteam develops high-performance wings and bodywork to optimize downforce and minimize drag for maximum lap times. Join us to gain hands-on experience with CFD analysis, wind tunnel testing, and composite manufacturing while designing the aerodynamic package that gives our car its competitive edge."
-  const FirmwareBlurb = "JAAAAAACKKKK"
+  const FirmwareBlurb = "The firmware team manages the embedded software that controls and interconnects the electrical components of the car. We program everything from battery management and data logging to throttle control and dashboard screens. If you love c++ and microcontrollers or want to help out with mission-critical software, then this is the team for you."
   const SoftwareBlurb = "The software team develops tools and systems that support vehicle simulation and autonomous driving. We build models to predict performance, design algorithms for control and perception, and ensure the car can make real-time decisions on and off the track. Our work connects data, software, and hardware to improve both driver and vehicle performance. The software team will be a big commitment and we expect dedication and curiosity whether you come in with no experience or lots of experience."
-  const ChassisBlurb = "GAAAAVINNNNNN"
+  const ChassisBlurb = "The Chassis is the glue that holds the car together. As a member of the chassis team you will learn top level system integration, how to work with complex CAD structures in Onshape, create complex simulations using Ansys to create lightweight & rigid steel tub frame frame"
   const ManufacturingBlurb = "BEN GRAU!"
   const WeldingBlurb = "Mr Morenious"
   const SuspensionBlurb = "MIRA"
+  const LVBlurb = "WESLEY"
   const HVBlurb = "The High Voltage team's primary responsibility is ensuring the energy inside the accumulator makes its way to the motor. This involves designing circuits that interface with the motor controller, placing high-current cabling to carry the power, collaborating with other teams to optimally position tractive system components, and more! In addition to the on-board system, we also design and assemble a custom charger for the accumulator."
 
   const subteamCard = ({
@@ -33,11 +34,13 @@ export default function TeamPage() {
     teamPhoto,
     blurb,
     leftPhoto,
+    leadName,
   }: {
     subteam: any;
     teamPhoto: string;
     blurb: string;
     leftPhoto: boolean;
+    leadName: string;
   }) => {
     const photoElement = (
       <div className="flex items-center justify-center w-2/3 p-4">
@@ -63,7 +66,14 @@ export default function TeamPage() {
           {subteam}
         </h2>
         <p 
-          className="text-white text-center text-2xl flex items-center justify-center h-full">{blurb}</p>
+          className="text-white text-center text-2xl flex items-center justify-center h-full w-3/4"
+        >
+          "{blurb}"
+        </p>
+        <div className="mt-4 flex justify-end items-center w-full mr-10">
+          <span className="text-white text-xl font-semibold mr-2">-{leadName}</span>
+          <span className="text-white text-lg">| {subteam} Lead</span>
+        </div>
       </div>
     );
 
@@ -109,20 +119,21 @@ export default function TeamPage() {
           </h1>
           
             <div className="flex flex-col">
-            {subteamCard({ subteam: "Aerodynamics", teamPhoto: "Aerodynamics.jpg", blurb: AerodynamicsBlurb, leftPhoto: true })}
-            {subteamCard({ subteam: "Composites", teamPhoto: "Composites.png", blurb: CompositesBlurb, leftPhoto: false })}
-            {subteamCard({ subteam: "Chassis", teamPhoto: "Chassis.png", blurb: ChassisBlurb, leftPhoto: true })}
-            {subteamCard({ subteam: "Vehicle Dynamics", teamPhoto: "VehicleDynamics.png", blurb: VDBlurb, leftPhoto: false })}
-            {subteamCard({ subteam: "Ergonomics", teamPhoto: "Ergonomics.png", blurb: ErgonomicsBlurb, leftPhoto: true })}
-            {subteamCard({ subteam: "Accumulator", teamPhoto: "Accumulator.png", blurb: AccumulatorBlurb, leftPhoto: false })}
-            {subteamCard({ subteam: "Outreach", teamPhoto: "Outreach.jpg", blurb: OutreachBlurb, leftPhoto: true })}
-            {subteamCard({ subteam: "Finance", teamPhoto: "Finance.JPG", blurb: FinanceBlurb, leftPhoto: false })}
-            {subteamCard({ subteam: "Firmware", teamPhoto: "Firmware.jpg", blurb: FirmwareBlurb, leftPhoto: true })}
-            {subteamCard({ subteam: "Software", teamPhoto: "Software.png", blurb: SoftwareBlurb, leftPhoto: false })}
-            {subteamCard({ subteam: "Manufacturing", teamPhoto: "Manufacturing.png", blurb: ManufacturingBlurb, leftPhoto: true })}
-            {subteamCard({ subteam: "Welding", teamPhoto: "Welding.jpg", blurb: WeldingBlurb, leftPhoto: false })}
-            {subteamCard({ subteam: "High Voltage", teamPhoto: "HV.jpg", blurb: HVBlurb, leftPhoto: true })}
-            {subteamCard({ subteam: "Suspension", teamPhoto: "Suspension.jpg", blurb: SuspensionBlurb, leftPhoto: false })}
+            {subteamCard({ subteam: "Aerodynamics", teamPhoto: "Aerodynamics.jpg", blurb: AerodynamicsBlurb, leftPhoto: true, leadName: "Megh Patel" })}
+            {subteamCard({ subteam: "Composites", teamPhoto: "Composites.jpg", blurb: CompositesBlurb, leftPhoto: false, leadName: "Daniel Au" })}
+            {subteamCard({ subteam: "Chassis", teamPhoto: "Chassis.jpeg", blurb: ChassisBlurb, leftPhoto: true, leadName: "Gavin Leach" })}
+            {subteamCard({ subteam: "Vehicle Dynamics", teamPhoto: "VD.jpg", blurb: VDBlurb, leftPhoto: false, leadName: "Caleb Shin" })}
+            {subteamCard({ subteam: "Ergonomics", teamPhoto: "Ergonomics.jpg", blurb: ErgonomicsBlurb, leftPhoto: true, leadName: "Justin Judge" })}
+            {subteamCard({ subteam: "Accumulator", teamPhoto: "Accumulator.png", blurb: AccumulatorBlurb, leftPhoto: false, leadName: "Aethlyn Lim" })}
+            {subteamCard({ subteam: "Outreach", teamPhoto: "Outreach.jpg", blurb: OutreachBlurb, leftPhoto: true, leadName: "Naveen Challa" })}
+            {subteamCard({ subteam: "Finance", teamPhoto: "Finance.JPG", blurb: FinanceBlurb, leftPhoto: false, leadName: "Max Simonen Luke" })}
+            {subteamCard({ subteam: "Firmware", teamPhoto: "Firmware.jpg", blurb: FirmwareBlurb, leftPhoto: true, leadName: "Jack Nystrom" })}
+            {subteamCard({ subteam: "Software", teamPhoto: "Software.png", blurb: SoftwareBlurb, leftPhoto: false, leadName: "Nathaniel Platt" })}
+            {subteamCard({ subteam: "Manufacturing", teamPhoto: "Manufacturing.png", blurb: ManufacturingBlurb, leftPhoto: true, leadName: "Ben Grau" })}
+            {subteamCard({ subteam: "Welding", teamPhoto: "Welding.jpg", blurb: WeldingBlurb, leftPhoto: false, leadName: "Mr Christian Reyo-Morenious" })}
+            {subteamCard({ subteam: "High Voltage", teamPhoto: "HV.jpg", blurb: HVBlurb, leftPhoto: true, leadName: "Victor Kalastirsky" })}
+            {subteamCard({ subteam: "Suspension", teamPhoto: "Suspension.jpg", blurb: SuspensionBlurb, leftPhoto: false, leadName: "Mira Verma" })}
+            {subteamCard({ subteam: "Low Voltage", teamPhoto: "LV.PNG", blurb: LVBlurb, leftPhoto: true, leadName: "Wesley Kronmiller" })}
 
 
             </div>
