@@ -4,8 +4,8 @@
   Need finance/outreach in team section
   Also need to make them vertical on mobile (with un-blur on scroll section)
   Why does the front page look like shit?
-    Two different buttons look yucky
-
+    Two different buttons look yucky          <div className="flex-1 h-64 md:h-full flex flex-col items-center justify-center relative group"
+          style={{ backgroundImage: 'url(/photos/Telvis.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
 
 */
 
@@ -20,6 +20,8 @@ export default function Home() {
 
   const [subtitleActive, setSubtitleActive] = useState(false);
   const [titleVisible, setTitleVisible] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Configurable delays
   const fallInDelay = 0.02; 
@@ -29,10 +31,62 @@ export default function Home() {
     setTitleVisible(true);
     // Trigger subtitle animation after half the main title's fall-in duration
     const subtitleTimeout = setTimeout(() => setSubtitleActive(true), ((title.length - 1) * fallInDelay * 1000 + 1000) / 2);
+    
+    // Check if mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    // Add scroll listener for mobile hover effect
+    const handleScroll = () => {
+      if (!isMobile) return;
+      
+      const windowHeight = window.innerHeight;
+      const scrollY = window.scrollY;
+      
+      // Calculate the middle 20% of the screen (40% to 60% from top)
+      const viewportStart = scrollY + windowHeight * 0.4;
+      const viewportEnd = scrollY + windowHeight * 0.6;
+      
+      // Get team sections
+      const mechanicalEl = document.getElementById('mechanical-section');
+      const electricalEl = document.getElementById('electrical-section');
+      const softwareEl = document.getElementById('software-section');
+      
+      let newActiveSection = null;
+      
+      // Check which section is in the middle 20%
+      [
+        { el: mechanicalEl, name: 'mechanical' },
+        { el: electricalEl, name: 'electrical' },
+        { el: softwareEl, name: 'software' }
+      ].forEach(({ el, name }) => {
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          const elementTop = rect.top + scrollY;
+          const elementBottom = elementTop + rect.height;
+          
+          // Check if the element intersects with the middle 20% zone
+          if (elementTop < viewportEnd && elementBottom > viewportStart) {
+            newActiveSection = name;
+          }
+        }
+      });
+      
+      setActiveSection(newActiveSection);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+    
     return () => {
       clearTimeout(subtitleTimeout);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', checkMobile);
     };
-  }, []);
+  }, [isMobile]);
   
   return (
     <main 
@@ -71,7 +125,7 @@ export default function Home() {
         </div>
         <Navbar />
         <h1
-          className="w-full text-4xl sm:text-5xl md:text-6xl mt-32 lg:text-9xl font-bold drop-shadow-lg flex flex-wrap justify-center mb-2 max-w-full break-words"
+          className="w-full text-4xl sm:text-5xl md:text-6xl mt-16 md:mt-32 lg:text-9xl font-bold drop-shadow-lg flex flex-wrap justify-center mb-2 max-w-full break-words px-4 md:px-0"
           style={{
             color: 'var(--text-color)',
             opacity: titleVisible ? 1 : 0,
@@ -94,7 +148,7 @@ export default function Home() {
             </span>
           ))}
         </h1>
-        <h2 className="mt-1 text-2xl font-semibold text-center tracking-widest" style={{ color: 'var(--text-color)', opacity: subtitleActive ? 0.85 : 0, transition: 'opacity 0.2s linear' }}>
+        <h2 className="mt-1 text-xl md:text-2xl font-semibold text-center tracking-widest px-4 md:px-0" style={{ color: 'var(--text-color)', opacity: subtitleActive ? 0.85 : 0, transition: 'opacity 0.2s linear' }}>
           {subtitle.split('').map((char, index) => (
             <span
               key={index}
@@ -111,18 +165,16 @@ export default function Home() {
           ))}
         </h2>
         {/* video section */}
-        <div className="flex w-1/2 max-w-6xl mt-20 items-center justify-between gap-12">
-          <div className="flex-1 flex items-center">
-            <p className="text-lg w-3/4" style={{ 
+        <div className="flex flex-col md:flex-row w-full md:w-5/6 lg:w-1/2 mt-12 md:mt-20 items-center justify-center md:justify-between gap-6 md:gap-12 px-4 md:px-0">
+          <div className="flex-1 flex flex-col md:flex-row items-center">
+            <p className="text-base md:text-sm w-full md:w-2/4 text-center md:text-left mb-4 md:mb-0" style={{ 
               color: 'var(--text-color)', 
-              fontSize: '1vw',
-
+              lineHeight: '1.6'
               }}>
-                {/* I hate this */}
         Formula Slug is the student-run FSAE electric team at UC Santa Cruz. Building complex high-performance race cars we push the boundaries of innovation and teamwork.
             </p>
             <button
-              className="ml-6 px-6 py-2 rounded-full text-white font-semibold shadow transition-colors duration-200"
+              className="md:ml-6 px-8 md:px-6 py-3 md:py-2 rounded-full text-white font-semibold shadow transition-colors duration-200"
               style={{ 
               backgroundColor: colors.electricBlue,
               border: `2px solid ${colors.slugYellow}`,
@@ -149,15 +201,14 @@ export default function Home() {
           </div>
           
         </div>
-        <div className="flex w-full max-w-6xl mt-10 mb-40 items-center justify-between gap-12">
-          <div className="flex-1 flex flex-col items-center justify-center">
+        <div className="flex flex-col md:flex-row w-full max-w-6xl mt-8 md:mt-10 mb-20 md:mb-40 items-center justify-center gap-8 md:gap-12 px-4 md:px-0">
+          <div className="flex-1 order-2 md:order-1 flex flex-col items-center justify-center">
               <button
-          className="px-0 py-0 border-4 border-white bg-transparent text-white text-3xl font-bold shadow-lg transition-colors duration-200 hover:bg-white hover:text-yellow-400"
+          className="hidden md:flex px-0 py-0 border-4 border-white bg-transparent text-white text-3xl font-bold shadow-lg transition-colors duration-200 hover:bg-white hover:text-yellow-400"
           style={{
           width: '15',
           height: '12vh',
           padding: '10px',
-          display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           borderRadius: '0',
@@ -168,21 +219,27 @@ export default function Home() {
           Join Our Slack
               </button>
           </div>
-          <div className="flex-1">
-            <h3 className="text-4xl font-bold mb-4" style={{ color: 'var(--text-color)' }}>
+          <div className="flex-1 order-1 md:order-2 text-center md:text-left">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: 'var(--text-color)' }}>
               Join the Team
             </h3>
-              <p className="text-lg" style={{ color: 'var(--text-color)', opacity: 0.85 }}>
+            <button
+              className="md:hidden mb-6 px-6 py-3 border-2 border-white bg-transparent text-white text-lg font-bold shadow-lg transition-colors duration-200 hover:bg-white hover:text-yellow-400 rounded"
+              onClick={() => window.open('https://fsae.slack.com/join/signup#/domain-signup', '_blank')}
+            >
+              Join Our Slack
+            </button>
+              <p className="text-base md:text-lg mb-4" style={{ color: 'var(--text-color)', opacity: 0.85, lineHeight: '1.6' }}>
               Ready to build, race, and innovate? Whether you’re an engineer, designer, or just a passionate creator, Formula Slug welcomes all UCSC students. Click the button to join our Slack and get started!
               </p>
-              <p className="text-xs mt-2" style={{ color: 'var(--text-color)', opacity: 0.65 }}>
+              <p className="text-xs mt-2" style={{ color: 'var(--text-color)', opacity: 0.65, lineHeight: '1.4' }}>
               This group is open to all students consistent with state and federal law, the UC Nondiscrimination Statement and the Nondiscrimination Policy Statement for University of California Publications Regarding Student-Related Matters.
               </p>
           </div>
         </div>
       </div>
-      <div className="w-screen h-full relative">
-        <div className="flex w-full h-150 z-0">
+      <div className="w-screen h-screen relative">
+        <div className="flex flex-col md:flex-row w-full h-full z-0">
 
               {/* Bug: 
           I cannot for the life of me fix the electrical fade in to not stutter on the first use
@@ -197,25 +254,43 @@ export default function Home() {
           Need to return and add links to take mech and electrical to team page
           -- use anchors
           */}
-          <div className="flex-1 h-full flex flex-col items-center justify-center relative group" 
-          style={{ backgroundImage: 'url(/photos/upright.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', width: '50%' }}
+          <div 
+          id="mechanical-section"
+          className="flex-1 h-1/3 md:h-full flex flex-col items-center justify-center relative group" 
+          style={{ backgroundImage: 'url(/photos/upright.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
           >
           <div
-              className="absolute inset-0 transition-opacity duration-300 opacity-60 group-hover:opacity-0 bg-[#111827]"
+              className={`absolute inset-0 transition-opacity duration-300 bg-[#111827] ${
+                isMobile 
+                  ? (activeSection === 'mechanical' ? 'opacity-0' : 'opacity-60')
+                  : 'opacity-60 group-hover:opacity-0'
+              }`}
             />
             <h3 className="text-3xl font-bold mb-4 text-white relative z-10">Mechanical</h3>
           </div>
-          <div className="flex-1 h-full flex flex-col items-center justify-center relative group"
+          <div 
+          id="electrical-section"
+          className="flex-1 h-1/3 md:h-full flex flex-col items-center justify-center relative group"
           style={{ backgroundImage: 'url(/photos/HV.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
           >
             <div
-              className="absolute inset-0 transition-opacity duration-300 opacity-60 group-hover:opacity-0 bg-[#111827]"
+              className={`absolute inset-0 transition-opacity duration-300 bg-[#111827] ${
+                isMobile 
+                  ? (activeSection === 'electrical' ? 'opacity-0' : 'opacity-60')
+                  : 'opacity-60 group-hover:opacity-0'
+              }`}
             />
             <h3 className="text-3xl font-bold mb-4 text-white relative z-10">Electrical</h3>
-          </div><div className="flex-1 h-full flex flex-col items-center justify-center relative group"
+          </div><div 
+          id="software-section"
+          className="flex-1 h-1/3 md:h-full flex flex-col items-center justify-center relative group"
           style={{ backgroundImage: 'url(/photos/Telvis.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div
-              className="absolute inset-0 transition-opacity duration-300 opacity-60 group-hover:opacity-0 bg-[#111827]"
+              className={`absolute inset-0 transition-opacity duration-300 bg-[#111827] ${
+                isMobile 
+                  ? (activeSection === 'software' ? 'opacity-0' : 'opacity-60')
+                  : 'opacity-60 group-hover:opacity-0'
+              }`}
             />
             <h3 className="text-3xl font-bold mb-4 text-white relative z-10">Software</h3>
           </div>
