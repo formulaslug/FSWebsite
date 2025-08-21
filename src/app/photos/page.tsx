@@ -4,6 +4,7 @@ import path from "path";
 import exifr from "exifr";
 import AutoScrollOnIdle from "./AutoScrollOnIdle";
 import Navbar from "@/components/Navbar";
+import ShimmerTitle from "@/components/ShimmerTitle";
 import { colors } from "@/config/colors";
 
 export default async function PhotosPage() {
@@ -49,18 +50,11 @@ export default async function PhotosPage() {
   return (
     <AutoScrollOnIdle>
       <main className="min-h-screen relative" style={{ backgroundColor: colors.background.primary }}>
-        <Navbar />
+        <Navbar textColor={colors.textColor} />
 
-        <h1 
-          className="text-4xl sm:text-6xl font-bold text-center mb-8 px-4 pt-8"
-          style={{ 
-            background: `linear-gradient(to right, ${'white'}, ${colors.titleBlue})`,
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            color: colors.textColor }}
-        >
+        <ShimmerTitle>
           Photo Gallery
-        </h1>
+        </ShimmerTitle>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0">
           {photoData.map((photo, idx) => (
             <div 

@@ -20,6 +20,7 @@ interface NavbarProps {
 
 
 import { useState, useEffect } from "react";
+import { colors } from "@/config/colors";
 
 const navLinks = [
   { href: '/', label: 'About' },
@@ -29,7 +30,7 @@ const navLinks = [
   { href: 'photos', label: 'Photos' },
 ];
 
-const Navbar: React.FC<NavbarProps> = ({ textColor = 'var(--text-color)' }) => {
+const Navbar: React.FC<NavbarProps> = ({ textColor = colors.textColor }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -44,15 +45,15 @@ const Navbar: React.FC<NavbarProps> = ({ textColor = 'var(--text-color)' }) => {
   }, []);
   return (
     <header
-      className="w-auto flex justify-end items-center fixed top-0 right-0 z-50 px-8 py-4"
-      style={{ backgroundColor: 'var(--background-primary)', zIndex: 10, right: 10, top: 50 }}
+      className="w-auto flex justify-end items-center fixed top-0 right-0 z-50 px-4 py-2"
+      style={{ backgroundColor: 'var(--background-primary)', zIndex: 10, right: 5, top: 5 }}
     >
       {/* Hamburger icon for mobile and when scrolled */}
       <button
         className={`${isScrolled ? 'flex' : 'md:hidden'} flex-col justify-center items-center w-10 h-10 focus:outline-none`}
         aria-label="Open navigation menu"
         onClick={() => setMenuOpen((open) => !open)}
-        style={{ background: 'transparent', border: 'none', padding: 0, marginRight: 8 }}
+        style={{ background: 'transparent', border: 'none', padding: 0, marginRight: 0 }}
       >
         <span className={`block w-7 h-1 bg-yellow-400 rounded transition-all duration-300 mb-1 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
         <span className={`block w-7 h-1 bg-yellow-400 rounded transition-all duration-300 mb-1 ${menuOpen ? 'opacity-0' : ''}`}></span>

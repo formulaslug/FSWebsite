@@ -23,6 +23,12 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
+  // Function to handle team section navigation
+  const handleTeamNavigation = (section: string) => {
+    // Navigate to team page first
+    window.location.href = `/team?scrollTo=${section}`;
+  };
+
   // Configurable delays
   const fallInDelay = 0.02; 
   const shadowPopDelay = 0; 
@@ -256,8 +262,9 @@ export default function Home() {
           */}
           <div 
           id="mechanical-section"
-          className="flex-1 h-1/3 md:h-full flex flex-col items-center justify-center relative group" 
+          className="flex-1 h-1/3 md:h-full flex flex-col items-center justify-center relative group cursor-pointer transition-transform duration-300 hover:scale-105" 
           style={{ backgroundImage: 'url(/photos/upright.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+          onClick={() => handleTeamNavigation('mechanical')}
           >
           <div
               className={`absolute inset-0 transition-opacity duration-300 bg-[#111827] ${
@@ -270,8 +277,9 @@ export default function Home() {
           </div>
           <div 
           id="electrical-section"
-          className="flex-1 h-1/3 md:h-full flex flex-col items-center justify-center relative group"
+          className="flex-1 h-1/3 md:h-full flex flex-col items-center justify-center relative group cursor-pointer transition-transform duration-300 hover:scale-105"
           style={{ backgroundImage: 'url(/photos/HV.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+          onClick={() => handleTeamNavigation('electrical')}
           >
             <div
               className={`absolute inset-0 transition-opacity duration-300 bg-[#111827] ${
@@ -283,8 +291,10 @@ export default function Home() {
             <h3 className="text-3xl font-bold mb-4 text-white relative z-10">Electrical</h3>
           </div><div 
           id="software-section"
-          className="flex-1 h-1/3 md:h-full flex flex-col items-center justify-center relative group"
-          style={{ backgroundImage: 'url(/photos/Telvis.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          className="flex-1 h-1/3 md:h-full flex flex-col items-center justify-center relative group cursor-pointer transition-transform duration-300 hover:scale-105"
+          style={{ backgroundImage: 'url(/photos/Telvis.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+          onClick={() => handleTeamNavigation('software')}
+          >
             <div
               className={`absolute inset-0 transition-opacity duration-300 bg-[#111827] ${
                 isMobile 

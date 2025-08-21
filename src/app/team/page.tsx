@@ -7,12 +7,39 @@
   Front page links need to have seperate anchor tags here, we also need outreach/finance on front page
 */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
+import ShimmerTitle from "@/components/ShimmerTitle";
 import { colors } from "@/config/colors";
 
 
 export default function TeamPage() {
+  // Handle scroll-to functionality from URL params
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const scrollToSection = urlParams.get('scrollTo');
+    
+    if (scrollToSection) {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        
+        setTimeout(() => {
+          const targetElement = document.getElementById(scrollToSection);
+          if (targetElement) {
+            targetElement.scrollIntoView({ 
+              behavior: 'smooth', // Smooth scroll
+              block: 'start' 
+            });
+          }
+        }, 300); // ms wait time at top
+      }, 10); 
+      
+      // Clean up URL params
+      const newUrl = window.location.pathname;
+      window.history.replaceState({}, '', newUrl);
+    }
+  }, []);
+
   const CompositesBlurb = "Pushing the limits of performance starts with cutting weight without compromising strength. Our composites team engineers precision carbon fiber components such as the aerodynamics package, steering wheel, seat, body shell, and accumulator fan cowling Every part we craft blends lightweight efficiency with durability that endures the high forces of racing."
   const VDBlurb = "Vehicle Dynamics is the invisible foundation of all motor vehicles. Our members often work between subteams, focusing on the physics behind every static and dynamic property of our cars. We design things that often cannot be seen, but are impossible to ignore. If you’re looking for a physics/mathematics-driven position, please consider joining Vehicle Dynamics!"
   const ErgonomicsBlurb = "The Ergonomics team focuses on systems that directly interact with the driver, focused on driver performance, connection, usability, safety, and comfort. They are responsible for the research, design, manufacturing, and testing of the pedal box, driver seating, steering system, brakes, and play a large role in the overall cockpit/chassis design. Their work heavily impacts the drivability and driving experience of the car."
@@ -25,7 +52,7 @@ export default function TeamPage() {
   const ChassisBlurb = "The Chassis is the glue that holds the car together. As a member of the chassis team you will learn top level system integration, how to work with complex CAD structures in Onshape, create complex simulations using Ansys to create lightweight & rigid steel tub frame frame"
   const ManufacturingBlurb = "BEN GRAU!"
   const WeldingBlurb = "Mr Morenious"
-  const SuspensionBlurb = "MIRA"
+  const SuspensionBlurb = "Suspension Team puts the car in motion. We design and engineer the system that links the drivetrain, steering, braking, and aerodynamic components to the chassis and wheels. By applying advanced physics and mathematics, we develop precise kinematic geometries that align with our vehicle dynamics objectives. Through rigorous force and load analyses, we bring the car to life, optimizing for performance in acceleration, braking, and cornering while ensuring the highest levels of driver safety."
   const LVBlurb = "WESLEY"
   const HVBlurb = "The High Voltage team's primary responsibility is ensuring the energy inside the accumulator makes its way to the motor. This involves designing circuits that interface with the motor controller, placing high-current cabling to carry the power, collaborating with other teams to optimally position tractive system components, and more! In addition to the on-board system, we also design and assemble a custom charger for the accumulator."
 
@@ -117,14 +144,9 @@ export default function TeamPage() {
       <Navbar />
         
         <div>
-          <h1 
-            className="text-4xl sm:text-6xl font-bold text-center mb-8 px-4 pt-8"
-            style={{
-              color: "white"
-            }}
-          >
+          <ShimmerTitle>
             Meet the Team
-          </h1>
+          </ShimmerTitle>
           
             <div className="flex flex-col">
 
@@ -136,25 +158,31 @@ export default function TeamPage() {
 
 
             {/* Electrical Teams */}
-            {subteamCard({ subteam: "Accumulator", teamPhoto: "Accumulator.png", blurb: AccumulatorBlurb, leftPhoto: false, leadName: "Aethlyn Lim" })}
-            {subteamCard({ subteam: "Firmware", teamPhoto: "Firmware.jpg", blurb: FirmwareBlurb, leftPhoto: true, leadName: "Jack Nystrom" })}
+            <div id="electrical">
+            {subteamCard({ subteam: "Accumulator", teamPhoto: "Accumulator.png", blurb: AccumulatorBlurb, leftPhoto: true, leadName: "Aethlyn Lim" })}
+            {subteamCard({ subteam: "Firmware", teamPhoto: "Firmware.jpg", blurb: FirmwareBlurb, leftPhoto: false, leadName: "Jack Nystrom" })}
             {subteamCard({ subteam: "High Voltage", teamPhoto: "HV.jpg", blurb: HVBlurb, leftPhoto: true, leadName: "Victor Kalastirsky" })}
-            {subteamCard({ subteam: "Low Voltage", teamPhoto: "LV.PNG", blurb: LVBlurb, leftPhoto: true, leadName: "Wesley Kronmiller" })}
+            {subteamCard({ subteam: "Low Voltage", teamPhoto: "LV.PNG", blurb: LVBlurb, leftPhoto: false, leadName: "Wesley Kronmiller" })}
+            </div>
 
 
             {/* Software Teams */}
-            {subteamCard({ subteam: "Software", teamPhoto: "Software.png", blurb: SoftwareBlurb, leftPhoto: false, leadName: "Nathaniel Platt" })}
+            <div id="software">
+            {subteamCard({ subteam: "Software", teamPhoto: "Software.png", blurb: SoftwareBlurb, leftPhoto: true, leadName: "Nathaniel Platt" })}
+            </div>
 
 
             {/* Mechanical Teams */}
+            <div id="mechanical">
             {subteamCard({ subteam: "Suspension", teamPhoto: "Suspension.jpg", blurb: SuspensionBlurb, leftPhoto: false, leadName: "Mira Verma" })}
             {subteamCard({ subteam: "Aerodynamics", teamPhoto: "Aerodynamics.jpg", blurb: AerodynamicsBlurb, leftPhoto: true, leadName: "Megh Patel" })}
             {subteamCard({ subteam: "Welding", teamPhoto: "Welding.jpg", blurb: WeldingBlurb, leftPhoto: false, leadName: "Mr Christian Reyo-Morenious" })}
-            {subteamCard({ subteam: "Composites", teamPhoto: "Composites.jpg", blurb: CompositesBlurb, leftPhoto: false, leadName: "Daniel Au" })}
-            {subteamCard({ subteam: "Chassis", teamPhoto: "Chassis.jpeg", blurb: ChassisBlurb, leftPhoto: true, leadName: "Gavin Leach" })}
-            {subteamCard({ subteam: "Vehicle Dynamics", teamPhoto: "VD.jpg", blurb: VDBlurb, leftPhoto: false, leadName: "Caleb Shin" })}
-            {subteamCard({ subteam: "Ergonomics", teamPhoto: "Ergonomics.jpg", blurb: ErgonomicsBlurb, leftPhoto: true, leadName: "Justin Judge" })}
+            {subteamCard({ subteam: "Composites", teamPhoto: "Composites.jpg", blurb: CompositesBlurb, leftPhoto: true, leadName: "Daniel Au" })}
+            {subteamCard({ subteam: "Chassis", teamPhoto: "Chassis.jpeg", blurb: ChassisBlurb, leftPhoto: false, leadName: "Gavin Leach" })}
+            {subteamCard({ subteam: "Vehicle Dynamics", teamPhoto: "VD.jpg", blurb: VDBlurb, leftPhoto: true, leadName: "Caleb Shin" })}
+            {subteamCard({ subteam: "Ergonomics", teamPhoto: "Ergonomics.jpg", blurb: ErgonomicsBlurb, leftPhoto: false, leadName: "Justin Judge" })}
             {subteamCard({ subteam: "Manufacturing", teamPhoto: "Manufacturing.png", blurb: ManufacturingBlurb, leftPhoto: true, leadName: "Ben Grau" })}
+            </div>
 
 
             </div>
