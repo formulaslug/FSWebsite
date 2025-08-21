@@ -192,6 +192,8 @@ export default function Home() {
           I swapped images and the html renders differently? What is going on
           compressing 90% did not change the transition time
           
+          it fixed itself :(
+          
           Need to return and add links to take mech and electrical to team page
           -- use anchors
           */}

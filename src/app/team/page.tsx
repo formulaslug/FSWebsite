@@ -43,18 +43,18 @@ export default function TeamPage() {
     leadName: string;
   }) => {
     const photoElement = (
-      <div className="flex items-center justify-center w-2/3 p-4">
+      <div className="flex items-center justify-center w-full md:w-full p-0 md:h-50vh overflow-hidden mt-5 md:mr-20 md:ml-20">
         <img
           src={`/photos/${teamPhoto}`}
           alt={`${subteam} Team Photo`}
-          className="w-full h-full object-cover"
-          style={{ margin: "4vw" }}
+          className="w-full h-full object-cover min-w-full min-h-full"
+          style={{ margin: "0" }}
         />
       </div>
     );
 
     const textElement = (
-      <div className="h-full flex flex-col justify-center items-center w-1/3 p-4">
+      <div className="flex flex-col justify-center items-center w-full md:w-full p-4">
         <h2
           className="text-5xl font-semibold mb-2 text-center"
           style={{
@@ -66,7 +66,7 @@ export default function TeamPage() {
           {subteam}
         </h2>
         <p 
-          className="text-white text-center text-2xl flex items-center justify-center h-full w-3/4"
+          className="text-white text-center text-xl flex items-center justify-center h-full w-95% md:w-3/4"
         >
           "{blurb}"
         </p>
@@ -79,25 +79,33 @@ export default function TeamPage() {
 
     return (
       <div
-        className="flex"
+        className="flex flex-col w-full md:h-[50vh]"
         style={{
           padding: "0",
-          width: "100vw",
-          height: "50vh",
+          width: "100%",
         }}
       >
-        <div className="flex w-full h-full">
-          {leftPhoto ? (
-            <>
-              {photoElement}
-              {textElement}
-            </>
-          ) : (
-            <>
-              {textElement}
-              {photoElement}
-            </>
-          )}
+        <div className="flex flex-col md:flex-row w-full h-full">
+          {/* Mobile layout - always text first, then photo */}
+          <div className="flex flex-col md:hidden w-full">
+        {textElement}
+        {photoElement}
+          </div>
+          
+          {/* Desktop layout - respects leftPhoto prop */}
+          <div className="hidden md:flex md:flex-row w-full h-full">
+        {leftPhoto ? (
+          <>
+            <div className="flex w-2/3">{photoElement}</div>
+            <div className="flex w-1/3">{textElement}</div>
+          </>
+        ) : (
+          <>
+            <div className="flex w-1/3">{textElement}</div>
+            <div className="flex w-2/3">{photoElement}</div>
+          </>
+        )}
+          </div>
         </div>
       </div>
     );
@@ -119,21 +127,34 @@ export default function TeamPage() {
           </h1>
           
             <div className="flex flex-col">
+
+
+
+            {/* Business Teams */}
+            {subteamCard({ subteam: "Outreach", teamPhoto: "Outreach.jpg", blurb: OutreachBlurb, leftPhoto: true, leadName: "Naveen Challa" })}
+            {subteamCard({ subteam: "Finance", teamPhoto: "Finance.JPG", blurb: FinanceBlurb, leftPhoto: false, leadName: "Max Simonen Luke" })}
+
+
+            {/* Electrical Teams */}
+            {subteamCard({ subteam: "Accumulator", teamPhoto: "Accumulator.png", blurb: AccumulatorBlurb, leftPhoto: false, leadName: "Aethlyn Lim" })}
+            {subteamCard({ subteam: "Firmware", teamPhoto: "Firmware.jpg", blurb: FirmwareBlurb, leftPhoto: true, leadName: "Jack Nystrom" })}
+            {subteamCard({ subteam: "High Voltage", teamPhoto: "HV.jpg", blurb: HVBlurb, leftPhoto: true, leadName: "Victor Kalastirsky" })}
+            {subteamCard({ subteam: "Low Voltage", teamPhoto: "LV.PNG", blurb: LVBlurb, leftPhoto: true, leadName: "Wesley Kronmiller" })}
+
+
+            {/* Software Teams */}
+            {subteamCard({ subteam: "Software", teamPhoto: "Software.png", blurb: SoftwareBlurb, leftPhoto: false, leadName: "Nathaniel Platt" })}
+
+
+            {/* Mechanical Teams */}
+            {subteamCard({ subteam: "Suspension", teamPhoto: "Suspension.jpg", blurb: SuspensionBlurb, leftPhoto: false, leadName: "Mira Verma" })}
             {subteamCard({ subteam: "Aerodynamics", teamPhoto: "Aerodynamics.jpg", blurb: AerodynamicsBlurb, leftPhoto: true, leadName: "Megh Patel" })}
+            {subteamCard({ subteam: "Welding", teamPhoto: "Welding.jpg", blurb: WeldingBlurb, leftPhoto: false, leadName: "Mr Christian Reyo-Morenious" })}
             {subteamCard({ subteam: "Composites", teamPhoto: "Composites.jpg", blurb: CompositesBlurb, leftPhoto: false, leadName: "Daniel Au" })}
             {subteamCard({ subteam: "Chassis", teamPhoto: "Chassis.jpeg", blurb: ChassisBlurb, leftPhoto: true, leadName: "Gavin Leach" })}
             {subteamCard({ subteam: "Vehicle Dynamics", teamPhoto: "VD.jpg", blurb: VDBlurb, leftPhoto: false, leadName: "Caleb Shin" })}
             {subteamCard({ subteam: "Ergonomics", teamPhoto: "Ergonomics.jpg", blurb: ErgonomicsBlurb, leftPhoto: true, leadName: "Justin Judge" })}
-            {subteamCard({ subteam: "Accumulator", teamPhoto: "Accumulator.png", blurb: AccumulatorBlurb, leftPhoto: false, leadName: "Aethlyn Lim" })}
-            {subteamCard({ subteam: "Outreach", teamPhoto: "Outreach.jpg", blurb: OutreachBlurb, leftPhoto: true, leadName: "Naveen Challa" })}
-            {subteamCard({ subteam: "Finance", teamPhoto: "Finance.JPG", blurb: FinanceBlurb, leftPhoto: false, leadName: "Max Simonen Luke" })}
-            {subteamCard({ subteam: "Firmware", teamPhoto: "Firmware.jpg", blurb: FirmwareBlurb, leftPhoto: true, leadName: "Jack Nystrom" })}
-            {subteamCard({ subteam: "Software", teamPhoto: "Software.png", blurb: SoftwareBlurb, leftPhoto: false, leadName: "Nathaniel Platt" })}
             {subteamCard({ subteam: "Manufacturing", teamPhoto: "Manufacturing.png", blurb: ManufacturingBlurb, leftPhoto: true, leadName: "Ben Grau" })}
-            {subteamCard({ subteam: "Welding", teamPhoto: "Welding.jpg", blurb: WeldingBlurb, leftPhoto: false, leadName: "Mr Christian Reyo-Morenious" })}
-            {subteamCard({ subteam: "High Voltage", teamPhoto: "HV.jpg", blurb: HVBlurb, leftPhoto: true, leadName: "Victor Kalastirsky" })}
-            {subteamCard({ subteam: "Suspension", teamPhoto: "Suspension.jpg", blurb: SuspensionBlurb, leftPhoto: false, leadName: "Mira Verma" })}
-            {subteamCard({ subteam: "Low Voltage", teamPhoto: "LV.PNG", blurb: LVBlurb, leftPhoto: true, leadName: "Wesley Kronmiller" })}
 
 
             </div>

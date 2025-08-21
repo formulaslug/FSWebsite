@@ -86,7 +86,6 @@ export default function SponsorsPage() {
             height={120}
             className="object-contain max-w-full max-h-full"
             style={{ display: 'block' }}
-            unoptimized
             onError={(e) => {
               // Fallback to initials if image fails to load
               const target = e.target as HTMLImageElement;
