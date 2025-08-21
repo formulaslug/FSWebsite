@@ -204,7 +204,7 @@ export default function Home() {
             <h3 className="text-3xl font-bold mb-4 text-white relative z-10">Mechanical</h3>
           </div>
           <div className="flex-1 h-full flex flex-col items-center justify-center relative group"
-          style={{ backgroundImage: 'url(/photos/VicHotworkOpt.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+          style={{ backgroundImage: 'url(/photos/HV.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
           >
             <div
               className="absolute inset-0 transition-opacity duration-300 opacity-60 group-hover:opacity-0 bg-[#111827]"

@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "next export",
+			"type": "shell",
+			"command": "npx next export",
+			"isBackground": false,
+			"group": "build"
+		}
+	]
+}

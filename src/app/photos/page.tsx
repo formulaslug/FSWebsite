@@ -75,6 +75,7 @@ export default async function PhotosPage() {
                 height={600}
                 className="object-cover w-full h-full"
                 priority={idx < 3}
+                unoptimized
               />
             </div>
           ))}
