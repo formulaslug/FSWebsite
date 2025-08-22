@@ -173,11 +173,11 @@ export default function Home() {
         {/* video section */}
         <div className="flex flex-col md:flex-row w-full md:w-5/6 lg:w-1/2 mt-12 md:mt-20 items-center justify-center md:justify-between gap-6 md:gap-12 px-4 md:px-0">
           <div className="flex-1 flex flex-col md:flex-row items-center">
-            <p className="text-base md:text-sm w-full md:w-2/4 text-center md:text-left mb-4 md:mb-0" style={{ 
+            <p className="text-base md:text-xl w-full md:w-2/4 text-center md:text-left mb-4 md:mb-0" style={{ 
               color: 'var(--text-color)', 
               lineHeight: '1.6'
               }}>
-        Formula Slug is the student-run FSAE electric team at UC Santa Cruz. Building complex high-performance race cars we push the boundaries of innovation and teamwork.
+          Formula Slug is the student-run FSAE electric team at UC Santa Cruz. By building complex, high-performance race cars, we push our boundaries in innovation and competition while fostering the learning of applied skills and teamwork.
             </p>
             <button
               className="md:ml-6 px-8 md:px-6 py-3 md:py-2 rounded-full text-white font-semibold shadow transition-colors duration-200"
@@ -236,11 +236,9 @@ export default function Home() {
               Join Our Slack
             </button>
               <p className="text-base md:text-lg mb-4" style={{ color: 'var(--text-color)', opacity: 0.85, lineHeight: '1.6' }}>
-              Ready to build, race, and innovate? Whether you’re an engineer, designer, or just a passionate creator, Formula Slug welcomes all UCSC students. Click the button to join our Slack and get started!
+              Ready to build, compete, and innovate? Whether you’re an engineer, designer, or just a passionate creator, Formula Slug welcomes all UCSC students. Click the button to join our Slack and get started!
               </p>
-              <p className="text-xs mt-2" style={{ color: 'var(--text-color)', opacity: 0.65, lineHeight: '1.4' }}>
-              This group is open to all students consistent with state and federal law, the UC Nondiscrimination Statement and the Nondiscrimination Policy Statement for University of California Publications Regarding Student-Related Matters.
-              </p>
+
           </div>
         </div>
       </div>
@@ -262,10 +260,13 @@ export default function Home() {
           */}
           <div 
           id="mechanical-section"
-          className="flex-1 h-1/3 md:h-full flex flex-col items-center justify-center relative group cursor-pointer transition-transform duration-300 hover:scale-105" 
-          style={{ backgroundImage: 'url(/photos/upright.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+          className="flex-1 h-1/3 md:h-full flex flex-col items-center justify-center relative group cursor-pointer overflow-hidden" 
           onClick={() => handleTeamNavigation('mechanical')}
           >
+          <div
+            className="absolute inset-0 transition-transform duration-300 group-hover:scale-110"
+            style={{ backgroundImage: 'url(/photos/upright.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+          />
           <div
               className={`absolute inset-0 transition-opacity duration-300 bg-[#111827] ${
                 isMobile 
@@ -277,10 +278,13 @@ export default function Home() {
           </div>
           <div 
           id="electrical-section"
-          className="flex-1 h-1/3 md:h-full flex flex-col items-center justify-center relative group cursor-pointer transition-transform duration-300 hover:scale-105"
-          style={{ backgroundImage: 'url(/photos/HV.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+          className="flex-1 h-1/3 md:h-full flex flex-col items-center justify-center relative group cursor-pointer overflow-hidden"
           onClick={() => handleTeamNavigation('electrical')}
           >
+          <div
+            className="absolute inset-0 transition-transform duration-300 group-hover:scale-110"
+            style={{ backgroundImage: 'url(/photos/HV.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+          />
             <div
               className={`absolute inset-0 transition-opacity duration-300 bg-[#111827] ${
                 isMobile 
@@ -291,10 +295,13 @@ export default function Home() {
             <h3 className="text-3xl font-bold mb-4 text-white relative z-10">Electrical</h3>
           </div><div 
           id="software-section"
-          className="flex-1 h-1/3 md:h-full flex flex-col items-center justify-center relative group cursor-pointer transition-transform duration-300 hover:scale-105"
-          style={{ backgroundImage: 'url(/photos/Telvis.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+          className="flex-1 h-1/3 md:h-full flex flex-col items-center justify-center relative group cursor-pointer overflow-hidden"
           onClick={() => handleTeamNavigation('software')}
           >
+          <div
+            className="absolute inset-0 transition-transform duration-300 group-hover:scale-110"
+            style={{ backgroundImage: 'url(/photos/Telvis.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+          />
             <div
               className={`absolute inset-0 transition-opacity duration-300 bg-[#111827] ${
                 isMobile 
@@ -323,8 +330,7 @@ export default function Home() {
             <div className="flex-1 flex items-center justify-center">
               <div className="w-full max-w-xl aspect-video rounded-lg shadow-lg overflow-hidden">
               <iframe
-                width="500"
-                height="300"
+                className="w-full h-full"
                 src="https://www.youtube.com/embed/W2YDWzCsP7c?si=YlAYGXaJvxtaGviR"
                 title="YouTube video player"
                 frameBorder="0"
@@ -391,6 +397,9 @@ export default function Home() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, odit perferendis! In esse suscipit maiores obcaecati consequatur iusto neque officiis vitae dolorum cum perferendis, nostrum est minus dolore laudantium necessitatibus.
           </p>
         </div>
+              <p className="text-xs mt-2" style={{ color: 'var(--text-color)', opacity: 0.65, lineHeight: '1.4' }}>
+              This group is open to all students consistent with state and federal law, the UC Nondiscrimination Statement and the Nondiscrimination Policy Statement for University of California Publications Regarding Student-Related Matters.
+              </p>
       </section>
       
       

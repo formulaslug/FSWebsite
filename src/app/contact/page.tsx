@@ -82,7 +82,7 @@ export default function ContactPage() {
               {/* Social Media Links */}
               <div className="grid grid-cols-2 gap-4 mt-8">
                 <a
-                  href="https://www.instagram.com/formulaslug/"
+                  href="https://www.instagram.com/formula_slug/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col items-center justify-center p-6 rounded-lg transition-all duration-300 hover:scale-105 cursor-pointer group"
