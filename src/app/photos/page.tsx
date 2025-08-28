@@ -6,6 +6,12 @@ import AutoScrollOnIdle from "./AutoScrollOnIdle";
 import Navbar from "@/components/Navbar";
 import ShimmerTitle from "@/components/ShimmerTitle";
 import { colors } from "@/config/colors";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Formula Slug - Photos",
+  description: "Formula Slug's Website - Photo Gallery",
+};
 
 export default async function PhotosPage() {
   // Read the /public/photos directory at build time (server-side only)

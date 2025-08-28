@@ -1,5 +1,3 @@
-"use client";
-
 /*
   I'm really not sure how to make this look good,
   I want big high quality photos of every subteam doing their work and a small photo of the subteam leader.
@@ -7,39 +5,18 @@
   Front page links need to have seperate anchor tags here, we also need outreach/finance on front page
 */
 
-import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import ShimmerTitle from "@/components/ShimmerTitle";
 import { colors } from "@/config/colors";
+import { Metadata } from "next";
+import ScrollToSection from "./ScrollToSection";
 
+export const metadata: Metadata = {
+  title: "Formula Slug - Team",
+  description: "Formula Slug's Website - Meet the Team",
+};
 
 export default function TeamPage() {
-  // Handle scroll-to functionality from URL params
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const scrollToSection = urlParams.get('scrollTo');
-    
-    if (scrollToSection) {
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'instant' });
-        
-        setTimeout(() => {
-          const targetElement = document.getElementById(scrollToSection);
-          if (targetElement) {
-            targetElement.scrollIntoView({ 
-              behavior: 'smooth', // Smooth scroll
-              block: 'start' 
-            });
-          }
-        }, 300); // ms wait time at top
-      }, 10); 
-      
-      // Clean up URL params
-      const newUrl = window.location.pathname;
-      window.history.replaceState({}, '', newUrl);
-    }
-  }, []);
-
   const CompositesBlurb = "Pushing the limits of performance starts with cutting weight without compromising strength. Our composites team engineers precision carbon fiber components such as the aerodynamics package, steering wheel, seat, body shell, and accumulator fan cowling Every part we craft blends lightweight efficiency with durability that endures the high forces of racing."
   const VDBlurb = "Vehicle Dynamics is the invisible foundation of all motor vehicles. Our members often work between subteams, focusing on the physics behind every static and dynamic property of our cars. We design things that often cannot be seen, but are impossible to ignore. If you’re looking for a physics/mathematics-driven position, please consider joining Vehicle Dynamics!"
   const ErgonomicsBlurb = "The Ergonomics team focuses on systems that directly interact with the driver, focused on driver performance, connection, usability, safety, and comfort. They are responsible for the research, design, manufacturing, and testing of the pedal box, driver seating, steering system, brakes, and play a large role in the overall cockpit/chassis design. Their work heavily impacts the drivability and driving experience of the car."
@@ -140,8 +117,10 @@ export default function TeamPage() {
 
   return (
     <main className="min-h-screen text-white" style={{ backgroundColor: colors.background.primary }}>
-    <div style={{ margin: 0, padding: 0, width: '100%' }}>
-      <Navbar />
+      <ScrollToSection />
+
+      <div style={{ margin: 0, padding: 0, width: '100%' }}>
+        <Navbar />
         
         <div>
           <ShimmerTitle>
