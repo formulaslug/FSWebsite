@@ -150,7 +150,31 @@ export default function TeamPage() {
           
             <div className="flex flex-col">
 
-
+            {/* Business Team Section */}
+            <div className="flex flex-col items-center justify-center w-full py-12">
+              <h2
+                className="text-5xl font-semibold mb-8 text-center"
+                style={{
+                  color: colors.slugYellow,
+                  textShadow: `2px 2px 0px ${colors.electricBlue}`,
+                }}
+              >
+                Business Team
+              </h2>
+              <div className="flex items-center justify-center w-full max-w-md">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-auto"
+                  style={{ maxHeight: '300px' }}
+                >
+                  <source src="/animations/handshake.webm" type="video/webm" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
 
             {/* Business Teams */}
             {subteamCard({ subteam: "Outreach", teamPhoto: "Outreach.jpg", blurb: OutreachBlurb, leftPhoto: true, leadName: "Naveen Challa" })}
