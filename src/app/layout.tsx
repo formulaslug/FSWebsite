@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Formula Slug",
-  description: "Formula Slug Website",
+  title: "Formula Slug - About",
+  description: "Formula Slug's Website - About Us",
 };
 
 export default function RootLayout({
