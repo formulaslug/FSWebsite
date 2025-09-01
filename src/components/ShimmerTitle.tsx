@@ -30,7 +30,8 @@ const ShimmerTitle: React.FC<ShimmerTitleProps> = ({
     }
   }, []);
 
-  return (<>
+  return (
+    <>
       <span ref={shimmerRef} className="shimmer-text">{children}</span>
       
       <style jsx>{`
@@ -74,8 +75,8 @@ const ShimmerTitle: React.FC<ShimmerTitleProps> = ({
           }
         }
       `}</style>
-    
-  </>);
+    </>
+  );
 };
 
 export default ShimmerTitle;
