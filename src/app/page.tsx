@@ -158,7 +158,6 @@ export default function Home() {
         </h1>
         </ShimmerTitle>
         <h1
-          // delayMs={fallInDuration}
           className="mt-1 text-xl md:text-2xl font-semibold text-center tracking-widest px-4 md:px-0"
           style={{
             color: 'var(--text-color)',
