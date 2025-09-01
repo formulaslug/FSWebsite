@@ -7,12 +7,12 @@ interface ShimmerTitleProps {
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
+  delayMs?: number;
 }
 
 const ShimmerTitle: React.FC<ShimmerTitleProps> = ({ 
   children, 
-  className = "text-4xl sm:text-6xl font-bold text-center mb-8 px-4 pt-8",
-  style = {}
+  delayMs = 100,
 }) => {
   const shimmerRef = useRef<HTMLSpanElement>(null);
   const hasAnimated = useRef(false);
@@ -23,20 +23,14 @@ const ShimmerTitle: React.FC<ShimmerTitleProps> = ({
       // Small delay to ensure the element is mounted
       setTimeout(() => {
         if (shimmerRef.current) {
-          shimmerRef.current.style.animation = 'diagonalShimmer 3s ease-out forwards';
+          shimmerRef.current.style.animation =
+            `diagonalShimmer 3s cubic-bezier(.05,.59,.44,.94) forwards`;
         }
-      }, 100);
+      }, delayMs);
     }
   }, []);
 
-  return (
-    <h1 
-      className={`${className} relative overflow-hidden`}
-      style={{
-        color: "white",
-        ...style
-      }}
-    >
+  return (<>
       <span ref={shimmerRef} className="shimmer-text">{children}</span>
       
       <style jsx>{`
@@ -55,7 +49,7 @@ const ShimmerTitle: React.FC<ShimmerTitleProps> = ({
             white 100%
           );
           background-size: 400% 400%;
-          background-position: -150% -150%;
+          background-position: -50% 0;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -63,10 +57,10 @@ const ShimmerTitle: React.FC<ShimmerTitleProps> = ({
         
         @keyframes diagonalShimmer {
           0% {
-            background-position: -150% -150%;
+            background-position: -50% 0;
           }
           100% {
-            background-position: 100% 100%;
+            background-position: 100% 0;
           }
         }
         
@@ -80,8 +74,8 @@ const ShimmerTitle: React.FC<ShimmerTitleProps> = ({
           }
         }
       `}</style>
-    </h1>
-  );
+    
+  </>);
 };
 
 export default ShimmerTitle;
