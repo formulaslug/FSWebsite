@@ -101,9 +101,9 @@ export default function SponsorsPage() {
         <Navbar />
         
         <div className="max-w-6xl mx-auto">
-          <ShimmerTitle>
-            Our Sponsors
-          </ShimmerTitle>
+          <h1 className="text-4xl sm:text-6xl font-bold text-center mb-8 px-4 pt-8">
+            <ShimmerTitle>Our Sponsors</ShimmerTitle>
+          </h1>
           
           <div className="text-center mb-12">
             <p className="text-xl mb-4" style={{ color: colors.textColor }}>

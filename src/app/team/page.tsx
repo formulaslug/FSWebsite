@@ -123,9 +123,9 @@ export default function TeamPage() {
         <Navbar />
         
         <div>
-          <ShimmerTitle>
-            Meet the Team
-          </ShimmerTitle>
+          <h1 className="text-4xl sm:text-6xl font-bold text-center mb-8 px-4 pt-8">
+            <ShimmerTitle>Meet the Team</ShimmerTitle>
+          </h1>
           
             <div className="flex flex-col">
 
