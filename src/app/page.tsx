@@ -13,6 +13,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import { colors } from "@/config/colors";
+import ShimmerTitle from "@/components/ShimmerTitle";
 
 export default function Home() {
   const title = "FORMULA SLUG";
@@ -31,12 +32,12 @@ export default function Home() {
 
   // Configurable delays
   const fallInDelay = 0.02; 
-  const shadowPopDelay = 0; 
+  const fallInDuration = (title.length - 1) * fallInDelay * 1000 + 1000;
 
   useEffect(() => {
     setTitleVisible(true);
     // Trigger subtitle animation after half the main title's fall-in duration
-    const subtitleTimeout = setTimeout(() => setSubtitleActive(true), ((title.length - 1) * fallInDelay * 1000 + 1000) / 2);
+    const subtitleTimeout = setTimeout(() => setSubtitleActive(true), fallInDuration / 2);
     
     // Check if mobile
     const checkMobile = () => {
@@ -130,6 +131,7 @@ export default function Home() {
           />
         </div>
         <Navbar />
+        <ShimmerTitle delayMs={fallInDuration*0.9}>
         <h1
           className="w-full text-4xl sm:text-5xl md:text-6xl mt-16 md:mt-32 lg:text-9xl font-bold drop-shadow-lg flex flex-wrap justify-center mb-2 max-w-full break-words px-4 md:px-0"
           style={{
@@ -144,7 +146,7 @@ export default function Home() {
               className={char === ' ' ? 'inline-block w-4 sm:w-8' : ''}
               style={{
                 display: char === ' ' ? 'inline-block' : 'inline',
-                animation: `fall-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both ${index * fallInDelay}s, shadow-pop 1.0s cubic-bezier(0.12, 0.25, 0.3, 0.5) forwards ${(index * fallInDelay) + 1.0}s`,
+                animation: `fall-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both ${index * fallInDelay}s`,
                 animationFillMode: 'both',
                 minWidth: char === ' ' ? '0.25em' : undefined,
                 letterSpacing: '0.03em'
@@ -154,22 +156,28 @@ export default function Home() {
             </span>
           ))}
         </h1>
-        <h2 className="mt-1 text-xl md:text-2xl font-semibold text-center tracking-widest px-4 md:px-0" style={{ color: 'var(--text-color)', opacity: subtitleActive ? 0.85 : 0, transition: 'opacity 0.2s linear' }}>
+        </ShimmerTitle>
+        <h1
+          className="mt-1 text-xl md:text-2xl font-semibold text-center tracking-widest px-4 md:px-0"
+          style={{
+            color: 'var(--text-color)',
+            opacity: subtitleActive ? 0.85 : 0,
+            transition: 'opacity 0.2s linear'
+          }}
+        >
           {subtitle.split('').map((char, index) => (
             <span
               key={index}
               className={char === ' ' ? 'inline-block' : ''}
-              style={subtitleActive ? {
+              style={{
                 display: char === ' ' ? 'inline-block' : 'inline',
-                animation: `fall-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both ${index * 0.02}s, shadow-pop 1.0s cubic-bezier(0.12, 0.25, 0.3, 0.5) forwards ${(index * 0.02) + 0.5}s`,
-                animationFillMode: 'both',
                 minWidth: char === ' ' ? '0.5em' : undefined
-              } : { display: char === ' ' ? 'inline-block' : 'inline', minWidth: char === ' ' ? '0.5em' : undefined }}
+              }}
             >
               {char === ' ' ? '\u00A0' : char}
             </span>
           ))}
-        </h2>
+        </h1>
         {/* video section */}
         <div className="flex flex-col md:flex-row w-full md:w-5/6 lg:w-1/2 mt-12 md:mt-20 items-center justify-center md:justify-between gap-6 md:gap-12 px-4 md:px-0">
           <div className="flex-1 flex flex-col md:flex-row items-center">
