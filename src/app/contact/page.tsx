@@ -18,12 +18,12 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="min-h-screen text-white" style={{ backgroundColor: colors.background.primary }}>
-      <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
+      <div className="container mx-auto p-0 sm:px-6 lg:px-8">
         <Navbar />
         <div className="max-w-4xl mx-auto">
-          <ShimmerTitle className="text-4xl sm:text-6xl font-bold text-center mb-8 px-4 pt-0">
-            Contact Us
-          </ShimmerTitle>
+          <h1 className="text-4xl sm:text-6xl font-bold text-center mb-8 px-4 pt-8">
+            <ShimmerTitle>Contact Us</ShimmerTitle>
+          </h1>
           
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Information */}
