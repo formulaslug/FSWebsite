@@ -350,7 +350,7 @@ export default function Home() {
             </div>
             <div className="flex-1">
               <p className="text-lg text-gray-100 text-left">
-               THE DOCUMENTARY DOESN"T LOAD Founded in 2014, Formula Slug was founded on the premise of electric vehicles and renewable energy projects. This led to our first vehicle, FS-0. While it didn't go to competition, it served as the springboard for the team.
+                Founded in 2014, Formula Slug was founded on the premise of renewable energy in electric vehicles. This led to our first vehicle, FS-0. We raised over $16,000 and put in countless hours of work. While it didn't go to competition, it served as the springboard for Formula Slug's ventures into electric vehicle engineering and catalyzed the team's growth and guiding principles.
               </p>
             </div>
           </div>
@@ -359,7 +359,7 @@ export default function Home() {
 
             <div className="flex-1">
               <p className="text-lg text-gray-100 text-left">
-                Story of FS-1, the prev website got it wrong, need to ask Sam. Anyway. FS-1 drove (haha) us closer to our goals of competition...
+                Building on the progress and experienced gained from FS-0, FS-1 was the first vehicle Formula Slug entered in the Formula SAE Electric Vehicle competition in Lincoln, Nebraska. Although FS-1 did not pass technical inspection, it earned our first points at competition through the static events. This experience provided invaluable lessons that informed the design and engineering of our subsequent vehicles, while showing us we could score points at competition. 
               </p>
             </div>
             <div className="flex-1 flex items-center justify-center">
