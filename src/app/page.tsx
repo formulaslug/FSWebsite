@@ -378,7 +378,7 @@ export default function Home() {
             <div className="flex-1">
               <p className="text-lg text-gray-100 text-left">
                 {/* we need the official account to post the pov videos */}
-                FS2 ABSULUTELY RIPPING IT AT BLUE MAX KART CLUB LINKED ON THE LEFT FS-2 was our first car to make it to the FSAE michigan competition, while we didn't pass EV inspection we did pass mechanical inspection. This was a huge step for the team, and propelled us to our next car.
+                FS-2 was our first car to make it to the FSAE Michigan competition. We improved upon the performance of FS-1 by passing mechanical technical inspection and placing 56th overall. This was a huge step forward for Formula Slug, and propelled us to our next stage with FS-3.
               </p>
             </div>
           </div>
