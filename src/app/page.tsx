@@ -349,6 +349,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex-1">
+              <h3 className="text-yellow-300 text-xl font-semibold mb-2">FS-0</h3>
               <p className="text-lg text-gray-100 text-left">
                 Founded in 2014, Formula Slug was founded on the premise of renewable energy in electric vehicles. This led to our first vehicle, FS-0. We raised over $16,000 and put in countless hours of work. While it didn't go to competition, it served as the springboard for Formula Slug's ventures into electric vehicle engineering and catalyzed the team's growth and guiding principles.
               </p>
@@ -358,6 +359,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mx-auto mb-8 gap-8">
 
             <div className="flex-1">
+              <h3 className="text-yellow-300 text-xl font-semibold mb-2">FS-1</h3>
               <p className="text-lg text-gray-100 text-left">
                 Building on the progress and experienced gained from FS-0, FS-1 was the first vehicle Formula Slug entered in the Formula SAE Electric Vehicle competition in Lincoln, Nebraska. Although FS-1 did not pass technical inspection, it earned our first points at competition through the static events. This experience provided invaluable lessons that informed the design and engineering of our subsequent vehicles, while showing us we could score points at competition. 
               </p>
@@ -376,6 +378,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex-1">
+              <h3 className="text-yellow-300 text-xl font-semibold mb-2">FS-2</h3>
               <p className="text-lg text-gray-100 text-left">
                 {/* we need the official account to post the pov videos */}
                 FS-2 was our first car to make it to the FSAE Michigan competition. We improved upon the performance of FS-1 by passing mechanical technical inspection and placing 56th overall. This was a huge step forward for Formula Slug, and propelled us to our next stage with FS-3.
@@ -385,25 +388,18 @@ export default function Home() {
 
             <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mx-auto mb-8 gap-8">
             <div className="flex-1">
+              <h3 className="text-yellow-300 text-xl font-semibold mb-2">FS-3</h3>
               <p className="text-lg text-gray-100 text-left">
-                CALEB SHIN EDITED SICK AS SHIT VIDEO LINKED TO THE RIGHT This last year in 2025 we brought our car FS-3 to FSAE Michigan. It blew through mechanical, HV, EV active, rain, tilt, and brake inspections. 
-                Our cumulative score from dynamic and static events placed us 18th out of the 79 teams who were on site. 
+                This past year in June 2025, we brought FS-3 to FSAE Michigan. It blew through mechanical, HV, EV active, rain, tilt, and brake inspections, while successfully competing in all dynamic events. 
+                We managed to achieve our lofty goal of a top 20 placement in just our third ever year of officially competing, with a top 3 finish in efficiency.
               </p>
             </div>
             <div className="flex-1 flex items-center justify-center">
               <div className="w-full max-w-xl aspect-video rounded-lg shadow-lg overflow-hidden">
-              <img src="https://via.placeholder.com/500x300" alt="Placeholder" />
+              <iframe width="500" height="300" src="https://www.youtube.com/embed/xwFrdFvr7uU" title="FS-3 Competition Video" frameBorder="0" allowFullScreen></iframe>
               </div>
             </div>
           </div>
-          
-
-
-          <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos praesentium at quasi cum enim expedita minus atque, accusantium, deleniti exercitationem recusandae possimus sunt excepturi! Vel nam error distinctio molestiae quae.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem consectetur enim fuga excepturi itaque placeat quas repellendus incidunt, earum suscipit exercitationem, perferendis cum. Eum sapiente rem voluptate quo ab reprehenderit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, odit perferendis! In esse suscipit maiores obcaecati consequatur iusto neque officiis vitae dolorum cum perferendis, nostrum est minus dolore laudantium necessitatibus.
-          </p>
         </div>
               <p className="text-xs mt-2" style={{ color: 'var(--text-color)', opacity: 0.65, lineHeight: '1.4' }}>
               This group is open to all students consistent with state and federal law, the UC Nondiscrimination Statement and the Nondiscrimination Policy Statement for University of California Publications Regarding Student-Related Matters.
