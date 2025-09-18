@@ -180,10 +180,10 @@ export default function Home() {
           ))}
         </h1>
         {/* video section */}
-        <div className="flex flex-col md:flex-row w-full md:w-5/6 lg:w-1/2 mt-12 md:mt-20 items-center justify-center md:justify-between gap-6 md:gap-12 px-4 md:px-0">
-          <div className="flex-1 flex flex-col md:flex-row items-center">
+        <div className="flex flex-col md:flex-row w-full max-w-6xl mt-12 md:mt-20 items-center justify-center gap-6 md:gap-12 px-4 md:px-0 mx-auto">
+          <div className="flex-1 flex flex-col md:flex-row items-center justify-center">
             <button
-              className="md:ml-6 px-8 md:px-6 py-3 md:py-2 rounded-full text-white font-semibold shadow transition-colors duration-200"
+              className="px-8 md:px-6 py-3 md:py-2 rounded-full text-white font-semibold shadow transition-colors duration-200 mx-auto"
               style={{ 
               backgroundColor: colors.electricBlue,
               border: `2px solid ${colors.slugYellow}`,
@@ -210,34 +210,25 @@ export default function Home() {
           </div>
           
         </div>
-        <div className="flex flex-col md:flex-row w-full max-w-6xl mt-8 md:mt-10 mb-20 md:mb-40 items-center justify-center gap-8 md:gap-12 px-4 md:px-0">
-          <div className="flex-1 order-2 md:order-1 flex flex-col items-center justify-center">
-              <button
-          className="hidden md:flex px-0 py-0 border-4 border-white bg-transparent shadow-lg transition-colors duration-200 hover:bg-white hover:text-yellow-400"
-          style={{
-          width: '15',
-          height: '12vh',
-          padding: '10px',
-          alignItems: 'center',
-          justifyContent: 'center',
-          borderRadius: '0',
-          color: 'var(--text-color)'
-          }}
-          onClick={() => window.open('https://fsae.slack.com/join/signup#/domain-signup', '_blank')}
-              >
-          <span className="text-2xl md:text-3xl font-bold">Join the Team</span>
-              </button>
-          </div>
-          <div className="flex-1 order-1 md:order-2 text-center md:text-left">
-            <button
-              className="md:hidden mb-6 px-6 py-3 border-2 border-white bg-transparent shadow-lg transition-colors duration-200 hover:bg-white hover:text-yellow-400 rounded"
-              style={{ color: 'var(--text-color)' }}
-              onClick={() => window.open('https://fsae.slack.com/join/signup#/domain-signup', '_blank')}
+        <div className="w-full max-w-6xl mt-8 md:mt-10 mb-20 md:mb-40 px-4 md:px-0 mx-auto flex justify-center">
+          <button
+            className="px-6 py-3 border-4 border-white bg-transparent shadow-lg transition-colors duration-200 hover:bg-white hover:text-yellow-400 rounded"
+            style={{
+              borderRadius: '6px',
+              color: 'var(--text-color)',
+              padding: '12px 20px'
+            }}
+            onClick={() => window.open('https://fsae.slack.com/join/signup#/domain-signup', '_blank')}
+            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = colors.electricBlue; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = 'var(--text-color)'; }}
+          >
+            <span
+              className="text-2xl md:text-3xl font-bold"
+              style={{ fontFamily: "'Scandia Bold Italic', sans-serif", fontStyle: 'italic' }}
             >
-              <span className="text-2xl md:text-3xl font-bold">Join the Team</span>
-            </button>
-
-          </div>
+              Join the Team
+            </span>
+          </button>
         </div>
       </div>
       <div className="w-screen h-screen relative">
