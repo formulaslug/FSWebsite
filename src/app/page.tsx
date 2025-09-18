@@ -186,7 +186,9 @@ export default function Home() {
               color: 'var(--text-color)', 
               lineHeight: '1.6'
               }}>
-Formula Slug is the premier student-run FSAE electric team at UC Santa Cruz. By engineering advanced, high-performance racecars, we challenge the limits of innovation and competition while cultivating real-world skills and teamwork.            </p>
+            Formula Slug is UC Santa Cruz’s premier student-run electric vehicle team, proudly competing each June in the international Formula SAE Electric competition in Michigan. There, we put our student-built racecar to the test against teams from around the world in a rigorous series of technical inspections, static events (design, cost, and business presentations), and dynamic events measuring acceleration, handling, endurance, and overall performance.
+
+            </p>
             <button
               className="md:ml-6 px-8 md:px-6 py-3 md:py-2 rounded-full text-white font-semibold shadow transition-colors duration-200"
               style={{ 
@@ -327,7 +329,7 @@ Formula Slug is the premier student-run FSAE electric team at UC Santa Cruz. By 
       <section className="w-full  mx-0 mt-0 mb-16 px-4 py-10 bg-[#181c2a] bg-opacity-90  shadow-lg flex flex-col items-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-yellow-300 mb-4">About Us</h2>
                 <p className="text-lg text-gray-100 mb-4 text-center max-w-6xl">
-          Formula Slug is UC Santa Cruz's Formula Electric Vehicleteam, proudly competing each June in the international Formula SAE Electric competition in Michigan. There, we put our student-built racecar to the test against teams from around the world in a rigorous series of technical inspections, static events (design, cost, and business presentations), and dynamic events measuring acceleration, handling, endurance, and overall performance.
+          Formula Slug is UC Santa Cruz's premier student-run electric vehicle team, proudly competing each June in the international Formula SAE Electric competition in Michigan. There, we put our student-built racecar to the test against teams from around the world in a rigorous series of technical inspections, static events (design, cost, and business presentations), and dynamic events measuring acceleration, handling, endurance, and overall performance.
         </p>
         <p className="text-lg text-gray-100 mb-4 text-center max-w-6xl">
           Our student-led team of aspiring engineers are more than just a college organization — we're a team built on collaboration, technical excellence, and ambition. Formula Slug members take on real engineering challenges, grow into leaders, and work as one cohesive team to push the boundaries of electric racecar design through Formula SAE. Together, we're proving that a team of dedicated students can compete on the international stage.
@@ -340,7 +342,7 @@ Formula Slug is the premier student-run FSAE electric team at UC Santa Cruz. By 
               <div className="flex flex-col gap-4">
                 <h3 className="text-2xl md:text-3xl font-bold mb-2 text-center md:text-left text-yellow-300">FS-3</h3>
                 <p className="text-sm md:text-lg text-gray-100 leading-relaxed">
-                  This past year in June 2025, we brought FS-3 to FSAE Michigan. It blew through mechanical, HV, EV active, rain, tilt, and brake inspections, while successfully competing in all dynamic events. We managed to achieve our lofty goal of a top 20 placement in just our third ever year of officially competing, with a top 3 finish in efficiency.
+                  Our most recent and highest-placing car, FS-3, competed at FSAE Michigan in June 2025. The car cleared every inspection — mechanical, HV, EV active, rain, tilt, and brake — and successfully took part in all dynamic events. In just our third year of official competition, FS-3 met our ambitious goal of a Top 20 overall finish and secured a Top 3 placement in efficiency, marking a new benchmark for Formula Slug’s success. The achievements of FS-3 set a strong foundation for FS-4, inspiring the team to reach even higher in performance, innovation, and competition.
                 </p>
               </div>
               <div className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden mx-auto" style={{ boxShadow: '8px 8px 0px rgb(74, 177, 228)' }}>
@@ -361,7 +363,7 @@ Formula Slug is the premier student-run FSAE electric team at UC Santa Cruz. By 
               <div className="flex flex-col gap-4 md:order-2">
                 <h3 className="text-2xl md:text-3xl font-bold mb-2 text-center md:text-left text-yellow-300">FS-2</h3>
                 <p className="text-sm md:text-lg text-gray-100 leading-relaxed">
-                  FS-2 was our first car to make it to the FSAE Michigan competition. We improved upon the performance of FS-1 by passing mechanical technical inspection and placing 56th overall. This was a huge step forward for Formula Slug, and propelled us to our next stage with FS-3.
+                  FS-2 marked a major milestone as our first car to compete at the Formula SAE Electric competition in Michigan. Building on the foundation of FS-1, the team passed mechanical technical inspection and placed 56th overall — a significant step forward for Formula Slug. This era was opened due to new opportunities with the support of Baskin Engineering, including closer collaboration with Slugworks and the resources to rebuild the team after the challenges of the pandemic. FS-2 not only advanced our technical capabilities but also strengthened our community, setting the stage for the achievements of FS-3.
                 </p>
               </div>
               <div className="w-full md:order-1">
@@ -376,7 +378,7 @@ Formula Slug is the premier student-run FSAE electric team at UC Santa Cruz. By 
               <div className="flex flex-col gap-4 md:order-1">
                 <h3 className="text-2xl md:text-3xl font-bold mb-2 text-center md:text-left text-yellow-300">FS-1</h3>
                 <p className="text-sm md:text-lg text-gray-100 leading-relaxed">
-                  Building on the progress and experienced gained from FS-0, FS-1 was the first vehicle Formula Slug entered in the Formula SAE Electric Vehicle competition in Lincoln, Nebraska. Although FS-1 did not pass technical inspection, it earned our first points at competition through the static events. This experience provided invaluable lessons that informed the design and engineering of our subsequent vehicles, while showing us we could score points at competition.
+                  Building on the progress and experience gained from FS-0, FS-1 became the first Formula Slug vehicle to compete at the Formula SAE Electric competition in Lincoln, Nebraska. Although the car did not pass technical inspection, it marked a milestone for the team by earning our very first points through the static events. This experience proved that we could compete on the international stage and provided invaluable lessons that shaped the design and engineering of every car that followed.
                 </p>
               </div>
               <div className="w-full md:order-2">
@@ -405,7 +407,8 @@ Formula Slug is the premier student-run FSAE electric team at UC Santa Cruz. By 
                   allowFullScreen
                 ></iframe>
                 <p className="text-sm md:text-lg text-gray-100 leading-relaxed">
-                  Founded in 2014, Formula Slug was founded on the premise of renewable energy in electric vehicles. This led to our first vehicle, FS-0. We raised over $16,000 and put in countless hours of work. While it didn't go to competition, it served as the springboard for Formula Slug's ventures into electric vehicle engineering and catalyzed the team's growth and guiding principles.
+                  Founded in 2014, Formula Slug began with a vision of advancing renewable energy through electric vehicles. Our first project, FS-0, was built with over $16,000 in raised funds and countless hours of student dedication. Though it never made it to competition, FS-0 became the foundation for Formula Slug’s journey into electric vehicle engineering and set the guiding principles that continue to drive the team today.
+
                 </p>
               </div>
             </div>
