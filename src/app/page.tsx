@@ -5,7 +5,7 @@
   Also need to make them vertical on mobile (with un-blur on scroll section)
   Why does the front page look like shit?
     Two different buttons look yucky          <div className="flex-1 h-64 md:h-full flex flex-col items-center justify-center relative group"
-          style={{ backgroundImage: 'url(/photos/Telvis.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          style={{ backgroundImage: 'url(/photos/                <img src="/photos/FS2AtComp.jpg" alt="FS-2 Team at Competition" className="w-full h-auto object-cover rounded-lg" loading="lazy" style={{ boxShadow: '8px 8px 0px rgb(247, 236, 47)' }} />elvis.png)', b                <img src="/photos/FS1.jpg" alt="FS-1 Formula Slug Vehicle" className="w-full h-auto object-cover rounded-lg" loading="lazy" style={{ boxShadow: '8px 8px 0px rgb(247, 236, 47)' }} />ckgroundSize:              <div className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden mx-auto md:order-1" style={{ boxShadow: '8px 8px 0px rgb(247, 236, 47)' }}>'cover', backgroundPosition: 'center' }}>
 
 */
 
@@ -344,7 +344,7 @@ export default function Home() {
                   This past year in June 2025, we brought FS-3 to FSAE Michigan. It blew through mechanical, HV, EV active, rain, tilt, and brake inspections, while successfully competing in all dynamic events. We managed to achieve our lofty goal of a top 20 placement in just our third ever year of officially competing, with a top 3 finish in efficiency.
                 </p>
               </div>
-              <div className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden mx-auto">
+              <div className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden mx-auto" style={{ boxShadow: '8px 8px 0px rgb(74, 177, 228)' }}>
                 <iframe 
                   className="w-full h-full" 
                   src="https://www.youtube.com/embed/xwFrdFvr7uU" 
@@ -366,7 +366,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="w-full md:order-1">
-                <img src="/photos/FS2AtComp.jpg" alt="FS-2 Team at Competition" className="w-full h-auto object-cover rounded-lg" loading="lazy" />
+                <img src="/photos/FS2AtComp.jpg" alt="FS-2 Team at Competition" className="w-full h-auto object-cover rounded-lg" loading="lazy" style={{ boxShadow: '8px 8px 0px rgb(74, 177, 228)' }} />
               </div>
             </div>
           </section>
@@ -381,7 +381,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="w-full md:order-2">
-                <img src="/photos/FS1.jpg" alt="FS-1 Formula Slug Vehicle" className="w-full h-auto object-cover rounded-lg" loading="lazy" />
+                <img src="/photos/FS1.jpg" alt="FS-1 Formula Slug Vehicle" className="w-full h-auto object-cover rounded-lg" loading="lazy" style={{ boxShadow: '8px 8px 0px rgb(74, 177, 228)' }} />
               </div>
             </div>
           </section>
@@ -395,7 +395,7 @@ export default function Home() {
                   Founded in 2014, Formula Slug was founded on the premise of renewable energy in electric vehicles. This led to our first vehicle, FS-0. We raised over $16,000 and put in countless hours of work. While it didn't go to competition, it served as the springboard for Formula Slug's ventures into electric vehicle engineering and catalyzed the team's growth and guiding principles.
                 </p>
               </div>
-              <div className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden mx-auto md:order-1">
+              <div className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden mx-auto md:order-1" style={{ boxShadow: '8px 8px 0px rgb(74, 177, 228)' }}>
                 <iframe
                   className="w-full h-full"
                   src="https://www.youtube.com/embed/W2YDWzCsP7c?si=YlAYGXaJvxtaGviR"
