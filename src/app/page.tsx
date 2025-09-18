@@ -180,35 +180,30 @@ export default function Home() {
           ))}
         </h1>
         {/* video section */}
-        <div className="flex flex-col md:flex-row w-full max-w-6xl mt-12 md:mt-20 items-center justify-center gap-6 md:gap-12 px-4 md:px-0 mx-auto">
-          <div className="flex-1 flex flex-col md:flex-row items-center justify-center">
-            <button
-              className="px-8 md:px-6 py-3 md:py-2 rounded-full text-white font-semibold shadow transition-colors duration-200 mx-auto"
-              style={{ 
-              backgroundColor: colors.electricBlue,
-              border: `2px solid ${colors.slugYellow}`,
-              }}
-              onClick={() => {
+        <div className="w-full max-w-6xl mt-12 md:mt-20 mb-8 md:mb-10 px-4 md:px-0 mx-auto flex justify-center">
+          <button
+            className="px-6 py-3 border-4 border-white bg-transparent shadow-lg transition-colors duration-200 hover:bg-white hover:text-yellow-400 rounded"
+            style={{
+              borderRadius: '6px',
+              color: 'var(--text-color)',
+              padding: '12px 20px'
+            }}
+            onClick={() => {
               const aboutSection = document.querySelector('section');
               if (aboutSection) {
                 aboutSection.scrollIntoView({ behavior: 'smooth' });
               }
-              }}
-              onMouseEnter={e => {
-              e.currentTarget.style.backgroundColor = colors.slugYellow;
-              e.currentTarget.style.color = colors.electricBlue;
-              e.currentTarget.style.border = `2px solid ${colors.electricBlue}`;
-              }}
-              onMouseLeave={e => {
-              e.currentTarget.style.backgroundColor = colors.electricBlue;
-              e.currentTarget.style.color = 'white';
-              e.currentTarget.style.border = `2px solid ${colors.slugYellow}`;
-              }}
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = colors.slugYellow; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = 'var(--text-color)'; }}
+          >
+            <span
+              className="text-2xl md:text-3xl font-bold"
+              style={{ fontFamily: "'Scandia Bold Italic', sans-serif", fontStyle: 'italic' }}
             >
               About Us
-            </button>
-          </div>
-          
+            </span>
+          </button>
         </div>
         <div className="w-full max-w-6xl mt-8 md:mt-10 mb-20 md:mb-40 px-4 md:px-0 mx-auto flex justify-center">
           <button
