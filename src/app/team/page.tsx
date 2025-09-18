@@ -7,9 +7,9 @@
 
 import Navbar from "@/components/Navbar";
 import ShimmerTitle from "@/components/ShimmerTitle";
+import SubteamCard from "./subteamComponent";
 import { colors } from "@/config/colors";
 import { Metadata } from "next";
-import ScrollToSection from "./ScrollToSection";
 
 export const metadata: Metadata = {
   title: "Formula Slug - Team",
@@ -33,160 +33,228 @@ export default function TeamPage() {
   const LVBlurb = "WESLEY"
   const HVBlurb = "The High Voltage team's primary responsibility is ensuring the energy inside the accumulator makes its way to the motor. This involves designing circuits that interface with the motor controller, placing high-current cabling to carry the power, collaborating with other teams to optimally position tractive system components, and more! In addition to the on-board system, we also design and assemble a custom charger for the accumulator."
 
-  const subteamCard = ({
-    subteam,
-    teamPhoto,
-    blurb,
-    leftPhoto,
-    leadName,
-  }: {
-    subteam: any;
-    teamPhoto: string;
-    blurb: string;
-    leftPhoto: boolean;
-    leadName: string;
-  }) => {
-    const photoElement = (
-      <div className="flex items-center justify-center w-full md:w-full p-0 md:h-50vh overflow-hidden mt-5 md:mr-20 md:ml-20">
-        <img
-          src={`/photos/${teamPhoto}`}
-          alt={`${subteam} Team Photo`}
-          className="w-full h-full object-cover min-w-full min-h-full"
-          style={{ margin: "0" }}
-        />
-      </div>
-    );
-
-    const textElement = (
-      <div className="flex flex-col justify-center items-center w-full md:w-full p-4">
-        <h2
-          className="text-5xl font-semibold mb-2 text-center"
-          style={{
-        marginTop: "5vh",
-        color: colors.slugYellow,
-        textShadow: `2px 2px 0px ${colors.electricBlue}`,
-          }}
-        >
-          {subteam}
-        </h2>
-        <p 
-          className="text-white text-center text-xl flex items-center justify-center h-full w-95% md:w-3/4"
-        >
-          "{blurb}"
-        </p>
-        <div className="mt-4 flex justify-end items-center w-full mr-10">
-          <span className="text-white text-xl font-semibold mr-2">-{leadName}</span>
-          <span className="text-white text-lg">| {subteam} Lead</span>
-        </div>
-      </div>
-    );
-
-    return (
-      <div
-        className="flex flex-col w-full md:h-[50vh]"
-        style={{
-          padding: "0",
-          width: "100%",
-        }}
-      >
-        <div className="flex flex-col md:flex-row w-full h-full">
-          {/* Mobile layout - always text first, then photo */}
-          <div className="flex flex-col md:hidden w-full">
-        {textElement}
-        {photoElement}
-          </div>
-          
-          {/* Desktop layout - respects leftPhoto prop */}
-          <div className="hidden md:flex md:flex-row w-full h-full">
-        {leftPhoto ? (
-          <>
-            <div className="flex w-2/3">{photoElement}</div>
-            <div className="flex w-1/3">{textElement}</div>
-          </>
-        ) : (
-          <>
-            <div className="flex w-1/3">{textElement}</div>
-            <div className="flex w-2/3">{photoElement}</div>
-          </>
-        )}
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   return (
     <main className="min-h-screen text-white" style={{ backgroundColor: colors.background.primary }}>
-      <ScrollToSection />
 
       <div style={{ margin: 0, padding: 0, width: '100%' }}>
         <Navbar />
         
         <div>
-          <h1 className="text-4xl sm:text-6xl font-bold text-center mb-8 px-4 pt-8">
+          <h1 className="text-4xl sm:text-6xl font-bold text-center mb-4 px-4 pt-8">
             <ShimmerTitle>Meet the Team</ShimmerTitle>
           </h1>
           
             <div className="flex flex-col">
 
             {/* Business Team Section */}
-            <div className="flex flex-col items-center justify-center w-full py-12">
+            <div className="flex flex-col items-center justify-center w-full py-6">
               <h2
                 className="text-5xl font-semibold mb-8 text-center"
                 style={{
-                  color: colors.slugYellow,
-                  textShadow: `2px 2px 0px ${colors.electricBlue}`,
+                  color: "white",
+                  textShadow: `1px 1px 0px ${colors.electricBlue}`,
                 }}
               >
                 Business Team
               </h2>
-              <div className="flex items-center justify-center w-full max-w-md">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-auto"
-                  style={{ maxHeight: '300px' }}
-                >
-                  <source src="/animations/handshake.webm" type="video/webm" />
-                  Your browser does not support the video tag.
-                </video>
+
+            </div>
+            <div className="flex justify-center w-full px-4">
+              <div className="w-1/3">
+                <SubteamCard
+                  subteamName="Outreach"
+                  photoPaths={["Outreach.jpg"]}
+                  blurb={OutreachBlurb}
+                  leadName="Naveen Challa"
+                  leadPhotoPath="Megh.jpeg"
+                  aspectRatio={16/9}
+                />
+              </div>
+              <div className="w-1/3">
+                <SubteamCard
+                  subteamName="Finance"
+                  photoPaths={["Finance.JPG"]}
+                  blurb={FinanceBlurb}
+                  leadName="Max Simonen Luke"
+                  leadPhotoPath="Max.jpg"
+                  aspectRatio={16/9}
+                />
               </div>
             </div>
 
-            {/* Business Teams */}
-            {subteamCard({ subteam: "Outreach", teamPhoto: "Outreach.jpg", blurb: OutreachBlurb, leftPhoto: true, leadName: "Naveen Challa" })}
-            {subteamCard({ subteam: "Finance", teamPhoto: "Finance.JPG", blurb: FinanceBlurb, leftPhoto: false, leadName: "Max Simonen Luke" })}
-
-
-            {/* Electrical Teams */}
-            <div id="electrical">
-            {subteamCard({ subteam: "Accumulator", teamPhoto: "Accumulator.png", blurb: AccumulatorBlurb, leftPhoto: true, leadName: "Aethlyn Lim" })}
-            {subteamCard({ subteam: "Firmware", teamPhoto: "Firmware.jpg", blurb: FirmwareBlurb, leftPhoto: false, leadName: "Jack Nystrom" })}
-            {subteamCard({ subteam: "High Voltage", teamPhoto: "HV.jpg", blurb: HVBlurb, leftPhoto: true, leadName: "Victor Kalastirsky" })}
-            {subteamCard({ subteam: "Low Voltage", teamPhoto: "LV.PNG", blurb: LVBlurb, leftPhoto: false, leadName: "Wesley Kronmiller" })}
+            {/* Electrical Team Section */}
+            <div className="flex flex-col items-center justify-center w-full py-6 mt-10">
+              <h2
+                className="text-5xl font-semibold mb-8 text-center"
+                style={{
+                  color: "white",
+                  textShadow: `1px 1px 0px ${colors.electricBlue}`,
+                }}
+              >
+                Electrical Team
+              </h2>
+              
+              <div className="flex justify-center w-full px-4">
+                <div className="w-1/3">
+                  <SubteamCard
+                    subteamName="LV"
+                    photoPaths={["LV.png"]}
+                    blurb={OutreachBlurb}
+                    leadName="Naveen Challa"
+                    leadPhotoPath="Megh.jpeg"
+                    aspectRatio={16/9}
+                  />
+                </div>
+                <div className="w-1/3">
+                  <SubteamCard
+                    subteamName="HV"
+                    photoPaths={["HV.jpg"]}
+                    blurb={FinanceBlurb}
+                    leadName="Victor Kalastirsky"
+                    leadPhotoPath="Megh.jpeg"
+                    aspectRatio={16/9}
+                  />
+                </div>
+              </div>
+              
+              <div className="flex justify-center w-full px-4 pt-8">
+                <div className="w-1/3">
+                  <SubteamCard
+                    subteamName="Battery"
+                    photoPaths={["Accumulator.png"]}
+                    blurb={OutreachBlurb}
+                    leadName="Aethlyn Lim"
+                    leadPhotoPath="Megh.jpeg"
+                    aspectRatio={16/9}
+                  />
+                </div>
+                <div className="w-1/3">
+                  <SubteamCard
+                    subteamName="Firmware"
+                    photoPaths={["Firmware.jpg"]}
+                    blurb={FinanceBlurb}
+                    leadName="Jack Nystrom"
+                    leadPhotoPath="Megh.jpeg"
+                    aspectRatio={16/9}
+                  />
+                </div>
+              </div>
             </div>
 
-
-            {/* Software Teams */}
-            <div id="software">
-            {subteamCard({ subteam: "Software", teamPhoto: "Software.png", blurb: SoftwareBlurb, leftPhoto: true, leadName: "Nathaniel Platt" })}
+            {/* Mechanical Team Section */}
+            <div className="flex flex-col items-center justify-center w-full py-6 mt-10">
+              <h2
+                className="text-5xl font-semibold mb-8 text-center"
+                style={{
+                  color: "white",
+                  textShadow: `1px 1px 0px ${colors.electricBlue}`,
+                }}
+              >
+                Mechanical Team
+              </h2>
+              
+              {/* First row - 3 cards */}
+              <div className="flex justify-center w-full px-4 mb-8">
+                <div className="w-1/3">
+                  <SubteamCard
+                    subteamName="Aerodynamics"
+                    photoPaths={["Aerodynamics.jpg"]}
+                    blurb={AerodynamicsBlurb}
+                    leadName="Megh Patel"
+                    leadPhotoPath="Megh.jpeg"
+                    aspectRatio={16/9}
+                  />
+                </div>
+                <div className="w-1/3">
+                  <SubteamCard
+                    subteamName="Ergonomics"
+                    photoPaths={["Ergonomics.jpg"]}
+                    blurb={ErgonomicsBlurb}
+                    leadName="Justin Judge"
+                    leadPhotoPath="Megh.jpeg"
+                    aspectRatio={16/9}
+                  />
+                </div>
+                <div className="w-1/3">
+                  <SubteamCard
+                    subteamName="Chassis"
+                    photoPaths={["Chassis.jpeg"]}
+                    blurb={ChassisBlurb}
+                    leadName="Gavin Leach"
+                    leadPhotoPath="Megh.jpeg"
+                    aspectRatio={16/9}
+                  />
+                </div>
+              </div>
+              
+              {/* Second row - 3 cards */}
+              <div className="flex justify-center w-full px-4 mb-8">
+                <div className="w-1/3">
+                  <SubteamCard
+                    subteamName="Suspension"
+                    photoPaths={["Suspension.jpg"]}
+                    blurb={SuspensionBlurb}
+                    leadName="Mira Verma"
+                    leadPhotoPath="Megh.jpeg"
+                    aspectRatio={16/9}
+                  />
+                </div>
+                <div className="w-1/3">
+                  <SubteamCard
+                    subteamName="Drivetrain"
+                    photoPaths={["drivetrain.jpg"]}
+                    blurb="The drivetrain team is responsible for transferring power from the motor to the wheels efficiently and reliably. We design and manufacture the gear reduction system, differential, and wheel assemblies that convert electrical energy into forward motion."
+                    leadName="Cameron Bannasch"
+                    leadPhotoPath="Megh.jpeg"
+                    aspectRatio={16/9}
+                  />
+                </div>
+                <div className="w-1/3">
+                  <SubteamCard
+                    subteamName="Vehicle Dynamics"
+                    photoPaths={["VD.jpg"]}
+                    blurb={VDBlurb}
+                    leadName="Caleb Shin"
+                    leadPhotoPath="Megh.jpeg"
+                    aspectRatio={16/9}
+                  />
+                </div>
+              </div>
+              
+              {/* Third row - 3 cards */}
+              <div className="flex justify-center w-full px-4">
+                <div className="w-1/3">
+                  <SubteamCard
+                    subteamName="Welding"
+                    photoPaths={["Welding.jpg"]}
+                    blurb={WeldingBlurb}
+                    leadName="Christian Reyes-Moreno"
+                    leadPhotoPath="Megh.jpeg"
+                    aspectRatio={16/9}
+                  />
+                </div>
+                <div className="w-1/3">
+                  <SubteamCard
+                    subteamName="Manufacturing"
+                    photoPaths={["manf.png"]}
+                    blurb={ManufacturingBlurb}
+                    leadName="Ben Grau"
+                    leadPhotoPath="Megh.jpeg"
+                    aspectRatio={16/9}
+                  />
+                </div>
+                <div className="w-1/3">
+                  <SubteamCard
+                    subteamName="Composites"
+                    photoPaths={["Composites.jpg"]}
+                    blurb={CompositesBlurb}
+                    leadName="Daniel Au"
+                    leadPhotoPath="Megh.jpeg"
+                    aspectRatio={16/9}
+                  />
+                </div>
+              </div>
             </div>
-
-
-            {/* Mechanical Teams */}
-            <div id="mechanical">
-            {subteamCard({ subteam: "Suspension", teamPhoto: "Suspension.jpg", blurb: SuspensionBlurb, leftPhoto: false, leadName: "Mira Verma" })}
-            {subteamCard({ subteam: "Aerodynamics", teamPhoto: "Aerodynamics.jpg", blurb: AerodynamicsBlurb, leftPhoto: true, leadName: "Megh Patel" })}
-            {subteamCard({ subteam: "Welding", teamPhoto: "Welding.jpg", blurb: WeldingBlurb, leftPhoto: false, leadName: "Mr Christian Reyo-Morenious" })}
-            {subteamCard({ subteam: "Composites", teamPhoto: "Composites.jpg", blurb: CompositesBlurb, leftPhoto: true, leadName: "Daniel Au" })}
-            {subteamCard({ subteam: "Chassis", teamPhoto: "Chassis.jpeg", blurb: ChassisBlurb, leftPhoto: false, leadName: "Gavin Leach" })}
-            {subteamCard({ subteam: "Vehicle Dynamics", teamPhoto: "VD.jpg", blurb: VDBlurb, leftPhoto: true, leadName: "Caleb Shin" })}
-            {subteamCard({ subteam: "Ergonomics", teamPhoto: "Ergonomics.jpg", blurb: ErgonomicsBlurb, leftPhoto: false, leadName: "Justin Judge" })}
-            {subteamCard({ subteam: "Manufacturing", teamPhoto: "Manufacturing.png", blurb: ManufacturingBlurb, leftPhoto: true, leadName: "Ben Grau" })}
-            </div>
-
 
             </div>
         </div>
