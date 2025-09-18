@@ -86,10 +86,18 @@ const SubteamCard: React.FC<SubteamCardProps> = ({
               >
                 {/* Lead Name */}
                 <h4 
-                  className="text-sm md:text-base font-bold text-center"
+                  className="text-sm md:text-base font-bold text-center hidden md:block"
                   style={{ color: colors.slugYellow }}
                 >
                   {leadName}
+                </h4>
+
+                {/* Subteam Name (prioritized on mobile*/}
+                <h4 
+                  className="text-sm md:text-base font-bold text-center md:hidden"
+                  style={{ color: colors.slugYellow }}
+                >
+                  {subteamName}
                 </h4>
 
                 {/* Subteam Title */}
