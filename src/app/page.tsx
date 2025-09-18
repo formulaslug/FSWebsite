@@ -182,13 +182,6 @@ export default function Home() {
         {/* video section */}
         <div className="flex flex-col md:flex-row w-full md:w-5/6 lg:w-1/2 mt-12 md:mt-20 items-center justify-center md:justify-between gap-6 md:gap-12 px-4 md:px-0">
           <div className="flex-1 flex flex-col md:flex-row items-center">
-            <p className="text-base md:text-xl w-full md:w-2/4 text-center md:text-left mb-4 md:mb-0" style={{ 
-              color: 'var(--text-color)', 
-              lineHeight: '1.6'
-              }}>
-            Formula Slug is UC Santa Cruz’s premier student-run electric vehicle team, proudly competing each June in the international Formula SAE Electric competition in Michigan. There, we put our student-built racecar to the test against teams from around the world in a rigorous series of technical inspections, static events (design, cost, and business presentations), and dynamic events measuring acceleration, handling, endurance, and overall performance.
-
-            </p>
             <button
               className="md:ml-6 px-8 md:px-6 py-3 md:py-2 rounded-full text-white font-semibold shadow transition-colors duration-200"
               style={{ 
@@ -212,7 +205,7 @@ export default function Home() {
               e.currentTarget.style.border = `2px solid ${colors.slugYellow}`;
               }}
             >
-              Read More
+              About Us
             </button>
           </div>
           
@@ -220,7 +213,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row w-full max-w-6xl mt-8 md:mt-10 mb-20 md:mb-40 items-center justify-center gap-8 md:gap-12 px-4 md:px-0">
           <div className="flex-1 order-2 md:order-1 flex flex-col items-center justify-center">
               <button
-          className="hidden md:flex px-0 py-0 border-4 border-white bg-transparent text-white text-3xl font-bold shadow-lg transition-colors duration-200 hover:bg-white hover:text-yellow-400"
+          className="hidden md:flex px-0 py-0 border-4 border-white bg-transparent shadow-lg transition-colors duration-200 hover:bg-white hover:text-yellow-400"
           style={{
           width: '15',
           height: '12vh',
@@ -228,26 +221,21 @@ export default function Home() {
           alignItems: 'center',
           justifyContent: 'center',
           borderRadius: '0',
-
+          color: 'var(--text-color)'
           }}
           onClick={() => window.open('https://fsae.slack.com/join/signup#/domain-signup', '_blank')}
               >
-          Join Our Slack
+          <span className="text-2xl md:text-3xl font-bold">Join the Team</span>
               </button>
           </div>
           <div className="flex-1 order-1 md:order-2 text-center md:text-left">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: 'var(--text-color)' }}>
-              Join the Team
-            </h3>
             <button
-              className="md:hidden mb-6 px-6 py-3 border-2 border-white bg-transparent text-white text-lg font-bold shadow-lg transition-colors duration-200 hover:bg-white hover:text-yellow-400 rounded"
+              className="md:hidden mb-6 px-6 py-3 border-2 border-white bg-transparent shadow-lg transition-colors duration-200 hover:bg-white hover:text-yellow-400 rounded"
+              style={{ color: 'var(--text-color)' }}
               onClick={() => window.open('https://fsae.slack.com/join/signup#/domain-signup', '_blank')}
             >
-              Join Our Slack
+              <span className="text-2xl md:text-3xl font-bold">Join the Team</span>
             </button>
-              <p className="text-base md:text-lg mb-4" style={{ color: 'var(--text-color)', opacity: 0.85, lineHeight: '1.6' }}>
-              Ready to build, compete, and innovate? Whether you’re an engineer, designer, or just a passionate creator, Formula Slug welcomes all UCSC students. Click the button to join our Slack and get started!
-              </p>
 
           </div>
         </div>
