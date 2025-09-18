@@ -186,8 +186,7 @@ export default function Home() {
               color: 'var(--text-color)', 
               lineHeight: '1.6'
               }}>
-          Formula Slug is the student-run FSAE electric team at UC Santa Cruz. By building complex, high-performance race cars, we push our boundaries in innovation and competition while fostering the learning of applied skills and teamwork.
-            </p>
+Formula Slug is the premier student-run FSAE electric team at UC Santa Cruz. By engineering advanced, high-performance racecars, we challenge the limits of innovation and competition while cultivating real-world skills and teamwork.            </p>
             <button
               className="md:ml-6 px-8 md:px-6 py-3 md:py-2 rounded-full text-white font-semibold shadow transition-colors duration-200"
               style={{ 
@@ -327,11 +326,11 @@ export default function Home() {
 
       <section className="w-full  mx-0 mt-0 mb-16 px-4 py-10 bg-[#181c2a] bg-opacity-90  shadow-lg flex flex-col items-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-yellow-300 mb-4">About Us</h2>
-        <p className="text-lg text-gray-100 mb-4 text-center max-w-6xl">
-          Formula Slug is UC Santa Cruz's premier student-run electric vehicle team, competing in the international Formula SAE Electric competition. Our multidisciplinary team of engineers, designers, and innovators is dedicated to building high-performance electric race cars from the ground up. We foster hands-on learning, technical excellence, and a collaborative spirit, empowering students to push the boundaries of automotive technology and sustainable transportation.
+                <p className="text-lg text-gray-100 mb-4 text-center max-w-6xl">
+          Formula Slug is UC Santa Cruz's Formula Electric Vehicleteam, proudly competing each June in the international Formula SAE Electric competition in Michigan. There, we put our student-built racecar to the test against teams from around the world in a rigorous series of technical inspections, static events (design, cost, and business presentations), and dynamic events measuring acceleration, handling, endurance, and overall performance.
         </p>
-        <p className="text-base text-gray-300 text-center max-w-4xl">
-          Whether you're passionate about mechanical design, electrical systems, software, business, or just want to be part of an ambitious and supportive community, Formula Slug welcomes all Banana Slugs ready to make an impact. Join us as we race toward the future!
+        <p className="text-lg text-gray-100 mb-4 text-center max-w-6xl">
+          Our student-led team of aspiring engineers are more than just a college organization — we're a team built on collaboration, technical excellence, and ambition. Formula Slug members take on real engineering challenges, grow into leaders, and work as one cohesive team to push the boundaries of electric racecar design through Formula SAE. Together, we're proving that a team of dedicated students can compete on the international stage.
         </p>
         <h2 className="text-3xl sm:text-4xl font-bold text-yellow-300 mt-8 mb-4">Our History</h2>
         <div className="w-full max-w-6xl mx-auto px-4 space-y-12">
