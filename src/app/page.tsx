@@ -333,77 +333,77 @@ export default function Home() {
           Whether you're passionate about mechanical design, electrical systems, software, business, or just want to be part of an ambitious and supportive community, Formula Slug welcomes all Banana Slugs ready to make an impact. Join us as we race toward the future!
         </p>
         <h2 className="text-3xl sm:text-4xl font-bold text-yellow-300 mt-8 mb-4">Our History</h2>
-        <div className="text-lg text-gray-100 mb-4 text-center max-w-10xl">
-          <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mx-auto mb-8 gap-8">
-            <div className="flex-1 flex items-center justify-center">
-              <div className="w-full max-w-xl aspect-video rounded-lg shadow-lg overflow-hidden">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/W2YDWzCsP7c?si=YlAYGXaJvxtaGviR"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              ></iframe>
-              </div>
-            </div>
-            <div className="flex-1">
-              <p className="text-lg text-gray-100 text-left">
-               THE DOCUMENTARY DOESN"T LOAD Founded in 2014, Formula Slug was founded on the premise of electric vehicles and renewable energy projects. This led to our first vehicle, FS-0. While it didn't go to competition, it served as the springboard for the team.
+        <div className="w-full max-w-6xl mx-auto px-4 space-y-8">
+          {/* FS-0 Section */}
+          <div className="flex flex-col gap-6">
+            <div className="text-center">
+              <h3 style={{color: 'rgb(74, 177, 228)'}} className="text-2xl md:text-3xl font-bold mb-4">FS-0</h3>
+              <p className="text-sm md:text-lg text-gray-100 leading-relaxed max-w-none md:max-w-4xl mx-auto">
+                Founded in 2014, Formula Slug was founded on the premise of renewable energy in electric vehicles. This led to our first vehicle, FS-0. We raised over $16,000 and put in countless hours of work. While it didn't go to competition, it served as the springboard for Formula Slug's ventures into electric vehicle engineering and catalyzed the team's growth and guiding principles.
               </p>
             </div>
-          </div>
-          
-          <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mx-auto mb-8 gap-8">
-
-            <div className="flex-1">
-              <p className="text-lg text-gray-100 text-left">
-                Story of FS-1, the prev website got it wrong, need to ask Sam. Anyway. FS-1 drove (haha) us closer to our goals of competition...
-              </p>
-            </div>
-            <div className="flex-1 flex items-center justify-center">
-              <div className="w-full max-w-xl aspect-video rounded-lg shadow-lg overflow-hidden">
-              <img src="/photos/FS1.jpg" alt="Placeholder" />
+            <div className="w-full flex justify-center">
+              <div className="w-full max-w-2xl aspect-video rounded-lg shadow-lg overflow-hidden">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/W2YDWzCsP7c?si=YlAYGXaJvxtaGviR"
+                  title="We Are Formula Slug Documentary"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </div>
-          
-          <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mx-auto mb-8 gap-8">
-            <div className="flex-1 flex items-center justify-center">
-              <div className="w-full max-w-xl aspect-video rounded-lg shadow-lg overflow-hidden">
-              <img src="/photos/FS2AtComp.jpg" alt="FS2AtComp" />
-              </div>
-            </div>
-            <div className="flex-1">
-              <p className="text-lg text-gray-100 text-left">
-                {/* we need the official account to post the pov videos */}
-                FS2 ABSULUTELY RIPPING IT AT BLUE MAX KART CLUB LINKED ON THE LEFT FS-2 was our first car to make it to the FSAE michigan competition, while we didn't pass EV inspection we did pass mechanical inspection. This was a huge step for the team, and propelled us to our next car.
+          {/* FS-1 Section */}
+          <div className="flex flex-col gap-6">
+            <div className="text-center">
+              <h3 style={{color: 'rgb(74, 177, 228)'}} className="text-2xl md:text-3xl font-bold mb-4">FS-1</h3>
+              <p className="text-sm md:text-lg text-gray-100 leading-relaxed max-w-none md:max-w-4xl mx-auto">
+                Building on the progress and experienced gained from FS-0, FS-1 was the first vehicle Formula Slug entered in the Formula SAE Electric Vehicle competition in Lincoln, Nebraska. Although FS-1 did not pass technical inspection, it earned our first points at competition through the static events. This experience provided invaluable lessons that informed the design and engineering of our subsequent vehicles, while showing us we could score points at competition.
               </p>
             </div>
-          </div>
-
-            <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mx-auto mb-8 gap-8">
-            <div className="flex-1">
-              <p className="text-lg text-gray-100 text-left">
-                CALEB SHIN EDITED SICK AS SHIT VIDEO LINKED TO THE RIGHT This last year in 2025 we brought our car FS-3 to FSAE Michigan. It blew through mechanical, HV, EV active, rain, tilt, and brake inspections. 
-                Our cumulative score from dynamic and static events placed us 18th out of the 79 teams who were on site. 
-              </p>
-            </div>
-            <div className="flex-1 flex items-center justify-center">
-              <div className="w-full max-w-xl aspect-video rounded-lg shadow-lg overflow-hidden">
-              <img src="https://via.placeholder.com/500x300" alt="Placeholder" />
+            <div className="w-full flex justify-center">
+              <div className="w-full max-w-2xl aspect-video rounded-lg shadow-lg overflow-hidden">
+                <img src="/photos/FS1.jpg" alt="FS-1 Formula Slug Vehicle" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
-          
-
-
-          <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos praesentium at quasi cum enim expedita minus atque, accusantium, deleniti exercitationem recusandae possimus sunt excepturi! Vel nam error distinctio molestiae quae.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem consectetur enim fuga excepturi itaque placeat quas repellendus incidunt, earum suscipit exercitationem, perferendis cum. Eum sapiente rem voluptate quo ab reprehenderit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, odit perferendis! In esse suscipit maiores obcaecati consequatur iusto neque officiis vitae dolorum cum perferendis, nostrum est minus dolore laudantium necessitatibus.
-          </p>
+          {/* FS-2 Section */}
+          <div className="flex flex-col gap-6">
+            <div className="text-center">
+              <h3 style={{color: 'rgb(74, 177, 228)'}} className="text-2xl md:text-3xl font-bold mb-4">FS-2</h3>
+              <p className="text-sm md:text-lg text-gray-100 leading-relaxed max-w-none md:max-w-4xl mx-auto">
+                FS-2 was our first car to make it to the FSAE Michigan competition. We improved upon the performance of FS-1 by passing mechanical technical inspection and placing 56th overall. This was a huge step forward for Formula Slug, and propelled us to our next stage with FS-3.
+              </p>
+            </div>
+            <div className="w-full flex justify-center">
+              <div className="w-full max-w-2xl aspect-video rounded-lg shadow-lg overflow-hidden">
+                <img src="/photos/FS2AtComp.jpg" alt="FS-2 Team at Competition" className="w-full h-full object-cover" />
+              </div>
+            </div>
+          </div>
+          {/* FS-3 Section */}
+          <div className="flex flex-col gap-6">
+            <div className="text-center">
+              <h3 style={{color: 'rgb(74, 177, 228)'}} className="text-2xl md:text-3xl font-bold mb-4">FS-3</h3>
+              <p className="text-sm md:text-lg text-gray-100 leading-relaxed max-w-none md:max-w-4xl mx-auto">
+                This past year in June 2025, we brought FS-3 to FSAE Michigan. It blew through mechanical, HV, EV active, rain, tilt, and brake inspections, while successfully competing in all dynamic events. We managed to achieve our lofty goal of a top 20 placement in just our third ever year of officially competing, with a top 3 finish in efficiency.
+              </p>
+            </div>
+            <div className="w-full flex justify-center">
+              <div className="w-full max-w-2xl aspect-video rounded-lg shadow-lg overflow-hidden">
+                <iframe 
+                  className="w-full h-full" 
+                  src="https://www.youtube.com/embed/xwFrdFvr7uU" 
+                  title="Formula Slug 2025 FSAE EV Michigan Competition" 
+                  frameBorder="0" 
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
         </div>
               <p className="text-xs mt-2" style={{ color: 'var(--text-color)', opacity: 0.65, lineHeight: '1.4' }}>
               This group is open to all students consistent with state and federal law, the UC Nondiscrimination Statement and the Nondiscrimination Policy Statement for University of California Publications Regarding Student-Related Matters.
