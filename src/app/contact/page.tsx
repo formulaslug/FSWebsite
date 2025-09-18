@@ -4,6 +4,7 @@
 
 import React from "react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import ShimmerTitle from "@/components/ShimmerTitle";
 import { colors } from "@/config/colors";
 import { ContactForm } from "./ContactForm";
@@ -72,6 +73,7 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
