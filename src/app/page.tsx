@@ -62,6 +62,7 @@ export default function Home() {
       const mechanicalEl = document.getElementById('mechanical-section');
       const electricalEl = document.getElementById('electrical-section');
       const softwareEl = document.getElementById('software-section');
+      const businessEl = document.getElementById('business-section');
       
       let newActiveSection = null;
       
@@ -69,7 +70,8 @@ export default function Home() {
       [
         { el: mechanicalEl, name: 'mechanical' },
         { el: electricalEl, name: 'electrical' },
-        { el: softwareEl, name: 'software' }
+        { el: softwareEl, name: 'software' },
+        { el: businessEl, name: 'business' }
       ].forEach(({ el, name }) => {
         if (el) {
           const rect = el.getBoundingClientRect();
@@ -244,7 +246,7 @@ export default function Home() {
           */}
           <div 
           id="mechanical-section"
-          className="flex-1 h-1/3 md:h-full flex flex-col items-center justify-center relative group cursor-pointer overflow-hidden" 
+          className="flex-1 h-1/4 md:h-full flex flex-col items-center justify-center relative group cursor-pointer overflow-hidden transition-all duration-500 md:hover:flex-[2]" 
           onClick={() => handleTeamNavigation('mechanical')}
           >
           <div
@@ -262,7 +264,7 @@ export default function Home() {
           </div>
           <div 
           id="electrical-section"
-          className="flex-1 h-1/3 md:h-full flex flex-col items-center justify-center relative group cursor-pointer overflow-hidden"
+          className="flex-1 h-1/4 md:h-full flex flex-col items-center justify-center relative group cursor-pointer overflow-hidden transition-all duration-500 md:hover:flex-[2]"
           onClick={() => handleTeamNavigation('electrical')}
           >
           <div
@@ -277,9 +279,10 @@ export default function Home() {
               }`}
             />
             <h3 className="text-3xl font-bold mb-4 text-white relative z-10">Electrical</h3>
-          </div><div 
+          </div>
+          <div 
           id="software-section"
-          className="flex-1 h-1/3 md:h-full flex flex-col items-center justify-center relative group cursor-pointer overflow-hidden"
+          className="flex-1 h-1/4 md:h-full flex flex-col items-center justify-center relative group cursor-pointer overflow-hidden transition-all duration-500 md:hover:flex-[2]"
           onClick={() => handleTeamNavigation('software')}
           >
           <div
@@ -294,6 +297,24 @@ export default function Home() {
               }`}
             />
             <h3 className="text-3xl font-bold mb-4 text-white relative z-10">Software</h3>
+          </div>
+          <div 
+          id="business-section"
+          className="flex-1 h-1/4 md:h-full flex flex-col items-center justify-center relative group cursor-pointer overflow-hidden transition-all duration-500 md:hover:flex-[2]"
+          onClick={() => handleTeamNavigation('business')}
+          >
+          <div
+            className="absolute inset-0 transition-transform duration-300 group-hover:scale-110"
+            style={{ backgroundImage: 'url(/photos/IMG_9114.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+          />
+            <div
+              className={`absolute inset-0 transition-opacity duration-300 bg-[#111827] ${
+                isMobile 
+                  ? (activeSection === 'business' ? 'opacity-0' : 'opacity-60')
+                  : 'opacity-60 group-hover:opacity-0'
+              }`}
+            />
+            <h3 className="text-3xl font-bold mb-4 text-white relative z-10">Business</h3>
           </div>
         </div>
       </div>
@@ -316,7 +337,7 @@ export default function Home() {
               <div className="flex flex-col gap-4">
                 <h3 className="text-2xl md:text-3xl font-bold mb-2 text-center md:text-left text-yellow-300">FS-3</h3>
                 <p className="text-sm md:text-lg text-gray-100 leading-relaxed">
-                  Our most recent and highest-placing car, FS-3, competed at FSAE Michigan in June 2025. The car cleared every inspection — mechanical, HV, EV active, rain, tilt, and brake — and successfully took part in all dynamic events. In just our third year of official competition, FS-3 met our ambitious goal of a Top 20 overall finish and secured a Top 3 placement in efficiency, marking a new benchmark for Formula Slug’s success. The achievements of FS-3 set a strong foundation for FS-4, inspiring the team to reach even higher in performance, innovation, and competition.
+                  Our most recent and highest-placing car, FS-3, competed at FSAE Michigan in June 2025. The car cleared every inspection — mechanical, HV, EV active, rain, tilt, and brake — and successfully took part in all dynamic events. In just our third year of official competition, FS-3 met our ambitious goal of a Top 20 overall finish and secured a Top 3 placement in efficiency, marking a new benchmark for Formula Slug's success. The achievements of FS-3 set a strong foundation for FS-4, inspiring the team to reach even higher in performance, innovation, and competition.
                 </p>
               </div>
               <div className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden mx-auto" style={{ boxShadow: '8px 8px 0px rgb(74, 177, 228)' }}>
@@ -380,14 +401,141 @@ export default function Home() {
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 ></iframe>
-                <p className="text-sm md:text-lg text-gray-100 leading-relaxed">
-                  Founded in 2014, Formula Slug began with a vision of advancing renewable energy through electric vehicles. Our first project, FS-0, was built with over $16,000 in raised funds and countless hours of student dedication. Though it never made it to competition, FS-0 became the foundation for Formula Slug’s journey into electric vehicle engineering and set the guiding principles that continue to drive the team today.
-
-                </p>
               </div>
             </div>
           </section>
         </div>
+
+        {/* NEW MEMBER TIMELINE SECTION */}
+        <div id="new-member-timeline" className="w-full max-w-4xl mx-auto mt-16 mb-8">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center" style={{ color: colors.slugYellow }}>New Member Timeline</h2>
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 rounded-full" 
+                 style={{ 
+                   height: 'calc(100% - 2rem)', 
+                   top: '1rem',
+                   background: `linear-gradient(to bottom, ${colors.slugYellow}, ${colors.electricBlue}, ${colors.slugYellow})`
+                 }}>
+            </div>
+            
+            {/* Timeline Events */}
+            <div className="space-y-12">
+              {/* Event 1 */}
+              <div className="flex items-center justify-between">
+                <div className="w-5/12 text-right pr-8">
+                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
+                    <h3 className="text-lg font-bold mb-2">Intro Meeting #1</h3>
+                    <p className="text-sm opacity-90">Come to one of our information meetings! Location: BE-180</p>
+                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                      September 20, 2025
+                    </div>
+                  </div>
+                </div>
+                <div className="w-2/12 flex justify-center">
+                  <div className="w-4 h-4 rounded-full z-10" 
+                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                </div>
+                <div className="w-5/12"></div>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="w-5/12 text-right pr-8">
+                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
+                    <h3 className="text-lg font-bold mb-2">Intro Meeting #2</h3>
+                    <p className="text-sm opacity-90">If you can't make it to the first meeting,...</p>
+                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                      September 21, 2025
+                    </div>
+                  </div>
+                </div>
+                <div className="w-2/12 flex justify-center">
+                  <div className="w-4 h-4 rounded-full z-10" 
+                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                </div>
+                <div className="w-5/12"></div>
+              </div>
+
+              {/* Event 2 */}
+              <div className="flex items-center justify-between">
+                <div className="w-5/12"></div>
+                <div className="w-2/12 flex justify-center">
+                  <div className="w-4 h-4 rounded-full z-10" 
+                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                </div>
+                <div className="w-5/12 text-left pl-8">
+                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
+                    <h3 className="text-lg font-bold mb-2">Technical Workshops</h3>
+                    <p className="text-sm opacity-90">Hands-on workshops covering CAD, electrical systems, programming, and project management.</p>
+                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                      October 1-15, 2025
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Event 3 */}
+              <div className="flex items-center justify-between">
+                <div className="w-5/12 text-right pr-8">
+                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
+                    <h3 className="text-lg font-bold mb-2">Subteam Selection</h3>
+                    <p className="text-sm opacity-90">Choose your subteam and start working on real projects with experienced members.</p>
+                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                      October 20, 2025
+                    </div>
+                  </div>
+                </div>
+                <div className="w-2/12 flex justify-center">
+                  <div className="w-4 h-4 rounded-full z-10" 
+                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                </div>
+                <div className="w-5/12"></div>
+              </div>
+
+              {/* Event 4 */}
+              <div className="flex items-center justify-between">
+                <div className="w-5/12"></div>
+                <div className="w-2/12 flex justify-center">
+                  <div className="w-4 h-4 rounded-full z-10" 
+                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                </div>
+                <div className="w-5/12 text-left pl-8">
+                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
+                    <h3 className="text-lg font-bold mb-2">First Project Milestone</h3>
+                    <p className="text-sm opacity-90">Complete your first project assignment and present to the team.</p>
+                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                      November 15, 2025
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Event 5 */}
+              <div className="flex items-center justify-between">
+                <div className="w-5/12 text-right pr-8">
+                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
+                    <h3 className="text-lg font-bold mb-2">Official Team Member</h3>
+                    <p className="text-sm opacity-90">Congratulations! You're now a full team member ready to build the next Formula Slug car.</p>
+                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                      December 1, 2025
+                    </div>
+                  </div>
+                </div>
+                <div className="w-2/12 flex justify-center">
+                  <div className="w-4 h-4 rounded-full z-10" 
+                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                </div>
+                <div className="w-5/12"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
               <p className="text-xs mt-8 md:mt-12" style={{ color: 'var(--text-color)', opacity: 0.65, lineHeight: '1.4' }}>
               This group is open to all students consistent with state and federal law, the UC Nondiscrimination Statement and the Nondiscrimination Policy Statement for University of California Publications Regarding Student-Related Matters.
               </p>
