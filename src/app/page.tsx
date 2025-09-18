@@ -336,9 +336,9 @@ export default function Home() {
         <div className="w-full max-w-6xl mx-auto px-4 space-y-8">
           {/* FS-0 Section */}
           <div className="flex flex-col gap-6">
-            <div className="text-center md:text-left">
-              <h3 className="text-yellow-300 text-2xl md:text-3xl font-bold mb-4">FS-0</h3>
-              <p className="text-sm md:text-lg text-gray-100 leading-relaxed max-w-none md:max-w-4xl mx-auto md:mx-0">
+            <div className="text-center">
+              <h3 style={{color: 'rgb(74, 177, 228)'}} className="text-2xl md:text-3xl font-bold mb-4">FS-0</h3>
+              <p className="text-sm md:text-lg text-gray-100 leading-relaxed max-w-none md:max-w-4xl mx-auto">
                 Founded in 2014, Formula Slug was founded on the premise of renewable energy in electric vehicles. This led to our first vehicle, FS-0. We raised over $16,000 and put in countless hours of work. While it didn't go to competition, it served as the springboard for Formula Slug's ventures into electric vehicle engineering and catalyzed the team's growth and guiding principles.
               </p>
             </div>
@@ -358,9 +358,9 @@ export default function Home() {
           </div>
           {/* FS-1 Section */}
           <div className="flex flex-col gap-6">
-            <div className="text-center md:text-left">
-              <h3 className="text-yellow-300 text-2xl md:text-3xl font-bold mb-4">FS-1</h3>
-              <p className="text-sm md:text-lg text-gray-100 leading-relaxed max-w-none md:max-w-4xl mx-auto md:mx-0">
+            <div className="text-center">
+              <h3 style={{color: 'rgb(74, 177, 228)'}} className="text-2xl md:text-3xl font-bold mb-4">FS-1</h3>
+              <p className="text-sm md:text-lg text-gray-100 leading-relaxed max-w-none md:max-w-4xl mx-auto">
                 Building on the progress and experienced gained from FS-0, FS-1 was the first vehicle Formula Slug entered in the Formula SAE Electric Vehicle competition in Lincoln, Nebraska. Although FS-1 did not pass technical inspection, it earned our first points at competition through the static events. This experience provided invaluable lessons that informed the design and engineering of our subsequent vehicles, while showing us we could score points at competition.
               </p>
             </div>
@@ -372,9 +372,9 @@ export default function Home() {
           </div>
           {/* FS-2 Section */}
           <div className="flex flex-col gap-6">
-            <div className="text-center md:text-left">
-              <h3 className="text-yellow-300 text-2xl md:text-3xl font-bold mb-4">FS-2</h3>
-              <p className="text-sm md:text-lg text-gray-100 leading-relaxed max-w-none md:max-w-4xl mx-auto md:mx-0">
+            <div className="text-center">
+              <h3 style={{color: 'rgb(74, 177, 228)'}} className="text-2xl md:text-3xl font-bold mb-4">FS-2</h3>
+              <p className="text-sm md:text-lg text-gray-100 leading-relaxed max-w-none md:max-w-4xl mx-auto">
                 FS-2 was our first car to make it to the FSAE Michigan competition. We improved upon the performance of FS-1 by passing mechanical technical inspection and placing 56th overall. This was a huge step forward for Formula Slug, and propelled us to our next stage with FS-3.
               </p>
             </div>
@@ -386,9 +386,9 @@ export default function Home() {
           </div>
           {/* FS-3 Section */}
           <div className="flex flex-col gap-6">
-            <div className="text-center md:text-left">
-              <h3 className="text-yellow-300 text-2xl md:text-3xl font-bold mb-4">FS-3</h3>
-              <p className="text-sm md:text-lg text-gray-100 leading-relaxed max-w-none md:max-w-4xl mx-auto md:mx-0">
+            <div className="text-center">
+              <h3 style={{color: 'rgb(74, 177, 228)'}} className="text-2xl md:text-3xl font-bold mb-4">FS-3</h3>
+              <p className="text-sm md:text-lg text-gray-100 leading-relaxed max-w-none md:max-w-4xl mx-auto">
                 This past year in June 2025, we brought FS-3 to FSAE Michigan. It blew through mechanical, HV, EV active, rain, tilt, and brake inspections, while successfully competing in all dynamic events. We managed to achieve our lofty goal of a top 20 placement in just our third ever year of officially competing, with a top 3 finish in efficiency.
               </p>
             </div>
