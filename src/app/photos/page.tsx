@@ -4,6 +4,7 @@ import path from "path";
 import exifr from "exifr";
 import AutoScrollOnIdle from "./AutoScrollOnIdle";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import ShimmerTitle from "@/components/ShimmerTitle";
 import { colors } from "@/config/colors";
 import { Metadata } from "next";
@@ -87,6 +88,7 @@ export default async function PhotosPage() {
             </div>
           )}
         </div>
+        <Footer />
       </main>
     </AutoScrollOnIdle>
   );
