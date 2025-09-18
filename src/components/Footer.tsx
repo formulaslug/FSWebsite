@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
             © 2025 Formula Slug | UC Santa Cruz
           </p>
           <p className="text-gray-400 text-xs mt-1">
-            Racing toward the future of electric vehicles
+            Empowering the next generation of engineers
           </p>
         </div>
         
