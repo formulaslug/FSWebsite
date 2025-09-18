@@ -6,6 +6,7 @@
 */
 
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import ShimmerTitle from "@/components/ShimmerTitle";
 import SubteamCard from "./subteamComponent";
 import { colors } from "@/config/colors";
@@ -259,6 +260,7 @@ export default function TeamPage() {
             </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
