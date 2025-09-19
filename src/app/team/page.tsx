@@ -76,7 +76,7 @@ export default function TeamPage() {
                   photoPaths={["Finance.JPG"]}
                   blurb={FinanceBlurb}
                   leadName="Max Simonen Luke"
-                  leadPhotoPath="Max.jpg"
+                  leadPhotoPath="MaxLuke.png"
                   aspectRatio={16/9}
                 />
               </div>
@@ -100,8 +100,8 @@ export default function TeamPage() {
                     subteamName="LV"
                     photoPaths={["LV.png"]}
                     blurb={OutreachBlurb}
-                    leadName="Naveen Challa"
-                    leadPhotoPath="Megh.jpeg"
+                    leadName="Wesley Kronmiller"
+                    leadPhotoPath="WesleyKronmiller.jpg"
                     aspectRatio={16/9}
                   />
                 </div>
@@ -124,7 +124,7 @@ export default function TeamPage() {
                     photoPaths={["Accumulator.png"]}
                     blurb={OutreachBlurb}
                     leadName="Aethlyn Lim"
-                    leadPhotoPath="Megh.jpeg"
+                    leadPhotoPath="AethlynLim.JPG"
                     aspectRatio={16/9}
                   />
                 </div>
@@ -161,7 +161,7 @@ export default function TeamPage() {
                     photoPaths={["Aerodynamics.jpg"]}
                     blurb={AerodynamicsBlurb}
                     leadName="Megh Patel"
-                    leadPhotoPath="Megh.jpeg"
+                    leadPhotoPath="MeghPatel.jpg"
                     aspectRatio={16/9}
                   />
                 </div>
@@ -171,7 +171,7 @@ export default function TeamPage() {
                     photoPaths={["Ergonomics.jpg"]}
                     blurb={ErgonomicsBlurb}
                     leadName="Justin Judge"
-                    leadPhotoPath="Megh.jpeg"
+                    leadPhotoPath="JustinJudge.JPG"
                     aspectRatio={16/9}
                   />
                 </div>
@@ -195,7 +195,7 @@ export default function TeamPage() {
                     photoPaths={["Suspension.jpg"]}
                     blurb={SuspensionBlurb}
                     leadName="Mira Verma"
-                    leadPhotoPath="Megh.jpeg"
+                    leadPhotoPath="MiraVerma.jpg"
                     aspectRatio={16/9}
                   />
                 </div>
@@ -215,7 +215,7 @@ export default function TeamPage() {
                     photoPaths={["VD.jpg"]}
                     blurb={VDBlurb}
                     leadName="Caleb Shin"
-                    leadPhotoPath="Megh.jpeg"
+                    leadPhotoPath="CalebShin.png"
                     aspectRatio={16/9}
                   />
                 </div>
@@ -229,7 +229,7 @@ export default function TeamPage() {
                     photoPaths={["Welding.jpg"]}
                     blurb={WeldingBlurb}
                     leadName="Christian Reyes-Moreno"
-                    leadPhotoPath="Megh.jpeg"
+                    leadPhotoPath="ChristianMoreno.png"
                     aspectRatio={16/9}
                   />
                 </div>
@@ -239,7 +239,7 @@ export default function TeamPage() {
                     photoPaths={["manf.png"]}
                     blurb={ManufacturingBlurb}
                     leadName="Ben Grau"
-                    leadPhotoPath="Megh.jpeg"
+                    leadPhotoPath="BenGrau.jpg"
                     aspectRatio={16/9}
                   />
                 </div>
@@ -249,7 +249,7 @@ export default function TeamPage() {
                     photoPaths={["Composites.jpg"]}
                     blurb={CompositesBlurb}
                     leadName="Daniel Au"
-                    leadPhotoPath="Megh.jpeg"
+                    leadPhotoPath="DanielAu.jpg"
                     aspectRatio={16/9}
                   />
                 </div>
