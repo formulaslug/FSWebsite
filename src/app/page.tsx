@@ -5,13 +5,14 @@
   Also need to make them vertical on mobile (with un-blur on scroll section)
   Why does the front page look like shit?
     Two different buttons look yucky          <div className="flex-1 h-64 md:h-full flex flex-col items-center justify-center relative group"
-          style={{ backgroundImage: 'url(/photos/Telvis.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          style={{ backgroundImage: 'url(/photos/                <img src="/photos/FS2AtComp.jpg" alt="FS-2 Team at Competition" className="w-full h-auto object-cover rounded-lg" loading="lazy" style={{ boxShadow: '8px 8px 0px rgb(247, 236, 47)' }} />elvis.png)', b                <img src="/photos/FS1.jpg" alt="FS-1 Formula Slug Vehicle" className="w-full h-auto object-cover rounded-lg" loading="lazy" style={{ boxShadow: '8px 8px 0px rgb(247, 236, 47)' }} />ckgroundSize:              <div className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden mx-auto md:order-1" style={{ boxShadow: '8px 8px 0px rgb(247, 236, 47)' }}>'cover', backgroundPosition: 'center' }}>
 
 */
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { colors } from "@/config/colors";
 import ShimmerTitle from "@/components/ShimmerTitle";
 
@@ -181,75 +182,50 @@ export default function Home() {
           ))}
         </h1>
         {/* video section */}
-        <div className="flex flex-col md:flex-row w-full md:w-5/6 lg:w-1/2 mt-12 md:mt-20 items-center justify-center md:justify-between gap-6 md:gap-12 px-4 md:px-0">
-          <div className="flex-1 flex flex-col md:flex-row items-center">
-            <p className="text-base md:text-xl w-full md:w-2/4 text-center md:text-left mb-4 md:mb-0" style={{ 
-              color: 'var(--text-color)', 
-              lineHeight: '1.6'
-              }}>
-          Formula Slug is the student-run FSAE electric team at UC Santa Cruz. By building complex, high-performance race cars, we push our boundaries in innovation and competition while fostering the learning of applied skills and teamwork.
-            </p>
-            <button
-              className="md:ml-6 px-8 md:px-6 py-3 md:py-2 rounded-full text-white font-semibold shadow transition-colors duration-200"
-              style={{ 
-              backgroundColor: colors.electricBlue,
-              border: `2px solid ${colors.slugYellow}`,
-              }}
-              onClick={() => {
+        <div className="w-full max-w-6xl mt-12 md:mt-20 mb-8 md:mb-10 px-4 md:px-0 mx-auto flex justify-center">
+          <button
+            className="px-6 py-3 border-4 border-white bg-transparent shadow-lg transition-colors duration-200 hover:bg-[#181c2a] hover:text-yellow-400 rounded"
+            style={{
+              borderRadius: '6px',
+              color: 'var(--text-color)',
+              padding: '12px 20px'
+            }}
+            onClick={() => {
               const aboutSection = document.querySelector('section');
               if (aboutSection) {
                 aboutSection.scrollIntoView({ behavior: 'smooth' });
               }
-              }}
-              onMouseEnter={e => {
-              e.currentTarget.style.backgroundColor = colors.slugYellow;
-              e.currentTarget.style.color = colors.electricBlue;
-              e.currentTarget.style.border = `2px solid ${colors.electricBlue}`;
-              }}
-              onMouseLeave={e => {
-              e.currentTarget.style.backgroundColor = colors.electricBlue;
-              e.currentTarget.style.color = 'white';
-              e.currentTarget.style.border = `2px solid ${colors.slugYellow}`;
-              }}
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = colors.slugYellow; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = 'var(--text-color)'; }}
+          >
+            <span
+              className="text-2xl md:text-3xl font-bold"
+              style={{ fontFamily: "'Scandia Bold Italic', sans-serif", fontStyle: 'italic' }}
             >
-              Read More
-            </button>
-          </div>
-          
+              About Us
+            </span>
+          </button>
         </div>
-        <div className="flex flex-col md:flex-row w-full max-w-6xl mt-8 md:mt-10 mb-20 md:mb-40 items-center justify-center gap-8 md:gap-12 px-4 md:px-0">
-          <div className="flex-1 order-2 md:order-1 flex flex-col items-center justify-center">
-              <button
-          className="hidden md:flex px-0 py-0 border-4 border-white bg-transparent text-white text-3xl font-bold shadow-lg transition-colors duration-200 hover:bg-white hover:text-yellow-400"
-          style={{
-          width: '15',
-          height: '12vh',
-          padding: '10px',
-          alignItems: 'center',
-          justifyContent: 'center',
-          borderRadius: '0',
-
-          }}
-          onClick={() => window.open('https://fsae.slack.com/join/signup#/domain-signup', '_blank')}
-              >
-          Join Our Slack
-              </button>
-          </div>
-          <div className="flex-1 order-1 md:order-2 text-center md:text-left">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: 'var(--text-color)' }}>
-              Join the Team
-            </h3>
-            <button
-              className="md:hidden mb-6 px-6 py-3 border-2 border-white bg-transparent text-white text-lg font-bold shadow-lg transition-colors duration-200 hover:bg-white hover:text-yellow-400 rounded"
-              onClick={() => window.open('https://fsae.slack.com/join/signup#/domain-signup', '_blank')}
+        <div className="w-full max-w-6xl mt-8 md:mt-10 mb-20 md:mb-40 px-4 md:px-0 mx-auto flex justify-center">
+          <button
+            className="px-6 py-3 border-4 border-white bg-transparent shadow-lg transition-colors duration-200 hover:bg-white hover:text-yellow-400 rounded"
+            style={{
+              borderRadius: '6px',
+              color: 'var(--text-color)',
+              padding: '12px 20px'
+            }}
+            onClick={() => window.open('https://fsae.slack.com/join/signup#/domain-signup', '_blank')}
+            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = colors.electricBlue; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = 'var(--text-color)'; }}
+          >
+            <span
+              className="text-2xl md:text-3xl font-bold"
+              style={{ fontFamily: "'Scandia Bold Italic', sans-serif", fontStyle: 'italic' }}
             >
-              Join Our Slack
-            </button>
-              <p className="text-base md:text-lg mb-4" style={{ color: 'var(--text-color)', opacity: 0.85, lineHeight: '1.6' }}>
-              Ready to build, compete, and innovate? Whether you’re an engineer, designer, or just a passionate creator, Formula Slug welcomes all UCSC students. Click the button to join our Slack and get started!
-              </p>
-
-          </div>
+              Join the Team
+            </span>
+          </button>
         </div>
       </div>
       <div className="w-screen h-screen relative">
@@ -347,24 +323,75 @@ export default function Home() {
 
       <section className="w-full  mx-0 mt-0 mb-16 px-4 py-10 bg-[#181c2a] bg-opacity-90  shadow-lg flex flex-col items-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-yellow-300 mb-4">About Us</h2>
-        <p className="text-lg text-gray-100 mb-4 text-center max-w-6xl">
-          Formula Slug is UC Santa Cruz's premier student-run electric vehicle team, competing in the international Formula SAE Electric competition. Our multidisciplinary team of engineers, designers, and innovators is dedicated to building high-performance electric race cars from the ground up. We foster hands-on learning, technical excellence, and a collaborative spirit, empowering students to push the boundaries of automotive technology and sustainable transportation.
+                <p className="text-lg text-gray-100 mb-4 text-center max-w-6xl">
+          Formula Slug is UC Santa Cruz's premier student-run electric vehicle team, proudly competing each June in the international Formula SAE Electric competition in Michigan. There, we put our student-built racecar to the test against teams from around the world in a rigorous series of technical inspections, static events (design, cost, and business presentations), and dynamic events measuring acceleration, handling, endurance, and overall performance.
         </p>
-        <p className="text-base text-gray-300 text-center max-w-4xl">
-          Whether you're passionate about mechanical design, electrical systems, software, business, or just want to be part of an ambitious and supportive community, Formula Slug welcomes all Banana Slugs ready to make an impact. Join us as we race toward the future!
+        <p className="text-lg text-gray-100 mb-4 text-center max-w-6xl">
+          Our student-led team of aspiring engineers are more than just a college organization — we're a team built on collaboration, technical excellence, and ambition. Formula Slug members take on real engineering challenges, grow into leaders, and work as one cohesive team to push the boundaries of electric racecar design through Formula SAE. Together, we're proving that a team of dedicated students can compete on the international stage.
         </p>
         <h2 className="text-3xl sm:text-4xl font-bold text-yellow-300 mt-8 mb-4">Our History</h2>
-        <div className="w-full max-w-6xl mx-auto px-4 space-y-8">
-          {/* FS-0 Section */}
-          <div className="flex flex-col gap-6">
-            <div className="text-center">
-              <h3 style={{color: 'rgb(74, 177, 228)'}} className="text-2xl md:text-3xl font-bold mb-4">FS-0</h3>
-              <p className="text-sm md:text-lg text-gray-100 leading-relaxed max-w-none md:max-w-4xl mx-auto">
-                Founded in 2014, Formula Slug was founded on the premise of renewable energy in electric vehicles. This led to our first vehicle, FS-0. We raised over $16,000 and put in countless hours of work. While it didn't go to competition, it served as the springboard for Formula Slug's ventures into electric vehicle engineering and catalyzed the team's growth and guiding principles.
-              </p>
+        <div className="w-full max-w-6xl mx-auto px-4 space-y-12">
+          {/* FS-3 Section */}
+          <section aria-label="FS-3" id="fs-3" className="w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="flex flex-col gap-4">
+                <h3 className="text-2xl md:text-3xl font-bold mb-2 text-center md:text-left text-yellow-300">FS-3</h3>
+                <p className="text-sm md:text-lg text-gray-100 leading-relaxed">
+                  Our most recent and highest-placing car, FS-3, competed at FSAE Michigan in June 2025. The car cleared every inspection — mechanical, HV, EV active, rain, tilt, and brake — and successfully took part in all dynamic events. In just our third year of official competition, FS-3 met our ambitious goal of a Top 20 overall finish and secured a Top 3 placement in efficiency, marking a new benchmark for Formula Slug's success. The achievements of FS-3 set a strong foundation for FS-4, inspiring the team to reach even higher in performance, innovation, and competition.
+                </p>
+              </div>
+              <div className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden mx-auto" style={{ boxShadow: '8px 8px 0px rgb(74, 177, 228)' }}>
+                <iframe 
+                  className="w-full h-full" 
+                  src="https://www.youtube.com/embed/xwFrdFvr7uU" 
+                  title="Formula Slug 2025 FSAE EV Michigan Competition" 
+                  frameBorder="0" 
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
-            <div className="w-full flex justify-center">
-              <div className="w-full max-w-2xl aspect-video rounded-lg shadow-lg overflow-hidden">
+          </section>
+
+          {/* FS-2 Section */}
+          <section aria-label="FS-2" id="fs-2" className="w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="flex flex-col gap-4 md:order-2">
+                <h3 className="text-2xl md:text-3xl font-bold mb-2 text-center md:text-left text-yellow-300">FS-2</h3>
+                <p className="text-sm md:text-lg text-gray-100 leading-relaxed">
+                  FS-2 marked a major milestone as our first car to compete at the Formula SAE Electric competition in Michigan. Building on the foundation of FS-1, the team passed mechanical technical inspection and placed 56th overall — a significant step forward for Formula Slug. This era was opened due to new opportunities with the support of Baskin Engineering, including closer collaboration with Slugworks and the resources to rebuild the team after the challenges of the pandemic. FS-2 not only advanced our technical capabilities but also strengthened our community, setting the stage for the achievements of FS-3.
+                </p>
+              </div>
+              <div className="w-full md:order-1">
+                <img src="/photos/FS2AtComp.jpg" alt="FS-2 Team at Competition" className="w-full h-auto object-cover rounded-lg" loading="lazy" style={{ boxShadow: '8px 8px 0px rgb(74, 177, 228)' }} />
+              </div>
+            </div>
+          </section>
+
+          {/* FS-1 Section */}
+          <section aria-label="FS-1" id="fs-1" className="w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="flex flex-col gap-4 md:order-1">
+                <h3 className="text-2xl md:text-3xl font-bold mb-2 text-center md:text-left text-yellow-300">FS-1</h3>
+                <p className="text-sm md:text-lg text-gray-100 leading-relaxed">
+                  Building on the progress and experience gained from FS-0, FS-1 became the first Formula Slug vehicle to compete at the Formula SAE Electric competition in Lincoln, Nebraska. Although the car did not pass technical inspection, it marked a milestone for the team by earning our very first points through the static events. This experience proved that we could compete on the international stage and provided invaluable lessons that shaped the design and engineering of every car that followed.
+                </p>
+              </div>
+              <div className="w-full md:order-2">
+                <img src="/photos/FS1.jpg" alt="FS-1 Formula Slug Vehicle" className="w-full h-auto object-cover rounded-lg" loading="lazy" style={{ boxShadow: '8px 8px 0px rgb(74, 177, 228)' }} />
+              </div>
+            </div>
+          </section>
+
+          {/* FS-0 Section */}
+          <section aria-label="FS-0" id="fs-0" className="w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="flex flex-col gap-4 md:order-2">
+                <h3 className="text-2xl md:text-3xl font-bold mb-2 text-center md:text-left text-yellow-300">FS-0</h3>
+                <p className="text-sm md:text-lg text-gray-100 leading-relaxed">
+                  Founded in 2014, Formula Slug was founded on the premise of renewable energy in electric vehicles. This led to our first vehicle, FS-0. We raised over $16,000 and put in countless hours of work. While it didn't go to competition, it served as the springboard for Formula Slug's ventures into electric vehicle engineering and catalyzed the team's growth and guiding principles.
+                </p>
+              </div>
+              <div className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden mx-auto md:order-1" style={{ boxShadow: '8px 8px 0px rgb(74, 177, 228)' }}>
                 <iframe
                   className="w-full h-full"
                   src="https://www.youtube.com/embed/W2YDWzCsP7c?si=YlAYGXaJvxtaGviR"
@@ -376,195 +403,140 @@ export default function Home() {
                 ></iframe>
               </div>
             </div>
-          </div>
-          {/* FS-1 Section */}
-          <div className="flex flex-col gap-6">
-            <div className="text-center">
-              <h3 style={{color: 'rgb(74, 177, 228)'}} className="text-2xl md:text-3xl font-bold mb-4">FS-1</h3>
-              <p className="text-sm md:text-lg text-gray-100 leading-relaxed max-w-none md:max-w-4xl mx-auto">
-                Building on the progress and experienced gained from FS-0, FS-1 was the first vehicle Formula Slug entered in the Formula SAE Electric Vehicle competition in Lincoln, Nebraska. Although FS-1 did not pass technical inspection, it earned our first points at competition through the static events. This experience provided invaluable lessons that informed the design and engineering of our subsequent vehicles, while showing us we could score points at competition.
-              </p>
+          </section>
+        </div>
+
+        {/* NEW MEMBER TIMELINE SECTION */}
+        <div id="new-member-timeline" className="w-full max-w-4xl mx-auto mt-16 mb-8">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center" style={{ color: colors.slugYellow }}>New Member Timeline</h2>
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 rounded-full" 
+                 style={{ 
+                   height: 'calc(100% - 2rem)', 
+                   top: '1rem',
+                   background: `linear-gradient(to bottom, ${colors.slugYellow}, ${colors.electricBlue}, ${colors.slugYellow})`
+                 }}>
             </div>
-            <div className="w-full flex justify-center">
-              <div className="w-full max-w-2xl aspect-video rounded-lg shadow-lg overflow-hidden">
-                <img src="/photos/FS1.jpg" alt="FS-1 Formula Slug Vehicle" className="w-full h-full object-cover" />
+            
+            {/* Timeline Events */}
+            <div className="space-y-12">
+              {/* Event 1 */}
+              <div className="flex items-center justify-between">
+                <div className="w-5/12 text-right pr-8">
+                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
+                    <h3 className="text-lg font-bold mb-2">Intro Meeting #1</h3>
+                    <p className="text-sm opacity-90">Come to one of our information meetings! Location: BE-180</p>
+                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                      September 20, 2025
+                    </div>
+                  </div>
+                </div>
+                <div className="w-2/12 flex justify-center">
+                  <div className="w-4 h-4 rounded-full z-10" 
+                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                </div>
+                <div className="w-5/12"></div>
               </div>
-            </div>
-          </div>
-          {/* FS-2 Section */}
-          <div className="flex flex-col gap-6">
-            <div className="text-center">
-              <h3 style={{color: 'rgb(74, 177, 228)'}} className="text-2xl md:text-3xl font-bold mb-4">FS-2</h3>
-              <p className="text-sm md:text-lg text-gray-100 leading-relaxed max-w-none md:max-w-4xl mx-auto">
-                FS-2 was our first car to make it to the FSAE Michigan competition. We improved upon the performance of FS-1 by passing mechanical technical inspection and placing 56th overall. This was a huge step forward for Formula Slug, and propelled us to our next stage with FS-3.
-              </p>
-            </div>
-            <div className="w-full flex justify-center">
-              <div className="w-full max-w-2xl aspect-video rounded-lg shadow-lg overflow-hidden">
-                <img src="/photos/FS2AtComp.jpg" alt="FS-2 Team at Competition" className="w-full h-full object-cover" />
+              <div className="flex items-center justify-between">
+                <div className="w-5/12 text-right pr-8">
+                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
+                    <h3 className="text-lg font-bold mb-2">Intro Meeting #2</h3>
+                    <p className="text-sm opacity-90">If you can't make it to the first meeting,...</p>
+                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                      September 21, 2025
+                    </div>
+                  </div>
+                </div>
+                <div className="w-2/12 flex justify-center">
+                  <div className="w-4 h-4 rounded-full z-10" 
+                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                </div>
+                <div className="w-5/12"></div>
               </div>
-            </div>
-          </div>
-          {/* FS-3 Section */}
-          <div className="flex flex-col gap-6">
-            <div className="text-center">
-              <h3 style={{color: 'rgb(74, 177, 228)'}} className="text-2xl md:text-3xl font-bold mb-4">FS-3</h3>
-              <p className="text-sm md:text-lg text-gray-100 leading-relaxed max-w-none md:max-w-4xl mx-auto">
-                This past year in June 2025, we brought FS-3 to FSAE Michigan. It blew through mechanical, HV, EV active, rain, tilt, and brake inspections, while successfully competing in all dynamic events. We managed to achieve our lofty goal of a top 20 placement in just our third ever year of officially competing, with a top 3 finish in efficiency.
-              </p>
-            </div>
-            <div className="w-full flex justify-center">
-              <div className="w-full max-w-2xl aspect-video rounded-lg shadow-lg overflow-hidden">
-                <iframe 
-                  className="w-full h-full" 
-                  src="https://www.youtube.com/embed/xwFrdFvr7uU" 
-                  title="Formula Slug 2025 FSAE EV Michigan Competition" 
-                  frameBorder="0" 
-                  allowFullScreen
-                ></iframe>
+
+              {/* Event 2 */}
+              <div className="flex items-center justify-between">
+                <div className="w-5/12"></div>
+                <div className="w-2/12 flex justify-center">
+                  <div className="w-4 h-4 rounded-full z-10" 
+                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                </div>
+                <div className="w-5/12 text-left pl-8">
+                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
+                    <h3 className="text-lg font-bold mb-2">Technical Workshops</h3>
+                    <p className="text-sm opacity-90">Hands-on workshops covering CAD, electrical systems, programming, and project management.</p>
+                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                      October 1-15, 2025
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          
 
-
-          <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos praesentium at quasi cum enim expedita minus atque, accusantium, deleniti exercitationem recusandae possimus sunt excepturi! Vel nam error distinctio molestiae quae.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem consectetur enim fuga excepturi itaque placeat quas repellendus incidunt, earum suscipit exercitationem, perferendis cum. Eum sapiente rem voluptate quo ab reprehenderit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, odit perferendis! In esse suscipit maiores obcaecati consequatur iusto neque officiis vitae dolorum cum perferendis, nostrum est minus dolore laudantium necessitatibus.
-          </p>
-
-          {/* NEW MEMBER TIMELINE SECTION */}
-          <div id="new-member-timeline" className="w-full max-w-4xl mx-auto mt-16 mb-8">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center" style={{ color: colors.slugYellow }}>New Member Timeline</h2>
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 rounded-full" 
-                   style={{ 
-                     height: 'calc(100% - 2rem)', 
-                     top: '1rem',
-                     background: `linear-gradient(to bottom, ${colors.slugYellow}, ${colors.electricBlue}, ${colors.slugYellow})`
-                   }}>
+              {/* Event 3 */}
+              <div className="flex items-center justify-between">
+                <div className="w-5/12 text-right pr-8">
+                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
+                    <h3 className="text-lg font-bold mb-2">Subteam Selection</h3>
+                    <p className="text-sm opacity-90">Choose your subteam and start working on real projects with experienced members.</p>
+                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                      October 20, 2025
+                    </div>
+                  </div>
+                </div>
+                <div className="w-2/12 flex justify-center">
+                  <div className="w-4 h-4 rounded-full z-10" 
+                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                </div>
+                <div className="w-5/12"></div>
               </div>
-              
-              {/* Timeline Events */}
-              <div className="space-y-12">
-                {/* Event 1 */}
-                <div className="flex items-center justify-between">
-                  <div className="w-5/12 text-right pr-8">
-                    <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                      <h3 className="text-lg font-bold mb-2">Intro Meeting #1</h3>
-                      <p className="text-sm opacity-90">Come to one of our information meetings! Location: BE-180</p>
-                      <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
-                           style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                        September 20, 2025
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-2/12 flex justify-center">
-                    <div className="w-4 h-4 rounded-full z-10" 
-                         style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
-                  </div>
-                  <div className="w-5/12"></div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="w-5/12 text-right pr-8">
-                    <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                      <h3 className="text-lg font-bold mb-2">Intro Meeting #2</h3>
-                      <p className="text-sm opacity-90">If you can't make it to the first meeting,...</p>
-                      <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
-                           style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                        September 21, 2025
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-2/12 flex justify-center">
-                    <div className="w-4 h-4 rounded-full z-10" 
-                         style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
-                  </div>
-                  <div className="w-5/12"></div>
-                </div>
 
-                {/* Event 2 */}
-                <div className="flex items-center justify-between">
-                  <div className="w-5/12"></div>
-                  <div className="w-2/12 flex justify-center">
-                    <div className="w-4 h-4 rounded-full z-10" 
-                         style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
-                  </div>
-                  <div className="w-5/12 text-left pl-8">
-                    <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                      <h3 className="text-lg font-bold mb-2">Technical Workshops</h3>
-                      <p className="text-sm opacity-90">Hands-on workshops covering CAD, electrical systems, programming, and project management.</p>
-                      <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
-                           style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                        October 1-15, 2025
-                      </div>
+              {/* Event 4 */}
+              <div className="flex items-center justify-between">
+                <div className="w-5/12"></div>
+                <div className="w-2/12 flex justify-center">
+                  <div className="w-4 h-4 rounded-full z-10" 
+                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                </div>
+                <div className="w-5/12 text-left pl-8">
+                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
+                    <h3 className="text-lg font-bold mb-2">First Project Milestone</h3>
+                    <p className="text-sm opacity-90">Complete your first project assignment and present to the team.</p>
+                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                      November 15, 2025
                     </div>
                   </div>
                 </div>
+              </div>
 
-                {/* Event 3 */}
-                <div className="flex items-center justify-between">
-                  <div className="w-5/12 text-right pr-8">
-                    <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                      <h3 className="text-lg font-bold mb-2">Subteam Selection</h3>
-                      <p className="text-sm opacity-90">Choose your subteam and start working on real projects with experienced members.</p>
-                      <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
-                           style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                        October 20, 2025
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-2/12 flex justify-center">
-                    <div className="w-4 h-4 rounded-full z-10" 
-                         style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
-                  </div>
-                  <div className="w-5/12"></div>
-                </div>
-
-                {/* Event 4 */}
-                <div className="flex items-center justify-between">
-                  <div className="w-5/12"></div>
-                  <div className="w-2/12 flex justify-center">
-                    <div className="w-4 h-4 rounded-full z-10" 
-                         style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
-                  </div>
-                  <div className="w-5/12 text-left pl-8">
-                    <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                      <h3 className="text-lg font-bold mb-2">First Project Milestone</h3>
-                      <p className="text-sm opacity-90">Complete your first project assignment and present to the team.</p>
-                      <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
-                           style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                        November 15, 2025
-                      </div>
+              {/* Event 5 */}
+              <div className="flex items-center justify-between">
+                <div className="w-5/12 text-right pr-8">
+                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
+                    <h3 className="text-lg font-bold mb-2">Official Team Member</h3>
+                    <p className="text-sm opacity-90">Congratulations! You're now a full team member ready to build the next Formula Slug car.</p>
+                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                      December 1, 2025
                     </div>
                   </div>
                 </div>
-
-                {/* Event 5 */}
-                <div className="flex items-center justify-between">
-                  <div className="w-5/12 text-right pr-8">
-                    <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                      <h3 className="text-lg font-bold mb-2">Official Team Member</h3>
-                      <p className="text-sm opacity-90">Congratulations! You're now a full team member ready to build the next Formula Slug car.</p>
-                      <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
-                           style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                        December 1, 2025
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-2/12 flex justify-center">
-                    <div className="w-4 h-4 rounded-full z-10" 
-                         style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
-                  </div>
-                  <div className="w-5/12"></div>
+                <div className="w-2/12 flex justify-center">
+                  <div className="w-4 h-4 rounded-full z-10" 
+                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
                 </div>
+                <div className="w-5/12"></div>
               </div>
             </div>
           </div>
         </div>
-              <p className="text-xs mt-2" style={{ color: 'var(--text-color)', opacity: 0.65, lineHeight: '1.4' }}>
+
+              <p className="text-xs mt-8 md:mt-12" style={{ color: 'var(--text-color)', opacity: 0.65, lineHeight: '1.4' }}>
               This group is open to all students consistent with state and federal law, the UC Nondiscrimination Statement and the Nondiscrimination Policy Statement for University of California Publications Regarding Student-Related Matters.
               </p>
       </section>
@@ -618,6 +590,7 @@ export default function Home() {
           animation: none;
         }
             `}</style>
+      <Footer />
     </main>
   );
 }

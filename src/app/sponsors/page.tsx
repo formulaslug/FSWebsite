@@ -11,6 +11,7 @@
 
 import React from "react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import ShimmerTitle from "@/components/ShimmerTitle";
 import { colors } from "@/config/colors";
 import { Metadata } from "next";
@@ -219,6 +220,7 @@ export default function SponsorsPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
