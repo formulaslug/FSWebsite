@@ -1,4 +1,5 @@
-import React from "react";
+'use client'
+import React, { useState } from "react";
 import Image from "next/image";
 import { colors } from "@/config/colors";
 
@@ -22,19 +23,30 @@ const SubteamCard: React.FC<SubteamCardProps> = ({
   // Use first photo as cover
   const coverPhoto = photoPaths[0];
   
+  // State for mobile click-to-flip
+  const [isFlipped, setIsFlipped] = useState(false);
+  
+  const handleCardClick = () => {
+    // Only handle click on mobile/tablet (below lg breakpoint)
+    if (window.innerWidth < 1024) {
+      setIsFlipped(!isFlipped);
+    }
+  };
+  
   return (
-    <div className="group cursor-pointer w-15/16 h-full mx-auto">
+    <div className="group cursor-pointer w-15/16 h-full mx-auto" onClick={handleCardClick}>
       {/* Stable hover container - does not get resized */}
       <div 
-        className="relative w-full mx-auto overflow-hidden rounded-xl"
+        className="relative w-full mx-auto overflow-hidden rounded-xl aspect-[9/10] lg:aspect-[16/9]"
         style={{ 
-          aspectRatio: aspectRatio,
           boxShadow: `0px 4px 0px rgba(45, 195, 241, 1)`
         }}
       >
         {/* Front Side - Team Photo with Title */}
         <div 
-          className="absolute inset-0 w-full h-full transition-transform duration-200 ease-in-out group-hover:translate-y-[-100%] shadow-lg"
+          className={`absolute inset-0 w-full h-full transition-transform duration-200 ease-in-out shadow-lg
+            lg:group-hover:translate-y-[-100%] 
+            ${isFlipped ? 'translate-y-[-100%]' : 'translate-y-0'}`}
         >
           <div className="relative w-full h-full">
             <Image
@@ -63,7 +75,9 @@ const SubteamCard: React.FC<SubteamCardProps> = ({
 
         {/* Back Side - Lead Info */}
         <div 
-          className="absolute inset-0 w-full h-full transition-transform duration-500 ease-in-out translate-y-[100%] group-hover:translate-y-0 shadow-lg rounded-xl"
+          className={`absolute inset-0 w-full h-full transition-transform duration-500 ease-in-out shadow-lg rounded-xl
+            lg:translate-y-[100%] lg:group-hover:translate-y-0
+            ${isFlipped ? 'translate-y-0' : 'translate-y-[100%]'}`}
           style={{ 
             backgroundColor: colors.background.card
           }}
@@ -81,12 +95,12 @@ const SubteamCard: React.FC<SubteamCardProps> = ({
               
               {/* Floating overlay block */}
               <div 
-                className="absolute bottom-4 left-3 right-3 p-3 rounded-lg"
+                className="absolute bottom-0 p-1 left-1 md:bottom-4 left-3 right-3 md:p-3 rounded-lg"
                 style={{ backgroundColor: colors.primary }}
               >
                 {/* Lead Name */}
                 <h4 
-                  className="text-sm md:text-base font-bold text-center"
+                  className="text-xs md:text-base font-bold text-center"
                   style={{ color: colors.slugYellow }}
                 >
                   {leadName}
@@ -103,18 +117,22 @@ const SubteamCard: React.FC<SubteamCardProps> = ({
             </div>
 
             {/* Right 2/3 - Text Content */}
-            <div className="w-2/3 h-full p-10 flex items-center font-semibold relative overflow-hidden">
+            <div className="w-2/3 h-full p-5 md:p-5 flex items-center font-semibold relative overflow-hidden">
               {/* Yellow decorative stripes */}
               <div className="absolute top-0 right-[-80]">
                 <div 
-                  className="w-100 h-7 ml-5 mt-30 transform rotate-45 origin-top-right transition-transform duration-500 ease-out delay-350 translate-x-[-200px] translate-y-[-200px] group-hover:translate-x-0 group-hover:translate-y-0"
+                  className={`w-100 h-7 ml-5 mt-30 transform rotate-45 origin-top-right transition-transform duration-500 ease-out delay-350
+                    lg:translate-x-[-200px] lg:translate-y-[-200px] lg:group-hover:translate-x-0 lg:group-hover:translate-y-0
+                    ${isFlipped ? 'translate-x-0 translate-y-0' : 'translate-x-[-200px] translate-y-[-200px]'}`}
                   style={{ 
                     backgroundColor: colors.slugYellow,
                     transformOrigin: 'top right'
                   }}
                 ></div>
                 <div 
-                  className="w-100 h-4 transform rotate-45 origin-top-right transition-transform duration-700 ease-out delay-350 translate-x-[300px] translate-y-[300px] group-hover:translate-x-0 group-hover:translate-y-0"
+                  className={`w-100 h-4 transform rotate-45 origin-top-right transition-transform duration-700 ease-out delay-350
+                    lg:translate-x-[300px] lg:translate-y-[300px] lg:group-hover:translate-x-0 lg:group-hover:translate-y-0
+                    ${isFlipped ? 'translate-x-0 translate-y-0' : 'translate-x-[300px] translate-y-[300px]'}`}
                   style={{ 
                     backgroundColor: colors.electricBlue,
                     transformOrigin: 'top right'
@@ -122,7 +140,7 @@ const SubteamCard: React.FC<SubteamCardProps> = ({
                 ></div>
               </div>
               
-              <h1 className="text-sm md:text-md leading-relaxed">
+              <h1 className="text-xs md:text-lg  mt-10">
                 {blurb}
               </h1>
             </div>
