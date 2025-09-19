@@ -321,7 +321,7 @@ export default function Home() {
 
 { /* History section, this might be better in descending order of years */}
 
-      <section className="w-full  mx-0 mt-0 mb-16 px-4 py-10 bg-[#181c2a] bg-opacity-90  shadow-lg flex flex-col items-center">
+      <section className="w-full  mx-0 mt-0 mb-0 px-4 py-10 bg-[#181c2a] bg-opacity-90  shadow-lg flex flex-col items-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-yellow-300 mb-4">About Us</h2>
                 <p className="text-lg text-gray-100 mb-4 text-center max-w-6xl">
           Formula Slug is UC Santa Cruz's premier student-run electric vehicle team, proudly competing each June in the international Formula SAE Electric competition in Michigan. There, we put our student-built racecar to the test against teams from around the world in a rigorous series of technical inspections, static events (design, cost, and business presentations), and dynamic events measuring acceleration, handling, endurance, and overall performance.
