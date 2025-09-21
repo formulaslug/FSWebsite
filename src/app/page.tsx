@@ -414,6 +414,118 @@ export default function Home() {
           </section>
         </div>
 
+        {/* NEW MEMBER TIMELINE SECTION */}
+        <div id="new-member-timeline" className="w-full max-w-4xl mx-auto mt-16 mb-8">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center" style={{ color: colors.slugYellow }}>New Member Timeline</h2>
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 rounded-full hidden md:block" 
+                 style={{ 
+                   height: 'calc(100% - 2rem)', 
+                   top: '1rem',
+                   background: `linear-gradient(to bottom, ${colors.slugYellow}, ${colors.electricBlue}, ${colors.slugYellow})`
+                 }}>
+            </div>
+            
+            {/* Timeline Events */}
+            <div className="space-y-12">
+                {/* Intro Meeting 1 */}
+                <div className="flex items-center justify-between">
+                <div className="w-1/12 md:w-5/12"></div>
+                <div className="w-2/12 flex justify-center">
+                  <div className="w-4 h-4 rounded-full z-10" 
+                     style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                </div>
+                <div className="w-9/12 md:w-5/12 text-left pl-4 md:pl-8">
+                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
+                  <h3 className="text-lg font-bold mb-2">Intro Meeting #1</h3>
+                  <p className="text-sm opacity-90">Come to one of our information meetings!</p>
+                  <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                     style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                    September 25 @ 7:00pm in E2-180
+                  </div>
+                  </div>
+                </div>
+                </div>
+                {/* Intro Meeting 2*/}
+                <div className="flex items-center justify-between">
+                <div className="w-9/12 md:w-5/12 text-right pr-4 md:pr-8">
+                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
+                  <h3 className="text-lg font-bold mb-2">Intro Meeting #2</h3>
+                  <p className="text-sm opacity-90">Come to one of our information meetings!</p>
+                  <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                     style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                    September 26 @ 7:00pm in E2-180
+                  </div>
+                  </div>
+                </div>
+                <div className="w-2/12 flex justify-center">
+                  <div className="w-4 h-4 rounded-full z-10" 
+                     style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                </div>
+                <div className="w-1/12 md:w-5/12"></div>
+              </div>
+
+              {/* Event 3 */}
+              <div className="flex items-center justify-between">
+                <div className="w-1/12 md:w-5/12"></div>
+                <div className="w-2/12 flex justify-center">
+                  <div className="w-4 h-4 rounded-full z-10" 
+                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                </div>
+                <div className="w-9/12 md:w-5/12 text-left pl-4 md:pl-8">
+                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
+                    <h3 className="text-lg font-bold mb-2">Individual Subteam Meetings & Workshops</h3>
+                    <p className="text-sm opacity-90">Choose your subteam and start working on real projects with experienced members.</p>
+                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                      October 5th - 17th
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Event 4 */}
+              <div className="flex items-center justify-between">
+                <div className="w-9/12 md:w-5/12 text-right pr-4 md:pr-8">
+                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
+                    <h3 className="text-lg font-bold mb-2">Subteam Onboarding Projects Due</h3>
+                    <p className="text-sm opacity-90">All projects for subteam and major subteams are due</p>
+                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                      October 17th
+                    </div>
+                  </div>
+                </div>
+                <div className="w-2/12 flex justify-center">
+                  <div className="w-4 h-4 rounded-full z-10" 
+                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                </div>
+                <div className="w-1/12 md:w-5/12"></div>
+              </div>
+
+              {/* Event 5 */}
+              <div className="flex items-center justify-between">
+                <div className="w-9/12 md:w-5/12 text-right pr-4 md:pr-8">
+                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
+                    <h2 className="text-lg font-bold mb-2">Member Roster Released</h2>
+                    <p className="text-sm opacity-90">New members are assigned to their subteams and onboarding is complete!</p>
+                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                      October 19th
+                    </div>
+                  </div>
+                </div>
+                <div className="w-2/12 flex justify-center">
+                  <div className="w-4 h-4 rounded-full z-10" 
+                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                </div>
+                <div className="w-1/12 md:w-5/12"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* NEW MEMBER FAQ SECTION */}
         <div id="new-member-faq" className="w-full max-w-4xl mx-auto mt-16 mb-8">
           <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center" style={{ color: colors.slugYellow }}>New Member FAQ</h2>
@@ -464,136 +576,6 @@ export default function Home() {
         </div>
 
         {/* NEW MEMBER TIMELINE SECTION */}
-        <div id="new-member-timeline" className="w-full max-w-4xl mx-auto mt-16 mb-8">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center" style={{ color: colors.slugYellow }}>New Member Timeline</h2>
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 rounded-full hidden md:block" 
-                 style={{ 
-                   height: 'calc(100% - 2rem)', 
-                   top: '1rem',
-                   background: `linear-gradient(to bottom, ${colors.slugYellow}, ${colors.electricBlue}, ${colors.slugYellow})`
-                 }}>
-            </div>
-            
-            {/* Timeline Events */}
-            <div className="space-y-12">
-                {/* Intro Meeting 1 */}
-                <div className="flex items-center justify-between">
-                <div className="w-1/12 md:w-5/12"></div>
-                <div className="w-2/12 flex justify-center">
-                  <div className="w-4 h-4 rounded-full z-10" 
-                     style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
-                </div>
-                <div className="w-9/12 md:w-5/12 text-left pl-4 md:pl-8">
-                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                  <h3 className="text-lg font-bold mb-2">Intro Meeting #1</h3>
-                  <p className="text-sm opacity-90">Come to one of our information meetings!</p>
-                  <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
-                     style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                    September 25 @ 7:00pm in E2-180
-                  </div>
-                  </div>
-                </div>
-                </div>
-                {/* Intro Meeting 2*/}
-                <div className="flex items-center justify-between">
-                <div className="w-9/12 md:w-5/12 text-right pr-4 md:pr-8">
-                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                  <h3 className="text-lg font-bold mb-2">Intro Meeting #2</h3>
-                  <p className="text-sm opacity-90">Repeat of meeting #1 for those who couldn't make it</p>
-                  <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
-                     style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                    September 28 @ 4:00pm in E2-180
-                  </div>
-                  </div>
-                </div>
-                <div className="w-2/12 flex justify-center">
-                  <div className="w-4 h-4 rounded-full z-10" 
-                     style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
-                </div>
-                <div className="w-1/12 md:w-5/12"></div>
-                </div>
-
-                {/* Main Subteam Meetings */}
-                <div className="flex items-center justify-between">
-                <div className="w-1/12 md:w-5/12"></div>
-                <div className="w-2/12 flex justify-center">
-                  <div className="w-4 h-4 rounded-full z-10" 
-                     style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
-                </div>
-                <div className="w-9/12 md:w-5/12 text-left pl-4 md:pl-8">
-                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                  <h3 className="text-lg font-bold mb-2">Main Subteam Meetings</h3>
-                  <p className="text-sm opacity-90">Meetings to introduce the Business, Software, Electrical and Mechanical teams</p>
-                  <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
-                     style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                    September 29th - October 3rd
-                  </div>
-                  </div>
-                </div>
-                </div>
-
-              {/* Event 3 */}
-              <div className="flex items-center justify-between">
-                <div className="w-9/12 md:w-5/12 text-right pr-4 md:pr-8">
-                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                    <h3 className="text-lg font-bold mb-2">Individual Subteam Meetings & Workshops</h3>
-                    <p className="text-sm opacity-90">Choose your subteam and start working on real projects with experienced members.</p>
-                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
-                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                      October 5th - 17th
-                    </div>
-                  </div>
-                </div>
-                <div className="w-2/12 flex justify-center">
-                  <div className="w-4 h-4 rounded-full z-10" 
-                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
-                </div>
-                <div className="w-1/12 md:w-5/12"></div>
-              </div>
-
-              {/* Event 4 */}
-              <div className="flex items-center justify-between">
-                <div className="w-1/12 md:w-5/12"></div>
-                <div className="w-2/12 flex justify-center">
-                  <div className="w-4 h-4 rounded-full z-10" 
-                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
-                </div>
-                <div className="w-9/12 md:w-5/12 text-left pl-4 md:pl-8">
-                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                    <h3 className="text-lg font-bold mb-2">Subteam Onboarding Projects Due</h3>
-                    <p className="text-sm opacity-90">All projects for subteam and major subteams are due</p>
-                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
-                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                      October 17th
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Event 5 */}
-              <div className="flex items-center justify-between">
-                <div className="w-9/12 md:w-5/12 text-right pr-4 md:pr-8">
-                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                    <h2 className="text-lg font-bold mb-2">Member Roster Released</h2>
-                    <p className="text-sm opacity-90">New members are assigned to their subteams and onboarding is complete!</p>
-                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
-                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                      October 19th
-                    </div>
-                  </div>
-                </div>
-                <div className="w-2/12 flex justify-center">
-                  <div className="w-4 h-4 rounded-full z-10" 
-                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
-                </div>
-                <div className="w-1/12 md:w-5/12"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <p className="text-xs mt-8 md:mt-12" style={{ color: 'var(--text-color)', opacity: 0.65, lineHeight: '1.4' }}>
           This group is open to all students consistent with state and federal law, the UC Nondiscrimination Statement and the Nondiscrimination Policy Statement for University of California Publications Regarding Student-Related Matters.
         </p>
