@@ -420,19 +420,44 @@ export default function Home() {
           <div className="space-y-4">
             <FAQItem
               question="What is FSAE?"
-              answer= "Formula SAE is an international student engineering competition where teams design, build, and race small formula-style vehicles. Teams are evaluated on design, performance, cost, business, and innovation. We compete at FSAE Michigan which is held at Michigan International Speedway in June."
+              answer= "Formula SAE is an international student engineering competition where teams design, build, and race Formula-style vehicles. Teams are evaluated on design, performance, cost, business, and innovation. Formula Slug competes in FSAE Electric Michigan, which is held at Michigan International Speedway in June."
               />
             <FAQItem
-              question="Do you test on campus?"
-              answer="Due to space constraints and uneven grounds, testing in Santa Cruz is difficult. We have been lucky to work with Blue Max Kart Club in Davis who allow us to test on their track."
+              question="How much experience do I need to join the club?"
+              answer="You don't need experience to join Formula Slug! All we ask for is a willingness to learn and to put in time when things get tough! We provide a lot of opportunities and resources to learn the skills new members need to get started, but we've found that successful new members often learn on their own and bring their own ideas to the table."
             />
+
+            <FAQItem
+              question="How much time commitment is required?"
+              answer="The time commitment varies based on the task provided to you by your subteam lead. Typically, we see that students that put in more time tend to feel more fulfilled at the end of the season. We encourage new members to communicate with their leads and captains regarding the amount of time they are able to commit."
+            />
+
             <FAQItem
               question="Who gets to drive the car?"
               answer="Drivers for competition are chosen through a driver selection process and are members who have worked on the car throughout the year. While most do not drive at competition, we host track days to allow the season's team roster to drive that year's car."
             />
+
             <FAQItem
-              question="How much time commitment is required?"
-              answer="The time commitment varies based on the task..."
+              question="What are the major requirements for this club?"
+              answer="Regardless of the major, we welcome all UCSC students and majors to the club. We do not restrict members from joining if they are not an engineering major! We have a ton of non-Baskin majors including environmental science, applied physics, economics, bioinformatics, etc!"
+            />
+            <FAQItem
+              question="What type of work do new members get to work on?"
+              answer="We would like all members of the team to feel that they have contributed to the car! So, many of the tasks new members work on are directly on the car or directly impact the car - even as a new member, you may be working on a car critical component!"
+            />
+
+            <FAQItem
+              question="Do you test on campus?"
+              answer="Due to space constraints and uneven grounds, testing in Santa Cruz is difficult. We have been lucky to work with Blue Max Kart Club in Davis who allow us to test on their track."
+            />
+            
+            <FAQItem
+              question="How can this club help my career?"
+              answer="Our team, and FSAE as a whole, emphasizes building engineers. We hold design reviews, work under constraints, and learn various design skills required for our competition and industry as a whole. Many of these skills, technical and non-technical, help our team members and alumni land jobs and internships at companies such as Zero Motorcycles, Tesla, Apple, etc. With the wide network that comes with being a part of FSAE, students are also given the chance to network with other schools and industry professionals."
+            />
+            <FAQItem
+              question="How do I get access to the lab space?"
+              answer="All team members are required to complete the Slugworks (Baskin Engineering's makerspace) canvas course to get access to the club space. The canvas is not out yet but the team will be notified on slack for when it is released!"
             />
 
           </div>
