@@ -135,32 +135,38 @@ export default function Home() {
           />
         </div>
         <Navbar />
-        <ShimmerTitle delayMs={fallInDuration*0.9}>
         <h1
           className="w-full text-4xl sm:text-5xl md:text-6xl mt-16 md:mt-32 lg:text-9xl font-bold drop-shadow-lg flex flex-wrap justify-center mb-2 max-w-full break-words px-4 md:px-0"
           style={{
             color: 'var(--text-color)',
             opacity: titleVisible ? 1 : 0,
-            transition: 'opacity 0.1s linear',
+            transition: 'opacity 0.7s linear',
           }}
         >
-          {title.split('').map((char, index) => (
-            <span
-              key={index}
-              className={char === ' ' ? 'inline-block w-4 sm:w-8' : ''}
-              style={{
-                display: char === ' ' ? 'inline-block' : 'inline',
-                animation: `fall-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both ${index * fallInDelay}s`,
-                animationFillMode: 'both',
-                minWidth: char === ' ' ? '0.25em' : undefined,
-                letterSpacing: '0.03em'
-              }}
-            >
-              {char === ' ' ? '\u00A0' : char}
-            </span>
-          ))}
+          <ShimmerTitle delayMs={fallInDuration*0.9}>
+            {title.split('').map((char, index) => (
+              <span
+                key={index}
+                className={char === ' ' ? 'inline-block w-4 sm:w-8' : ''}
+                style={{
+                  display: char === ' ' ? 'inline-block' : 'inline',
+                  minWidth: char === ' ' ? '0.25em' : undefined,
+                  letterSpacing: '0.03em'
+
+                  // TODO: On chromium-based browsers, ShimmerTitle conflicts with
+                  // fall-in animation to cause the title to be invisible. I
+                  // *think* it's due to this chromium bug: 
+                  // https://issues.chromium.org/issues/41385122
+
+                  // animation: `fall-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both ${index * fallInDelay}s`,
+                  // animationFillMode: 'both',
+                }}
+              >
+                {char === ' ' ? '\u00A0' : char}
+              </span>
+            ))}
+          </ShimmerTitle>
         </h1>
-        </ShimmerTitle>
         <h1
           className="mt-1 text-xl md:text-2xl font-semibold text-center tracking-widest px-4 md:px-0"
           style={{
@@ -320,17 +326,18 @@ export default function Home() {
         </div>
       </div>
 
-{ /* History section, this might be better in descending order of years */}
 
       <section className="w-full  mx-0 mt-0 mb-0 px-4 py-10 bg-[#181c2a] bg-opacity-90  shadow-lg flex flex-col items-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-yellow-300 mb-4">About Us</h2>
-                <p className="text-lg text-gray-100 mb-4 text-center max-w-6xl">
+        <p className="text-lg text-gray-100 mb-4 text-center max-w-6xl">
           Formula Slug is UC Santa Cruz's premier student-run electric vehicle team, proudly competing each June in the international Formula SAE Electric competition in Michigan. There, we put our student-built racecar to the test against teams from around the world in a rigorous series of technical inspections, static events (design, cost, and business presentations), and dynamic events measuring acceleration, handling, endurance, and overall performance.
         </p>
         <p className="text-lg text-gray-100 mb-4 text-center max-w-6xl">
           Our student-led team of aspiring engineers are more than just a college organization — we're a team built on collaboration, technical excellence, and ambition. Formula Slug members take on real engineering challenges, grow into leaders, and work as one cohesive team to push the boundaries of electric racecar design through Formula SAE. Together, we're proving that a team of dedicated students can compete on the international stage.
         </p>
         <h2 className="text-3xl sm:text-4xl font-bold text-yellow-300 mt-8 mb-4">Our History</h2>
+
+        { /* History section */}
         <div className="w-full max-w-6xl mx-auto px-4 space-y-12">
           {/* FS-3 Section */}
           <section aria-label="FS-3" id="fs-3" className="w-full">
@@ -562,9 +569,9 @@ export default function Home() {
           </div>
         </div>
 
-              <p className="text-xs mt-8 md:mt-12" style={{ color: 'var(--text-color)', opacity: 0.65, lineHeight: '1.4' }}>
-              This group is open to all students consistent with state and federal law, the UC Nondiscrimination Statement and the Nondiscrimination Policy Statement for University of California Publications Regarding Student-Related Matters.
-              </p>
+        <p className="text-xs mt-8 md:mt-12" style={{ color: 'var(--text-color)', opacity: 0.65, lineHeight: '1.4' }}>
+          This group is open to all students consistent with state and federal law, the UC Nondiscrimination Statement and the Nondiscrimination Policy Statement for University of California Publications Regarding Student-Related Matters.
+        </p>
       </section>
       
       
