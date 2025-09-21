@@ -21,11 +21,11 @@ interface NavbarProps {
 
 import { useState, useEffect } from "react";
 import { colors } from "@/config/colors";
-
+  {/*{ href: 'contact', label: 'Contact' },*/}
 const navLinks = [
   { href: '/', label: 'About' },
   { href: 'team', label: 'Team' },
-  { href: 'contact', label: 'Contact' },
+
   { href: 'sponsors', label: 'Sponsors' },
   { href: 'photos', label: 'Photos' },
 ];

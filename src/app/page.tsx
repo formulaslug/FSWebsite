@@ -13,6 +13,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FAQItem from "@/components/FAQItem";
 import { colors } from "@/config/colors";
 import ShimmerTitle from "@/components/ShimmerTitle";
 
@@ -406,12 +407,36 @@ export default function Home() {
           </section>
         </div>
 
+        {/* NEW MEMBER FAQ SECTION */}
+        <div id="new-member-faq" className="w-full max-w-4xl mx-auto mt-16 mb-8">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center" style={{ color: colors.slugYellow }}>New Member FAQ</h2>
+          <div className="space-y-4">
+            <FAQItem
+              question="What is FSAE?"
+              answer= "Formula SAE is an international student engineering competition where teams design, build, and race small formula-style vehicles. Teams are evaluated on design, performance, cost, business, and innovation. We compete at FSAE Michigan which is held at Michigan International Speedway in June."
+              />
+            <FAQItem
+              question="Do you test on campus?"
+              answer="Due to space constraints and uneven grounds, testing in Santa Cruz is difficult. We have been lucky to work with Blue Max Kart Club in Davis who allow us to test on their track."
+            />
+            <FAQItem
+              question="Who gets to drive the car?"
+              answer="Drivers for competition are chosen through a driver selection process and are members who have worked on the car throughout the year. While most do not drive at competition, we host track days to allow the season's team roster to drive that year's car."
+            />
+            <FAQItem
+              question="How much time commitment is required?"
+              answer="The time commitment varies based on the task..."
+            />
+
+          </div>
+        </div>
+
         {/* NEW MEMBER TIMELINE SECTION */}
         <div id="new-member-timeline" className="w-full max-w-4xl mx-auto mt-16 mb-8">
           <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center" style={{ color: colors.slugYellow }}>New Member Timeline</h2>
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 rounded-full" 
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 rounded-full hidden md:block" 
                  style={{ 
                    height: 'calc(100% - 2rem)', 
                    top: '1rem',
@@ -421,70 +446,71 @@ export default function Home() {
             
             {/* Timeline Events */}
             <div className="space-y-12">
-              {/* Event 1 */}
-              <div className="flex items-center justify-between">
-                <div className="w-5/12 text-right pr-8">
+                {/* Intro Meeting 1 */}
+                <div className="flex items-center justify-between">
+                <div className="w-1/12 md:w-5/12"></div>
+                <div className="w-2/12 flex justify-center">
+                  <div className="w-4 h-4 rounded-full z-10" 
+                     style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                </div>
+                <div className="w-9/12 md:w-5/12 text-left pl-4 md:pl-8">
                   <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                    <h3 className="text-lg font-bold mb-2">Intro Meeting #1</h3>
-                    <p className="text-sm opacity-90">Come to one of our information meetings! Location: BE-180</p>
-                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
-                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                      September 20, 2025
-                    </div>
+                  <h3 className="text-lg font-bold mb-2">Intro Meeting #1</h3>
+                  <p className="text-sm opacity-90">Come to one of our information meetings!</p>
+                  <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                     style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                    September 25 @ 7:00pm in E2-180
+                  </div>
+                  </div>
+                </div>
+                </div>
+                {/* Intro Meeting 2*/}
+                <div className="flex items-center justify-between">
+                <div className="w-9/12 md:w-5/12 text-right pr-4 md:pr-8">
+                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
+                  <h3 className="text-lg font-bold mb-2">Intro Meeting #2</h3>
+                  <p className="text-sm opacity-90">Repeat of meeting #1 for those who couldn't make it</p>
+                  <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                     style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                    September 28 @ 4:00pm in E2-180
+                  </div>
                   </div>
                 </div>
                 <div className="w-2/12 flex justify-center">
                   <div className="w-4 h-4 rounded-full z-10" 
-                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                     style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
                 </div>
-                <div className="w-5/12"></div>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="w-5/12 text-right pr-8">
-                  <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                    <h3 className="text-lg font-bold mb-2">Intro Meeting #2</h3>
-                    <p className="text-sm opacity-90">If you can't make it to the first meeting,...</p>
-                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
-                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                      September 21, 2025
-                    </div>
-                  </div>
+                <div className="w-1/12 md:w-5/12"></div>
                 </div>
-                <div className="w-2/12 flex justify-center">
-                  <div className="w-4 h-4 rounded-full z-10" 
-                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
-                </div>
-                <div className="w-5/12"></div>
-              </div>
 
-              {/* Event 2 */}
-              <div className="flex items-center justify-between">
-                <div className="w-5/12"></div>
+                {/* Main Subteam Meetings */}
+                <div className="flex items-center justify-between">
+                <div className="w-1/12 md:w-5/12"></div>
                 <div className="w-2/12 flex justify-center">
                   <div className="w-4 h-4 rounded-full z-10" 
-                       style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
+                     style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
                 </div>
-                <div className="w-5/12 text-left pl-8">
+                <div className="w-9/12 md:w-5/12 text-left pl-4 md:pl-8">
                   <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                    <h3 className="text-lg font-bold mb-2">Technical Workshops</h3>
-                    <p className="text-sm opacity-90">Hands-on workshops covering CAD, electrical systems, programming, and project management.</p>
-                    <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
-                         style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                      October 1-15, 2025
-                    </div>
+                  <h3 className="text-lg font-bold mb-2">Main Subteam Meetings</h3>
+                  <p className="text-sm opacity-90">Meetings to introduce the Business, Software, Electrical and Mechanical teams</p>
+                  <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
+                     style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+                    September 29th - October 3rd
+                  </div>
                   </div>
                 </div>
-              </div>
+                </div>
 
               {/* Event 3 */}
               <div className="flex items-center justify-between">
-                <div className="w-5/12 text-right pr-8">
+                <div className="w-9/12 md:w-5/12 text-right pr-4 md:pr-8">
                   <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                    <h3 className="text-lg font-bold mb-2">Subteam Selection</h3>
+                    <h3 className="text-lg font-bold mb-2">Individual subteam meetings & technical workshops</h3>
                     <p className="text-sm opacity-90">Choose your subteam and start working on real projects with experienced members.</p>
                     <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
                          style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                      October 20, 2025
+                      October 5th - 17th
                     </div>
                   </div>
                 </div>
@@ -492,23 +518,23 @@ export default function Home() {
                   <div className="w-4 h-4 rounded-full z-10" 
                        style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
                 </div>
-                <div className="w-5/12"></div>
+                <div className="w-1/12 md:w-5/12"></div>
               </div>
 
               {/* Event 4 */}
               <div className="flex items-center justify-between">
-                <div className="w-5/12"></div>
+                <div className="w-1/12 md:w-5/12"></div>
                 <div className="w-2/12 flex justify-center">
                   <div className="w-4 h-4 rounded-full z-10" 
                        style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
                 </div>
-                <div className="w-5/12 text-left pl-8">
+                <div className="w-9/12 md:w-5/12 text-left pl-4 md:pl-8">
                   <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                    <h3 className="text-lg font-bold mb-2">First Project Milestone</h3>
-                    <p className="text-sm opacity-90">Complete your first project assignment and present to the team.</p>
+                    <h3 className="text-lg font-bold mb-2">Subteam onborading projects due</h3>
+                    <p className="text-sm opacity-90">All projects for subteam and major subteams are due</p>
                     <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
                          style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                      November 15, 2025
+                      October 17th
                     </div>
                   </div>
                 </div>
@@ -516,13 +542,13 @@ export default function Home() {
 
               {/* Event 5 */}
               <div className="flex items-center justify-between">
-                <div className="w-5/12 text-right pr-8">
+                <div className="w-9/12 md:w-5/12 text-right pr-4 md:pr-8">
                   <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                    <h3 className="text-lg font-bold mb-2">Official Team Member</h3>
-                    <p className="text-sm opacity-90">Congratulations! You're now a full team member ready to build the next Formula Slug car.</p>
+                    <h2 className="text-lg font-bold mb-2">Subteam decisions released</h2>
+                    <p className="text-sm opacity-90"></p>
                     <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
                          style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                      December 1, 2025
+                      October 19th
                     </div>
                   </div>
                 </div>
@@ -530,7 +556,7 @@ export default function Home() {
                   <div className="w-4 h-4 rounded-full z-10" 
                        style={{ backgroundColor: colors.slugYellow, border: `4px solid ${colors.electricBlue}` }}></div>
                 </div>
-                <div className="w-5/12"></div>
+                <div className="w-1/12 md:w-5/12"></div>
               </div>
             </div>
           </div>

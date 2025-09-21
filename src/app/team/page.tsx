@@ -68,7 +68,7 @@ export default function TeamPage() {
                   <CaptainCard
                     captainName="Maitreyi Patel"
                     team="Team Captain"
-                    photoPath="MaitreyiPatel.png"
+                    photoPath="MaitreyiPatel.jpg"
                     aspectRatio={3/4}
                   />
                 </div>
@@ -92,7 +92,7 @@ export default function TeamPage() {
                   <CaptainCard
                     captainName="Cole Lewis"
                     team="Electrical Captain"
-                    photoPath="ColeLewis.png"
+                    photoPath="ColeLewis.jpg"
                     aspectRatio={3/4}
                   />
                 </div>
@@ -114,7 +114,7 @@ export default function TeamPage() {
                     <CaptainCard
                       captainName="Maitreyi Patel"
                       team="Team Captain"
-                      photoPath="MaitreyiPatel.png"
+                      photoPath="MaitreyiPatel.jpg"
                       aspectRatio={3/4}
                     />
                   </div>
@@ -142,7 +142,7 @@ export default function TeamPage() {
                     <CaptainCard
                       captainName="Cole Lewis"
                       team="Electrical Captain"
-                      photoPath="ColeLewis.png"
+                      photoPath="ColeLewis.jpg"
                       aspectRatio={3/4}
                     />
                   </div>
@@ -182,7 +182,7 @@ export default function TeamPage() {
                   photoPaths={["Outreach.jpg"]}
                   blurb={OutreachBlurb}
                   leadName="Naveen Challa"
-                  leadPhotoPath="Megh.jpeg"
+                  leadPhotoPath="NaveenChalla.jpg"
                   aspectRatio={16/9}
                 />
               </div>
@@ -192,7 +192,7 @@ export default function TeamPage() {
                   photoPaths={["Finance.JPG"]}
                   blurb={FinanceBlurb}
                   leadName="Max Simonen Luke"
-                  leadPhotoPath="MaxLuke.png"
+                  leadPhotoPath="MaxLuke.jpg"
                   aspectRatio={16/9}
                 />
               </div>
@@ -250,7 +250,7 @@ export default function TeamPage() {
                     photoPaths={["Firmware.jpg"]}
                     blurb={FirmwareBlurb}
                     leadName="Jack Nystrom"
-                    leadPhotoPath="Megh.jpeg"
+                    leadPhotoPath="JackNystrom.JPG"
                     aspectRatio={16/9}
                   />
                 </div>
@@ -321,7 +321,7 @@ export default function TeamPage() {
                     photoPaths={["drivetrain.jpg"]}
                     blurb={drivetrainBlurb}
                     leadName="Cameron Bannasch"
-                    leadPhotoPath="Megh.jpeg"
+                    leadPhotoPath="CameronBannasch.JPG"
                     aspectRatio={16/9}
                   />
                 </div>
@@ -342,7 +342,7 @@ export default function TeamPage() {
                 <div className="w-full lg:w-1/3">
                   <SubteamCard
                     subteamName="Welding"
-                    photoPaths={["Welding.jpg"]}
+                    photoPaths={["welding.jpg"]}
                     blurb={WeldingBlurb}
                     leadName="Christian Reyes-Moreno"
                     leadPhotoPath="ChristianMoreno.png"
@@ -391,7 +391,7 @@ export default function TeamPage() {
                     photoPaths={["autonomous.jpg"]}
                     blurb={autonomousBlurb}
                     leadName="Daniel Rhee"
-                    leadPhotoPath="DanielRhee.jpg"
+                    leadPhotoPath="DanielRhee.JPG"
                     aspectRatio={16/9}
                   />
                 </div>
