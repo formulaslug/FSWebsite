@@ -1,8 +1,14 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
+import { PopupContactForm } from './PopupContactForm';
 
 const Footer: React.FC = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+
   return (
-    <footer className="w-full bg-gray-900 border-t border-gray-700 py-4 mt-0">
+    <>
+      <footer className="w-full bg-gray-900 border-t border-gray-700 py-4 mt-0">
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         <div className="text-center md:text-left mb-3 md:mb-0">
           <p className="text-gray-300 text-sm">
@@ -14,6 +20,17 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="flex items-center space-x-6">
+          <button
+            onClick={() => setIsContactFormOpen(true)}
+            className="text-gray-300 hover:text-yellow-300 transition-colors duration-200 flex items-center space-x-2"
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+              <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+            </svg>
+            <span className="text-sm">Contact</span>
+          </button>
+          
           <a
             href="mailto:formulaslug@gmail.com"
             className="text-gray-300 hover:text-yellow-300 transition-colors duration-200 flex items-center space-x-2"
@@ -50,7 +67,14 @@ const Footer: React.FC = () => {
           </a>
         </div>
       </div>
+      
+      {/* Popup Contact Form */}
+      <PopupContactForm 
+        isOpen={isContactFormOpen} 
+        onClose={() => setIsContactFormOpen(false)} 
+      />
     </footer>
+    </>
   );
 };
 
