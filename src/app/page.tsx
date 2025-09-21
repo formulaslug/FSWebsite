@@ -538,7 +538,7 @@ export default function Home() {
               <div className="flex items-center justify-between">
                 <div className="w-9/12 md:w-5/12 text-right pr-4 md:pr-8">
                   <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                    <h3 className="text-lg font-bold mb-2">Individual subteam meetings & technical workshops</h3>
+                    <h3 className="text-lg font-bold mb-2">Individual Subteam Meetings & Workshops</h3>
                     <p className="text-sm opacity-90">Choose your subteam and start working on real projects with experienced members.</p>
                     <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
                          style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
@@ -562,7 +562,7 @@ export default function Home() {
                 </div>
                 <div className="w-9/12 md:w-5/12 text-left pl-4 md:pl-8">
                   <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                    <h3 className="text-lg font-bold mb-2">Subteam onborading projects due</h3>
+                    <h3 className="text-lg font-bold mb-2">Subteam Onboarding Projects Due</h3>
                     <p className="text-sm opacity-90">All projects for subteam and major subteams are due</p>
                     <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
                          style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
@@ -576,8 +576,8 @@ export default function Home() {
               <div className="flex items-center justify-between">
                 <div className="w-9/12 md:w-5/12 text-right pr-4 md:pr-8">
                   <div className="text-white p-4 rounded-xl shadow-lg" style={{ background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})` }}>
-                    <h2 className="text-lg font-bold mb-2">Subteam decisions released</h2>
-                    <p className="text-sm opacity-90"></p>
+                    <h2 className="text-lg font-bold mb-2">Member Roster Released</h2>
+                    <p className="text-sm opacity-90">New members are assigned to their subteams and onboarding is complete!</p>
                     <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
                          style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
                       October 19th
