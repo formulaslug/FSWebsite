@@ -10,6 +10,8 @@ export function ContactForm() {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -19,9 +21,37 @@ export function ContactForm() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('https://formspree.io/f/mvgwpopb', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -29,6 +59,20 @@ export function ContactForm() {
       className="p-8 rounded-lg shadow-lg"
       style={{ backgroundColor: colors.background.secondary }}
     >
+      {/* Success Message */}
+      {submitStatus === 'success' && (
+        <div className="mb-6 p-4 rounded-md" style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+          <strong>Thanks for your message!</strong> We'll get back to you soon.
+        </div>
+      )}
+      
+      {/* Error Message */}
+      {submitStatus === 'error' && (
+        <div className="mb-6 p-4 rounded-md bg-red-600 text-white">
+          Sorry, there was an error sending your message. Please try again.
+        </div>
+      )}
+
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium mb-2">
