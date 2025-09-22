@@ -140,7 +140,7 @@ const SubteamCard: React.FC<SubteamCardProps> = ({
                 ></div>
               </div>
               
-              <h1 className="text-xs md:text-lg  mt-10">
+              <h1 className="text-[10px] sm:text-xs md:text-xs lg:text-[10px] xl:text-xs 2xl:text-sm mt-10 leading-tight break-words overflow-hidden">
                 {blurb}
               </h1>
             </div>
