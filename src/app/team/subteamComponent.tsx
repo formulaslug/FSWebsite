@@ -32,12 +32,21 @@ const SubteamCard: React.FC<SubteamCardProps> = ({
       setIsFlipped(!isFlipped);
     }
   };
+
+  // Function to determine text size based on content length
+  const getAdaptiveTextSize = (text: string) => {
+    const length = text.length;
+    if (length <= 450) return 'text-xs md:text-lg';
+    if (length <= 550) return 'text-xs md:text-md';
+    if (length <= 600) return 'text-xs md:text-sm';
+    return 'text-[10px] md:text-xs';
+  };
   
   return (
-    <div className="group cursor-pointer w-15/16 h-full mx-auto" onClick={handleCardClick}>
+    <div className="group w-15/16 h-full mx-auto lg:cursor-default cursor-pointer" onClick={handleCardClick}>
       {/* Stable hover container - does not get resized */}
       <div 
-        className="relative w-full mx-auto overflow-hidden rounded-xl aspect-[9/10] lg:aspect-[16/9]"
+        className="relative w-full mx-auto overflow-hidden rounded-xl aspect-[4/5] lg:aspect-[16/9]"
         style={{ 
           boxShadow: `0px 4px 0px rgba(45, 195, 241, 1)`
         }}
@@ -140,7 +149,7 @@ const SubteamCard: React.FC<SubteamCardProps> = ({
                 ></div>
               </div>
               
-              <h1 className="text-xs md:text-lg  mt-10">
+              <h1 className={`${getAdaptiveTextSize(blurb)} mt-10 leading-tight`}>
                 {blurb}
               </h1>
             </div>

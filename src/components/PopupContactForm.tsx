@@ -15,6 +15,8 @@ export function PopupContactForm({ isOpen, onClose }: PopupContactFormProps) {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -24,17 +26,42 @@ export function PopupContactForm({ isOpen, onClose }: PopupContactFormProps) {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Reset form and close popup
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-    onClose();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('https://formspree.io/f/mvgwpopb', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        // Close popup after 2 seconds to show success message
+        setTimeout(() => {
+          onClose();
+          setSubmitStatus('idle');
+        }, 2000);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -59,6 +86,20 @@ export function PopupContactForm({ isOpen, onClose }: PopupContactFormProps) {
           <h2 className="text-2xl font-bold mb-6 text-center" style={{ color: colors.slugYellow }}>
             Contact Us
           </h2>
+          
+          {/* Success Message */}
+          {submitStatus === 'success' && (
+            <div className="mb-6 p-4 rounded-md" style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
+              <strong>Thanks for your message!</strong> We'll get back to you soon.
+            </div>
+          )}
+          
+          {/* Error Message */}
+          {submitStatus === 'error' && (
+            <div className="mb-6 p-4 rounded-md bg-red-600 text-white">
+              Sorry, there was an error sending your message. Please try again.
+            </div>
+          )}
           
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
@@ -99,7 +140,7 @@ export function PopupContactForm({ isOpen, onClose }: PopupContactFormProps) {
                   borderColor: colors.gray[600],
                   color: colors.textColor,
                 }}
-                placeholder="your.email@ucsc.edu"
+                placeholder="Return email"
               />
             </div>
 
@@ -166,18 +207,23 @@ export function PopupContactForm({ isOpen, onClose }: PopupContactFormProps) {
               
               <button
                 type="submit"
-                className="flex-1 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
+                disabled={isSubmitting}
+                className="flex-1 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{
                   backgroundColor: colors.electricBlue,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = colors.titleBlue;
+                  if (!isSubmitting) {
+                    e.currentTarget.style.backgroundColor = colors.titleBlue;
+                  }
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = colors.electricBlue;
+                  if (!isSubmitting) {
+                    e.currentTarget.style.backgroundColor = colors.electricBlue;
+                  }
                 }}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </div>
           </form>

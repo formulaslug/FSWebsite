@@ -17,7 +17,7 @@ const CaptainCard: React.FC<CaptainCardProps> = ({
 }) => {
   
   return (
-    <div className="group cursor-pointer w-full h-full mx-auto">
+    <div className="group w-full h-full mx-auto cursor-default">
       {/* Stable hover container */}
       <div 
         className="relative w-full mx-auto overflow-hidden rounded-xl transition-shadow duration-300 ease-in-out group-hover:shadow-lg"
