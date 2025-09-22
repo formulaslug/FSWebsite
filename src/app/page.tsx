@@ -455,7 +455,7 @@ export default function Home() {
                   <p className="text-sm opacity-90">Come to one of our information meetings!</p>
                   <div className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" 
                      style={{ backgroundColor: colors.slugYellow, color: colors.primary }}>
-                    September 26 @ 7:00pm in E2-180
+                    September 28 @ 4:00pm in E2-180
                   </div>
                   </div>
                 </div>
