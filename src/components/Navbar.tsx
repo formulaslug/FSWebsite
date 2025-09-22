@@ -25,8 +25,8 @@ import { colors } from "@/config/colors";
 const navLinks = [
   { href: '/', label: 'About' },
   { href: 'team', label: 'Team' },
-
   { href: 'sponsors', label: 'Sponsors' },
+  { href: 'become-sponsor', label: 'Become a Sponsor' },
   { href: 'photos', label: 'Photos' },
 ];
 

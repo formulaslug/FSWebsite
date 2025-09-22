@@ -17,16 +17,16 @@ export function SponsorCard({
           <Image
             src={`/sponsors/${sponsor.logo}`}
             alt={`${sponsor.name} logo`}
-            width={180}
-            height={120}
+            width={sponsor.logo === "BaskinEngineeringLogo.png" ? 240 : 180}
+            height={sponsor.logo === "BaskinEngineeringLogo.png" ? 160 : 120}
             className="object-contain max-w-full max-h-full"
             style={{ display: "block" }}
             onError={(e) => {
-              // Fallback to initials if image fails to load
-              const target = e.target as HTMLImageElement;
-              target.style.display = "none";
+              console.warn('Image load failed:', sponsor.logo);
+              const img = e.currentTarget;
+              img.style.display = "none";
               const fallback =
-                target.parentElement?.querySelector(".fallback-text");
+                img.parentElement?.querySelector(".fallback-text");
               if (fallback) {
                 (fallback as HTMLElement).style.display = "flex";
               }
@@ -41,15 +41,6 @@ export function SponsorCard({
         </div>
       </div>
       <div className="mt-2">
-        <h3
-          className="text-base font-semibold mb-1"
-          style={{ color: colors.textColor }}
-        >
-          {sponsor.name}
-        </h3>
-        <p className="text-xs mb-0" style={{ color: colors.gray[400] }}>
-          {sponsor.description}
-        </p>
         {sponsor.website !== "#" && (
           <a
             href={sponsor.website}
