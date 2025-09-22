@@ -79,18 +79,6 @@ export default function SponsorsPage() {
         description: "Contributing to our racing success",
         logo: "calspanlogo.png",
         website: "#"
-      },
-      {
-        name: "Local Business 2",
-        description: "Supporting student engineering excellence",
-        logo: "local-business-2.png",
-        website: "#"
-      },
-      {
-        name: "Local Business 3",
-        description: "Investing in the future of electric racing",
-        logo: "DigiKey-Logo.png",
-        website: "#"
       }
     ]
   };

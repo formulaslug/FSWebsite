@@ -41,15 +41,6 @@ export function SponsorCard({
         </div>
       </div>
       <div className="mt-2">
-        <h3
-          className="text-base font-semibold mb-1"
-          style={{ color: colors.textColor }}
-        >
-          {sponsor.name}
-        </h3>
-        <p className="text-xs mb-0" style={{ color: colors.gray[400] }}>
-          {sponsor.description}
-        </p>
         {sponsor.website !== "#" && (
           <a
             href={sponsor.website}
