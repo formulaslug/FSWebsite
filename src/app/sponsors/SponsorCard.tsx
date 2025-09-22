@@ -22,11 +22,11 @@ export function SponsorCard({
             className="object-contain max-w-full max-h-full"
             style={{ display: "block" }}
             onError={(e) => {
-              // Fallback to initials if image fails to load
-              const target = e.target as HTMLImageElement;
-              target.style.display = "none";
+              console.warn('Image load failed:', sponsor.logo);
+              const img = e.currentTarget;
+              img.style.display = "none";
               const fallback =
-                target.parentElement?.querySelector(".fallback-text");
+                img.parentElement?.querySelector(".fallback-text");
               if (fallback) {
                 (fallback as HTMLElement).style.display = "flex";
               }
