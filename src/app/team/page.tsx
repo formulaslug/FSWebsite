@@ -12,6 +12,7 @@ import SubteamCard from "./subteamComponent";
 import CaptainCard from "./captainComponent";
 import { colors } from "@/config/colors";
 import { Metadata } from "next";
+import ScrollToSection from "./ScrollToSection";
 
 export const metadata: Metadata = {
   title: "Formula Slug - Team",
@@ -34,11 +35,12 @@ export default function TeamPage() {
   const SuspensionBlurb = "Suspension Team puts the car in motion. We design and engineer the system that links the drivetrain, steering, braking, and aerodynamic components to the chassis and wheels. By applying advanced physics and mathematics, we develop precise kinematic geometries that align with our vehicle dynamics objectives. Through rigorous force and load analyses, we bring the car to life, optimizing for performance in acceleration, braking, and cornering while ensuring the highest levels of driver safety."
   const LVBlurb = "The Low Voltage system ties the whole car together, providing safety systems, a communication network, and power for everything but the motor. You might enjoy working on the LV system if you're interested in logic puzzles, circuit design, PCB Layout, or soldering."
   const HVBlurb = "The High Voltage team's primary responsibility is ensuring the energy inside the accumulator makes its way to the motor. This involves designing circuits that interface with the motor controller, placing high-current cabling to carry the power, collaborating with other teams to optimally position tractive system components, and more! In addition to the on-board system, we also design and assemble a custom charger for the accumulator."
-  const drivetrainBlurb = "CAMERON"
+  const drivetrainBlurb = "The drivetrain is the system that connects the motor to the wheels. It takes electrical energy from the battery, converts it into mechanical rotation, and transmits that motion to drive the wheels. It's design requires optimizing torque delivery, minimizing weight, and ensuring reliability during harsh driving."
   const autonomousBlurb = "Autonomous is a challenge that involves racing without a driver, creating challenging computer vision and vehicle dynamics problems. This requires combining multiple types of sensors, such as cameras, lidar, and inertial measurement to interpret the vehicle’s surroundings and determine optimal control. This is a multidisciplinary effort spanning machine learning, vehicle dynamics modeling, as well as electrical and mechanical design to extract maximum performance from our race car."
 
   return (
     <main className="min-h-screen text-white" style={{ backgroundColor: colors.background.primary }}>
+      <ScrollToSection />
 
       <div style={{ margin: 0, padding: 0, width: '100%' }}>
         <Navbar />
@@ -163,7 +165,7 @@ export default function TeamPage() {
             </div>
 
             {/* Business Team Section */}
-            <div className="flex flex-col items-center justify-center w-full py-6">
+            <div id="business" className="flex flex-col items-center justify-center w-full py-6">
               <h2
                 className="text-5xl font-semibold mb-8 text-center"
                 style={{
@@ -173,8 +175,8 @@ export default function TeamPage() {
               >
                 Business Team
               </h2>
-
             </div>
+
             <div className="flex flex-col lg:flex-row justify-center w-full px-4 gap-4">
               <div className="w-full lg:w-1/3">
                 <SubteamCard
@@ -199,7 +201,7 @@ export default function TeamPage() {
             </div>
 
             {/* Electrical Team Section */}
-            <div className="flex flex-col items-center justify-center w-full py-6 mt-10">
+            <div id="electrical" className="flex flex-col items-center justify-center w-full py-6 mt-10">
               <h2
                 className="text-5xl font-semibold mb-8 text-center"
                 style={{
@@ -258,7 +260,7 @@ export default function TeamPage() {
             </div>
 
             {/* Mechanical Team Section */}
-            <div className="flex flex-col items-center justify-center w-full py-6 mt-10">
+            <div id="mechanical" className="flex flex-col items-center justify-center w-full py-6 mt-10">
               <h2
                 className="text-5xl font-semibold mb-8 text-center"
                 style={{
@@ -373,7 +375,7 @@ export default function TeamPage() {
             </div>
 
             {/* Software Team Section */}
-            <div className="flex flex-col items-center justify-center w-full py-6 mt-10">
+            <div id="software" className="flex flex-col items-center justify-center w-full py-6 mt-10">
               <h2
                 className="text-5xl font-semibold mb-8 text-center"
                 style={{

@@ -26,7 +26,8 @@ const navLinks = [
   { href: '/', label: 'About' },
   { href: 'team', label: 'Team' },
   { href: 'sponsors', label: 'Sponsors' },
-  { href: 'become-sponsor', label: 'Become a Sponsor' },
+  // TODO: uncomment when fixed
+  // { href: 'become-sponsor', label: 'Become a Sponsor' },
   { href: 'photos', label: 'Photos' },
 ];
 
