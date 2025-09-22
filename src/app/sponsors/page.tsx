@@ -46,23 +46,38 @@ export default function SponsorsPage() {
     ],
     silver: [
       {
-        name: "Community Partner 1",
+        name: "Gene Haas Foundation",
         description: "Supporting our mission with materials and resources",
-        logo: "community-partner-1.png",
-        website: "#"
+        logo: "genehaasfoundationlogo.png",
+        website: "https://www.ghaasfoundation.org/"
       },
       {
-        name: "Community Partner 2", 
+        name: "OnShape", 
         description: "Enabling innovation through strategic partnerships",
-        logo: "community-partner-2.png",
-        website: "#"
+        logo: "OnShapeLogo.png",
+        website: "https://www.onshape.com/"
+      },
+
+      {
+        name: "Ansys", 
+        description: "Enabling innovation through strategic partnerships",
+        logo: "ansys_logo.png",
+        website: "https://www.onshape.com/"
+      },
+
+      {
+        name: "DigiKey", 
+        description: "Enabling innovation through strategic partnerships",
+        logo: "DigiKey-Logo.png",
+        website: "https://www.digikey.com/"
       }
+      
     ],
     bronze: [
       {
         name: "Local Business 1",
         description: "Contributing to our racing success",
-        logo: "local-business-1.png",
+        logo: "calspanlogo.png",
         website: "#"
       },
       {
@@ -74,7 +89,7 @@ export default function SponsorsPage() {
       {
         name: "Local Business 3",
         description: "Investing in the future of electric racing",
-        logo: "local-business-3.png",
+        logo: "DigiKey-Logo.png",
         website: "#"
       }
     ]
