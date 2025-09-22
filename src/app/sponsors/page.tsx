@@ -41,7 +41,7 @@ export default function SponsorsPage() {
         name: "Baskin Engineering",
         description: "Primary support for facilities, equipment, and mentorship.",
         logo: "BaskinEngineeringLogo.png",
-        website: "https://www.ucsc.edu/"
+        website: "https://engineering.ucsc.edu/"
       },
       {
         name: "Tesla",
@@ -68,7 +68,7 @@ export default function SponsorsPage() {
         name: "Ansys", 
         description: "Enabling innovation through strategic partnerships",
         logo: "ansys_logo.png",
-        website: "https://www.onshape.com/"
+        website: "https://www.ansys.com/"
       },
 
       {
@@ -76,16 +76,36 @@ export default function SponsorsPage() {
         description: "Enabling innovation through strategic partnerships",
         logo: "DigiKey-Logo.png",
         website: "https://www.digikey.com/"
+      },
+
+      {
+        name: "Hexagon", 
+        description: "Enabling innovation through strategic partnerships",
+        logo: "HexagonLogo.png",
+        website: "https://www.hexagon.com/"
       }
       
     ],
     bronze: [
       {
-        name: "Local Business 1",
+        name: "CalSpan",
         description: "Contributing to our racing success",
         logo: "calspanlogo.png",
         website: "#"
+      },
+      {
+        name: "FrogzSkin",
+        description: "Contributing to our racing success",
+        logo: "FrogzSkin.png",
+        website: "#"
+      },
+      {
+        name: "Lightning Chart",
+        description: "Contributing to our racing success",
+        logo: "LightningChartLogo.png",
+        website: "#"
       }
+
     ]
   };
 

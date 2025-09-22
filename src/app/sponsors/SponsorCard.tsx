@@ -17,8 +17,8 @@ export function SponsorCard({
           <Image
             src={`/sponsors/${sponsor.logo}`}
             alt={`${sponsor.name} logo`}
-            width={180}
-            height={120}
+            width={sponsor.logo === "BaskinEngineeringLogo.png" ? 240 : 180}
+            height={sponsor.logo === "BaskinEngineeringLogo.png" ? 160 : 120}
             className="object-contain max-w-full max-h-full"
             style={{ display: "block" }}
             onError={(e) => {
