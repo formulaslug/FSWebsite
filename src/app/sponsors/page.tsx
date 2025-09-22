@@ -32,9 +32,15 @@ export default function SponsorsPage() {
         website: "https://www.zeromotorcycles.com/"
       },
       {
-        name: "UC Santa Cruz",
+        name: "Slugworks",
         description: "Primary support for facilities, equipment, and mentorship.",
         logo: "Slugworks-logo.png",
+        website: "https://www.ucsc.edu/"
+      },
+      {
+        name: "Baskin Engineering",
+        description: "Primary support for facilities, equipment, and mentorship.",
+        logo: "BaskinEngineeringLogo.png",
         website: "https://www.ucsc.edu/"
       },
       {
