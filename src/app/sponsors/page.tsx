@@ -162,7 +162,7 @@ export default function SponsorsPage() {
             <SponsorTier 
               title="Bronze" 
               sponsors={sponsors.bronze}
-              color={colors.gray[500]}
+              color={colors.bronze}
             />
           </div>
 
