@@ -20,6 +20,7 @@
     "rewrites": [
       { "source": "/team", "destination": "/team.html" },
       { "source": "/sponsors", "destination": "/sponsors.html" },
+      { "source": "/become-sponsor", "destination": "/become-sponsor.html" },
       { "source": "/photos", "destination": "/photos.html" },
       { "source": "/contact", "destination": "/contact.html" },
       { "source": "**", "destination": "/index.html" }
