@@ -51,6 +51,8 @@ export const colors = {
   
   success: '#10b981',
   warning: '#f59e0b',
+  // Bronze color for sponsor headings
+  bronze: '#b08d57',
   error: '#ef4444',
   info: '#3b82f6',
   // need to implement these colors
