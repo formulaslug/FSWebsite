@@ -46,7 +46,7 @@ export default function TeamPage() {
         <Navbar />
         
         <div>
-          <h1 className="text-4xl sm:text-6xl font-bold text-center mb-4 px-4 pt-8">
+          <h1 className="text-4xl sm:text-6xl font-bold text-center mb-4 px-4 pt-16">
             <ShimmerTitle>Meet the Team</ShimmerTitle>
           </h1>
           
