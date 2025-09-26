@@ -83,6 +83,13 @@ export default function SponsorsPage() {
         description: "Enabling innovation through strategic partnerships",
         logo: "HexagonLogo.png",
         website: "https://www.hexagon.com/"
+      },
+
+      {
+        name: "Black Stallion",
+        description: "Providing high-quality racing gear and apparel.",
+        logo: "BlackStallionLogo.png",
+        website: "https://www.blackstallion.com/"
       }
       
     ],
@@ -189,7 +196,7 @@ export default function SponsorsPage() {
 
           </div>
 
-          {/* Become a Sponsor Section */}
+          {/* Become a Sponsor Section
           <div 
             className="mt-20 p-8 rounded-lg text-center"
             style={{ backgroundColor: colors.background.secondary }}
@@ -242,8 +249,9 @@ export default function SponsorsPage() {
               </a>
             </div>
           </div>
+          */}
 
-          {/* Sponsorship Benefits */}
+          {/* Sponsorship Benefits
           <div className="mt-16">
             <h2 className="text-3xl font-bold text-center mb-8" style={{ color: colors.textColor }}>
               Sponsorship Benefits
@@ -270,6 +278,7 @@ export default function SponsorsPage() {
               ))}
             </div>
           </div>
+          */}
         </div>
       </div>
       <Footer />
