@@ -154,11 +154,11 @@ export default function SponsorsPage() {
         <Navbar />
         
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl sm:text-6xl font-bold text-center mb-8 px-4 pt-8">
+          <h1 className="text-4xl sm:text-6xl font-bold text-center mb-8 px-4 pt-16">
             <ShimmerTitle>Our Sponsors</ShimmerTitle>
           </h1>
           
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <p className="text-xl mb-4" style={{ color: colors.textColor }}>
               Thank you to our amazing sponsors who make Formula Slug possible!
             </p>
