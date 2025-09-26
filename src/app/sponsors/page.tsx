@@ -169,7 +169,20 @@ export default function SponsorsPage() {
 
           {/* Sponsor Tiers */}
           <div className="space-y-16">
-            
+
+            {/* Become a Sponsor button (matches homepage "About Us" styling) */}
+            <div className="flex justify-center">
+              <a
+                href="/become-sponsor"
+                className="px-6 py-3 border-4 border-white bg-transparent shadow-lg transition-colors duration-200 hover:bg-[#181c2a] hover:text-yellow-400 rounded"
+                style={{ borderRadius: '6px', color: colors.textColor, padding: '12px 20px' }}
+              >
+                <span className="text-lg font-bold" style={{ fontFamily: "'Scandia Bold Italic', sans-serif", fontStyle: 'italic' }}>
+                  Become a Sponsor
+                </span>
+              </a>
+            </div>
+
             <SponsorTier 
               title="Gold" 
               sponsors={sponsors.gold}
