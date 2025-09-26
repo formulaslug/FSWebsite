@@ -22,7 +22,7 @@ export default function BecomeSponsorPage() {
             <h1 className="text-4xl sm:text-6xl font-bold mb-6">
               <ShimmerTitle>Become a Sponsor</ShimmerTitle>
             </h1>
-            <p className="text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: colors.gray[300] }}>
+            <p className="text-xl max-w-3xl mx-auto leading-relaxed " style={{ color: colors.gray[300] }}>
               Formula Slug is dedicated to empowering the next 
 generation of engineers by providing hands-on 
 experience through the design and development 
@@ -32,7 +32,7 @@ competition. By sponsoring our team, you're directly contributing to hands-on en
           </div>
 
           {/* Why Partner With Us */}
-          <section className="py-12">
+          <section className="py-0">
             <h2 className="text-3xl font-bold text-center mb-12" style={{ color: colors.textColor }}>
               Why Partner With Us?
             </h2>
@@ -121,7 +121,7 @@ competition. By sponsoring our team, you're directly contributing to hands-on en
           </section>
 
           {/* Sponsorship CTA */}
-          <section className="py-20 text-center">
+          <section className="py-2 text-center">
             <div className="max-w-5xl mx-auto">
               <h2 className="text-4xl font-bold mb-8" style={{ color: colors.textColor }}>
                 Ready to Partner With Us?
