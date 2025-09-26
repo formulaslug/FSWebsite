@@ -106,6 +106,22 @@ export default function SponsorsPage() {
         website: "#"
       }
 
+    ],
+
+    specialThanks: [
+      {
+        name: "Analog Devices",
+        description: "Essential support for our operations",
+        logo: "AnalogDevicesLogo.png",
+        website: "#"
+      },
+
+      {
+        name: "Cable Markers Logo",
+        description: "Essential support for our operations",
+        logo: "CableMarkersLogo.jpg",
+        website: "#"
+      },
     ]
   };
 
@@ -164,6 +180,13 @@ export default function SponsorsPage() {
               sponsors={sponsors.bronze}
               color={colors.bronze}
             />
+
+            <SponsorTier 
+              title="Special Thanks" 
+              sponsors={sponsors.specialThanks}
+              color={colors.gray[50]}
+            />
+
           </div>
 
           {/* Become a Sponsor Section */}
