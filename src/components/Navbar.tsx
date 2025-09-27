@@ -23,7 +23,6 @@ import { useState, useEffect } from "react";
 import { colors } from "@/config/colors";
   {/*{ href: 'contact', label: 'Contact' },*/}
 const navLinks = [
-  { href: '/', label: 'About' },
   { href: '/team', label: 'Team' },
   { href: '/sponsors', label: 'Sponsors' },
   // TODO: uncomment when fixed
@@ -46,9 +45,25 @@ const Navbar: React.FC<NavbarProps> = ({ textColor = colors.textColor }) => {
   }, []);
   return (
     <header
-      className="w-auto flex justify-end items-center fixed top-0 right-0 z-50 px-4 py-2"
-      style={{ backgroundColor: 'var(--background-primary)', zIndex: 10, right: 5, top: 5 }}
+      className="w-full flex justify-between items-center fixed top-0 left-0 right-0 z-50 px-4 py-2"
+      style={{ backgroundColor: 'var(--background-primary)', zIndex: 10 }}
     >
+      {/* Formula Slug Logo */}
+      <div className="flex-shrink-0">
+        <a
+          href="/"
+          className="transition-opacity duration-200 hover:opacity-80"
+        >
+          <Image
+            src="/favicon.ico"
+            alt="Formula Slug Logo"
+            width={60}
+            height={60}
+            className="w-15 h-15"
+          />
+        </a>
+      </div>
+
       {/* Hamburger icon for mobile and when scrolled */}
       <button
         className={`${isScrolled ? 'flex' : 'md:hidden'} flex-col justify-center items-center w-10 h-10 focus:outline-none`}
