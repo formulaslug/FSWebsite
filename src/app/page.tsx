@@ -191,7 +191,7 @@ export default function Home() {
         {/* video section */}
         <div className="w-full max-w-6xl mt-12 md:mt-20 mb-8 md:mb-10 px-4 md:px-0 mx-auto flex justify-center">
           <button
-            className="px-6 py-3 border-4 border-white bg-transparent shadow-lg transition-colors duration-200 hover:bg-[#181c2a] hover:text-yellow-400 rounded"
+            className="px-6 py-3 border-4 border-white bg-transparent shadow-lg transition-colors duration-200 hover:bg-white hover:text-yellow-400 rounded"
             style={{
               borderRadius: '6px',
               color: 'var(--text-color)',
@@ -203,7 +203,7 @@ export default function Home() {
                 aboutSection.scrollIntoView({ behavior: 'smooth' });
               }
             }}
-            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = colors.slugYellow; }}
+            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = colors.electricBlue; }}
             onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = 'var(--text-color)'; }}
           >
             <span

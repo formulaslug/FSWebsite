@@ -16,6 +16,7 @@ import ShimmerTitle from "@/components/ShimmerTitle";
 import { colors } from "@/config/colors";
 import { Metadata } from "next";
 import { SponsorCard } from "./SponsorCard";
+import BecomeSponsorButton from "@/components/BecomeSponsorButton";
 
 export const metadata: Metadata = {
   title: "Formula Slug - Sponsors",
@@ -168,20 +169,11 @@ export default function SponsorsPage() {
           </div>
 
           {/* Sponsor Tiers */}
-          <div className="space-y-16">
+          <div className="space-y-6">
 
             {/* Become a Sponsor button (matches homepage "About Us" styling) */}
-            <div className="flex justify-center">
-              <a
-                href="/become-sponsor"
-                className="px-6 py-3 border-4 border-white bg-transparent shadow-lg transition-colors duration-200 hover:bg-[#181c2a] hover:text-yellow-400 rounded"
-                style={{ borderRadius: '6px', color: colors.textColor, padding: '12px 20px' }}
-              >
-                <span className="text-lg font-bold" style={{ fontFamily: "'Scandia Bold Italic', sans-serif", fontStyle: 'italic' }}>
-                  Become a Sponsor
-                </span>
-              </a>
-            </div>
+              {/* Become a Sponsor button (client) */}
+              <BecomeSponsorButton />
 
             <SponsorTier 
               title="Gold" 
