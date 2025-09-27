@@ -33,14 +33,14 @@ competition. By sponsoring our team, you're directly contributing to hands-on en
 
           {/* Why Partner With Us */}
           <section className="py-0">
-            <h2 className="text-3xl font-bold text-center mb-12" style={{ color: colors.textColor }}>
+            <h2 className="text-3xl font-bold text-center mb-12" style={{ color: colors.slugYellow }}>
               Why Partner With Us?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
                   title: "Brand Visibility",
-                  description: "Your logo prominently displayed on our Formula SAE Electric vehicle, team apparel, and digital platforms. Your company will gain exposure and visibility within the UC Santa Cruz community internally and reach broader audiences through our marketing and business operations.",
+                  description: "Your logo prominently displayed on our Formula SAE Electric vehicle, team apparel, and digital platforms. Your company will gain exposure and visibility within the UC Santa Cruz community.",
                 },
                 {
                   title: "Recruiting Pipeline", 
@@ -57,7 +57,7 @@ competition. By sponsoring our team, you're directly contributing to hands-on en
               ].map((benefit, index) => (
                 <div key={index} className="p-6 rounded-lg" style={{ backgroundColor: colors.background.secondary }}>
                   <div className="flex items-center mb-4">
-                    <h3 className="text-xl font-semibold" style={{ color: colors.textColor }}>
+                    <h3 className="text-xl font-semibold" style={{ color: colors.electricBlue }}>
                       {benefit.title}
                     </h3>
                   </div>
@@ -71,49 +71,60 @@ competition. By sponsoring our team, you're directly contributing to hands-on en
 
           {/* What Your Sponsorship Does */}
           <section className="py-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
-                <h2 className="text-3xl font-bold mb-6" style={{ color: colors.textColor }}>
-                  What Your Sponsorship Does
+                <h2 className="text-3xl font-bold text-center mb-6" style={{ color: colors.slugYellow }}>
+                  Make A Difference
                 </h2>
-                <p className="text-lg mb-6 leading-relaxed" style={{ color: colors.gray[300] }}>
-                  Your partnership directly fuels innovation and hands-on learning. Every dollar goes toward building 
-                  tomorrow's engineers and advancing electric vehicle technology.
-                </p>
-                <ul className="space-y-4">
-                  {[
-                    "Parts & materials: Composite layups, motor components, battery cells",
-                    "Tooling & manufacturing: Machine time, materials, shop supplies", 
-                    "Student development: Workshops, internships, and future full-time engineers"
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="text-2xl mr-3" style={{ color: colors.primary }}>•</span>
-                      <span style={{ color: colors.gray[300] }}>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="space-y-6">
+                  <div className="p-4 rounded-lg" style={{ backgroundColor: colors.background.secondary }}>
+                    <h3 className="text-xl font-bold mb-2" style={{ color: colors.electricBlue }}>
+                      FUNDING
+                    </h3>
+                    <p style={{ color: colors.gray[400] }}>
+                      The team depends on sponsor funding to purchase the materials and components required to build our car.
+                    </p>
+                  </div>
+
+                  <div className="p-4 rounded-lg" style={{ backgroundColor: colors.background.secondary }}>
+                    <h3 className="text-xl font-bold mb-2" style={{ color: colors.electricBlue }}>
+                      RESOURCES
+                    </h3>
+                    <p style={{ color: colors.gray[400] }}>
+                      In-kind donations such as parts and services give us the resources to turn our project into reality.
+                    </p>
+                  </div>
+
+                  <div className="p-4 rounded-lg" style={{ backgroundColor: colors.background.secondary }}>
+                    <h3 className="text-xl font-bold mb-2" style={{ color: colors.electricBlue }}>
+                      GUIDANCE
+                    </h3>
+                    <p style={{ color: colors.gray[400] }}>
+                      Working with unexplored technology creates challenges. The years of industry experience help us shape the engineers of the future.
+                    </p>
+                  </div>
+                </div>
               </div>
               
               {/* Stats Card */}
-              <div className="p-8 rounded-lg text-center" style={{ backgroundColor: colors.background.secondary }}>
-                <h3 className="text-2xl font-bold mb-6" style={{ color: colors.electricBlue }}>
+              <div>
+                <h2 className="text-3xl font-bold text-center mb-6" style={{ color: colors.slugYellow }}>
                   By the Numbers
-                </h3>
-                <div className="space-y-4">
-                  <div>
-                    <div className="text-3xl font-bold" style={{ color: colors.textColor }}>150+</div>
-                    <div className="text-sm" style={{ color: colors.gray[400] }}>Active Members</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold" style={{ color: colors.textColor }}>10+</div>
-                    <div className="text-sm" style={{ color: colors.gray[400] }}>Engineering Disciplines</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold" style={{ color: colors.textColor }}>1</div>
-                    <div className="text-sm" style={{ color: colors.gray[400] }}>Incredible Car</div>
-                  </div>
-                  <div className="text-sm mt-4" style={{ color: colors.gray[500] }}>
-                    Students majoring in: Mechanical, Electrical, Computer Science, Computer Engineering, and more
+                </h2>
+                                <div className="p-6 rounded-lg text-center" style={{ backgroundColor: colors.background.secondary }}>
+                  <div className="space-y-4">
+                    <div>
+                      <div className="text-2xl font-bold" style={{ color: colors.electricBlue }}>150+</div>
+                      <div className="text-sm" style={{ color: colors.gray[400] }}>Active Members</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold" style={{ color: colors.electricBlue }}>10+</div>
+                      <div className="text-sm" style={{ color: colors.gray[400] }}>Engineering Disciplines</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold" style={{ color: colors.electricBlue }}>1</div>
+                      <div className="text-sm" style={{ color: colors.gray[400] }}>Incredible Car</div>
+                    </div>
                   </div>
                 </div>
               </div>
