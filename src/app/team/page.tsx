@@ -27,7 +27,7 @@ export default function TeamPage() {
   const OutreachBlurb = "The Outreach Team at Formula Slug is responsible for both internal and external promotion, helping to shape and maintain the team’s image and brand. Through social media, partnerships with industry and academia, and engaging storytelling, the team connects with supporters, potential sponsors, and new talent. By showcasing the daily innovations and the collaboration behind every project, Outreach highlights Formula Slug not just as a team that engineers a car, but as a supportive, hands-on community dedicated to excellence both on and off the track."
   const FinanceBlurb = "The finance team is an amazing opportunity to gain experience understanding how different parts of an organization come together to make financial decisions. We work directly with subteams to create budgets and track expenses, while also coordinating fundraising efforts and developing financial proposals."
   const AerodynamicsBlurb = "The aerodynamics subteam develops high-performance wings and bodywork to optimize downforce and minimize drag for maximum lap times. Join us to gain hands-on experience with CFD analysis, wind tunnel testing, and composite manufacturing while designing the aerodynamic package that gives our car its competitive edge."
-  const FirmwareBlurb = "Firmware controls and interconnects the electrical control units of the car. We program everything from battery management and data logging to throttle control and dashboard screens. If you love C++ and microcontrollers or want to help out with mission-critical software, then you will enjoy working on the firmware!"
+  const FirmwareBlurb = "Firmware controls and interconnects the electrical control units of the car. We program everything from battery management and data logging to throttle control and dashboard screens. If you love C++ and microcontrollers or want to help out with mission-critical software, then you will enjoy working on firmware!"
   const SoftwareBlurb = "The software team develops tools and systems that support vehicle simulation and autonomous driving. We build models to predict performance, design algorithms for control and perception, and ensure the car can make real-time decisions on and off the track. Our work connects data, software, and hardware to improve both driver and vehicle performance. The software team will be a big commitment and we expect dedication and curiosity whether you come in with no experience or lots of experience."
   const ChassisBlurb = "The Chassis is the glue that holds the car together. As a member of the chassis team you will learn top level system integration, how to work with complex CAD structures in Onshape, create complex simulations using Ansys to create lightweight & rigid steel tub frame frame"
   const ManufacturingBlurb = "Have you ever wanted to manufacture a car? To be hands on with almost every part? On Manufacturing, you’ll get experience making parts with industry-grade machines like mills and routers. You’ll learn not just how to use the tools, but the theory and decision-making behind them. With opportunities to pursue CAM, material science, and cost logistics—skills that translate directly into future careers. If you're unfamiliar, we’ll guide you through the path to expertise; all we’re looking for is dedicated people to go the distance!"
@@ -216,7 +216,7 @@ export default function TeamPage() {
                 <div className="w-full lg:w-1/3">
                   <SubteamCard
                     subteamName="LV"
-                    photoPaths={["LV.png"]}
+                    photoPaths={["fs-3_peripheral_boards.jpg"]}
                     blurb={LVBlurb}
                     leadName="Wesley Kronmiller"
                     leadPhotoPath="WesleyKronmiller.jpg"
@@ -249,7 +249,7 @@ export default function TeamPage() {
                 <div className="w-full lg:w-1/3">
                   <SubteamCard
                     subteamName="Firmware"
-                    photoPaths={["Firmware.jpg"]}
+                    photoPaths={["firmware_deadbeef.jpg"]}
                     blurb={FirmwareBlurb}
                     leadName="Jack Nystrom"
                     leadPhotoPath="JackNystrom.JPG"
@@ -276,7 +276,7 @@ export default function TeamPage() {
                 <div className="w-full lg:w-1/3">
                   <SubteamCard
                     subteamName="Aerodynamics"
-                    photoPaths={["Aerodynamics.jpg"]}
+                    photoPaths={["YellowAeroPackageRender.png"]}
                     blurb={AerodynamicsBlurb}
                     leadName="Megh Patel"
                     leadPhotoPath="MeghPatel.jpg"
@@ -320,7 +320,7 @@ export default function TeamPage() {
                 <div className="w-full lg:w-1/3">
                   <SubteamCard
                     subteamName="Drivetrain"
-                    photoPaths={["drivetrain.jpg"]}
+                    photoPaths={["sprocket_FEA.png"]}
                     blurb={drivetrainBlurb}
                     leadName="Cameron Bannasch"
                     leadPhotoPath="CameronBannasch.JPG"
@@ -344,7 +344,7 @@ export default function TeamPage() {
                 <div className="w-full lg:w-1/3">
                   <SubteamCard
                     subteamName="Welding"
-                    photoPaths={["welding.jpg"]}
+                    photoPaths={["Welding.jpg"]}
                     blurb={WeldingBlurb}
                     leadName="Christian Reyes-Moreno"
                     leadPhotoPath="ChristianMoreno.png"
