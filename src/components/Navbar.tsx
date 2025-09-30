@@ -78,7 +78,7 @@ const Navbar: React.FC<NavbarProps> = ({ textColor = colors.textColor }) => {
 
       {/* Desktop nav */}
       <nav className={`${isScrolled ? 'hidden' : 'hidden md:block'}`}>
-        <ul className="flex gap-8 text-lg font-medium" style={{ color: textColor }}>
+  <ul className="flex gap-8 text-lg font-medium" style={{ color: textColor, fontFamily: "'Scandia Bold Italic', sans-serif", fontStyle: 'italic', fontSize: '150%' }}>
           {navLinks.map(({ href, label }) => (
             <li key={label} className="relative overflow-hidden">
               <a
@@ -96,7 +96,7 @@ const Navbar: React.FC<NavbarProps> = ({ textColor = colors.textColor }) => {
       {/* Mobile dropdown menu */}
       {menuOpen && (
         <nav className={`absolute top-full right-0 mt-2 w-48 bg-[#181c2a] bg-opacity-95 rounded-lg shadow-lg ${isScrolled ? 'block' : 'md:hidden'} animate-fade-in z-50`}>
-          <ul className="flex flex-col gap-2 py-4 px-4 text-lg font-medium" style={{ color: textColor }}>
+          <ul className="flex flex-col gap-2 py-4 px-4 text-lg font-medium" style={{ color: textColor, fontFamily: "'Scandia Bold Italic', sans-serif", fontStyle: 'italic', fontSize: '150%' }}>
             {navLinks.map(({ href, label }) => (
               <li key={label} className="relative">
                 <a
