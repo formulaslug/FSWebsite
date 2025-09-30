@@ -54,12 +54,12 @@ const Navbar: React.FC<NavbarProps> = ({ textColor = colors.textColor }) => {
           href="/"
           className="transition-opacity duration-200 hover:opacity-80"
         >
-          <Image
-            src="/favicon.ico"
+          <img
+            src="/assets/FS_icon.svg"
             alt="Formula Slug Logo"
-            width={60}
-            height={60}
-            className="w-15 h-15"
+            width={48}
+            height={48}
+            className="w-[48px] h-[48px] md:w-[90px] md:h-[90px] object-contain block"
           />
         </a>
       </div>
