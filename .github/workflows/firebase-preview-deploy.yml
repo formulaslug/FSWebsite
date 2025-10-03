@@ -83,7 +83,7 @@ jobs:
             --json)
           
           # Extract preview URL from output
-          PREVIEW_URL=$(echo "$DEPLOY_OUTPUT" | jq -r '.result.url // empty')
+          PREVIEW_URL=$(echo "$DEPLOY_OUTPUT" | jq -r '.result[]?.url // empty')
           
           if [ -n "$PREVIEW_URL" ]; then
             echo "url=$PREVIEW_URL" >> $GITHUB_OUTPUT
