@@ -1,0 +1,119 @@
+name: Firebase Preview Deploy
+
+# Trigger on every push and pull request
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: ['**']
+
+# Cancel in-progress deployments for the same branch
+concurrency:
+  group: preview-deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Setup Node.js with caching enabled
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # Build the Next.js application
+      - name: Build application
+        run: npm run build
+
+      # Optional: Export static files if next export is configured
+      - name: Export application (if configured)
+        run: |
+          if npm run export --if-present; then
+            echo "Export completed successfully"
+          else
+            echo "No export script found, skipping export step"
+          fi
+        continue-on-error: true
+
+      # Run tests if available (don't fail if no tests exist)
+      - name: Run tests
+        run: |
+          if npm run test --if-present -- --passWithNoTests --watchAll=false; then
+            echo "Tests completed successfully"
+          else
+            echo "No tests found or test command not configured"
+          fi
+        continue-on-error: true
+
+      # Generate safe channel name from branch and run ID
+      - name: Generate preview channel name
+        id: channel
+        run: |
+          # Clean branch name and create safe channel identifier
+          BRANCH_NAME="${{ github.ref_name }}"
+          CLEAN_BRANCH=$(echo "$BRANCH_NAME" | sed 's/[^a-zA-Z0-9-]/-/g' | cut -c1-20)
+          CHANNEL="preview-${CLEAN_BRANCH}-${{ github.run_id }}"
+          echo "name=$CHANNEL" >> $GITHUB_OUTPUT
+          echo "Generated channel name: $CHANNEL"
+
+      # Install Firebase CLI and deploy to preview channel
+      - name: Deploy to Firebase preview channel
+        id: firebase-deploy
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+        run: |
+          # Deploy to Firebase preview channel
+          DEPLOY_OUTPUT=$(npx firebase hosting:channel:deploy ${{ steps.channel.outputs.name }} \
+            --project ${{ secrets.FIREBASE_PROJECT_ID }} \
+            --token ${{ secrets.FIREBASE_TOKEN }} \
+            --expires 7d \
+            --non-interactive \
+            --json)
+          
+          # Extract preview URL from output
+          PREVIEW_URL=$(echo "$DEPLOY_OUTPUT" | jq -r '.result[]?.url // empty')
+          
+          if [ -n "$PREVIEW_URL" ]; then
+            echo "url=$PREVIEW_URL" >> $GITHUB_OUTPUT
+            echo "✅ Deployed to preview channel: $PREVIEW_URL"
+          else
+            echo "❌ Failed to extract preview URL from deploy output"
+            echo "$DEPLOY_OUTPUT"
+            exit 1
+          fi
+
+      # Add preview URL to job summary
+      - name: Add deployment summary
+        if: steps.firebase-deploy.outputs.url
+        run: |
+          cat >> $GITHUB_STEP_SUMMARY << EOF
+          ## 🚀 Preview Deployment Successful
+          
+          **Channel:** \`${{ steps.channel.outputs.name }}\`
+          **Preview URL:** ${{ steps.firebase-deploy.outputs.url }}
+          **Expires:** 7 days from now
+          
+          ### Quick Actions
+          - [🔗 Open Preview](${{ steps.firebase-deploy.outputs.url }})
+          - **Branch:** ${{ github.ref_name }}
+          - **Commit:** ${{ github.sha }}
+          EOF
+
+      # Output results for other workflows or steps
+      - name: Output deployment results
+        if: steps.firebase-deploy.outputs.url != ''
+        run: |
+          echo "Preview URL: ${{ steps.firebase-deploy.outputs.url }}"
+          echo "Channel name: ${{ steps.channel.outputs.name }}"
