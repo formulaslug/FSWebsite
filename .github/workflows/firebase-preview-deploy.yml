@@ -113,6 +113,7 @@ jobs:
 
       # Output results for other workflows or steps
       - name: Output deployment results
+        if: steps.firebase-deploy.outputs.url != ''
         run: |
           echo "Preview URL: ${{ steps.firebase-deploy.outputs.url }}"
           echo "Channel name: ${{ steps.channel.outputs.name }}"
