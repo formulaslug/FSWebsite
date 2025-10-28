@@ -91,6 +91,13 @@ export default function SponsorsPage() {
         description: "Providing high-quality racing gear and apparel.",
         logo: "BlackStallionLogo.png",
         website: "https://www.blackstallion.com/"
+      },
+
+      {
+        name: "Teledatics",
+        description: "Providing high-quality racing gear and apparel.",
+        logo: "TeledaticsLogo.png",
+        website: "https://www.teledatics.com/"
       }
       
     ],
