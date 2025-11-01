@@ -249,7 +249,7 @@ export default function TeamPage() {
                 <div className="w-full lg:w-1/3">
                   <SubteamCard
                     subteamName="Firmware"
-                    photoPaths={["firmware_deadbeef.jpg"]}
+                    photoPaths={["mcp2515_deadbeef.jpg"]}
                     blurb={FirmwareBlurb}
                     leadName="Jack Nystrom"
                     leadPhotoPath="JackNystrom.JPG"
