@@ -121,6 +121,29 @@ export default function SponsorsPage() {
         website: "#"
       }
 
+      ,
+      {
+        name: "Andrew Lee"
+      },
+      {
+        name: "Robert Shen"
+      },
+      {
+        name: "Abhishek and Tuhina Lal"
+      },
+      {
+        name: "Ruhmit Sahu"
+      },
+      {
+        name: "Boogie"
+      },
+      {
+        name: "Anthony Aguilar Rosales"
+      },
+      {        
+        name: "Ivan Kalastirsky"
+      }
+
     ],
 
     specialThanks: [
