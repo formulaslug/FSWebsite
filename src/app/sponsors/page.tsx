@@ -137,9 +137,9 @@ export default function SponsorsPage() {
       {
         name: "Boogie"
       },
-      {
-        name: "Anthony Aguilar Rosales"
-      },
+      //{
+      //  name: "Anthony Aguilar Rosales"
+      //},
       {        
         name: "Ivan Kalastirsky"
       }
