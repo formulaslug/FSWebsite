@@ -16,12 +16,16 @@ export default function BecomeSponsorPage() {
       <div className="container mx-auto p-0 sm:px-6 lg:px-8">
         <Navbar />
         
+        {/* Header centered between navbar and content */}
+        <div className="flex items-center justify-center min-h-[30vh]">
+          <h1 className="text-4xl sm:text-6xl font-bold text-center px-4">
+            <ShimmerTitle>Become a Sponsor</ShimmerTitle>
+          </h1>
+        </div>
+        
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
-          <div className="text-center py-16">
-            <h1 className="text-4xl sm:text-6xl font-bold mb-6">
-              <ShimmerTitle>Become a Sponsor</ShimmerTitle>
-            </h1>
+          <div className="text-center py-8">
             <p className="text-xl max-w-3xl mx-auto leading-relaxed " style={{ color: colors.gray[300] }}>
               Formula Slug is dedicated to empowering the next 
 generation of engineers by providing hands-on 

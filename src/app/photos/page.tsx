@@ -58,9 +58,13 @@ export default async function PhotosPage() {
     <AutoScrollOnIdle>
       <main className="min-h-screen relative" style={{ backgroundColor: colors.background.primary }}>
         <Navbar textColor={colors.textColor} />
-        <h1 className="text-4xl sm:text-6xl font-bold text-center mb-8 px-4 pt-8">
-          <ShimmerTitle>Photo Gallery</ShimmerTitle>
-        </h1>
+        
+        {/* Header centered between navbar and content */}
+        <div className="flex items-center justify-center min-h-[30vh]">
+          <h1 className="text-4xl sm:text-6xl font-bold text-center px-4">
+            <ShimmerTitle>Photo Gallery</ShimmerTitle>
+          </h1>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0">
           {photoData.map((photo, idx) => (
