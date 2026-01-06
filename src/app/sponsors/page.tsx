@@ -155,7 +155,7 @@ export default function SponsorsPage() {
         <Navbar />
         
         {/* Header centered between navbar and content */}
-        <div className="flex items-center justify-center min-h-[30vh]">
+        <div className="pt-[12vh] pb-4">
           <h1 className="text-4xl sm:text-6xl font-bold text-center px-4">
             <ShimmerTitle>Our Sponsors</ShimmerTitle>
           </h1>

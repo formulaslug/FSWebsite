@@ -46,7 +46,7 @@ export default function TeamPage() {
         <Navbar />
         
         {/* Meet the Team - centered between navbar and captains */}
-        <div className="flex items-center justify-center min-h-[30vh]">
+        <div className="pt-[12vh] pb-4">
           <h1 className="text-4xl sm:text-6xl font-bold text-center px-4">
             <ShimmerTitle>Meet the Team</ShimmerTitle>
           </h1>
