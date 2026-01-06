@@ -154,10 +154,14 @@ export default function SponsorsPage() {
       <div className="container mx-auto p-0 sm:px-6 lg:px-8">
         <Navbar />
         
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl sm:text-6xl font-bold text-center mb-8 px-4 pt-16">
+        {/* Header centered between navbar and content */}
+        <div className="flex items-center justify-center min-h-[30vh]">
+          <h1 className="text-4xl sm:text-6xl font-bold text-center px-4">
             <ShimmerTitle>Our Sponsors</ShimmerTitle>
           </h1>
+        </div>
+        
+        <div className="max-w-6xl mx-auto">
           
           <div className="text-center mb-8">
             <p className="text-xl mb-4" style={{ color: colors.textColor }}>
