@@ -22,7 +22,7 @@ export default function ContactPage() {
       <div className="container mx-auto p-0 sm:px-6 lg:px-8">
         <Navbar />
         
-        <div className="flex items-center justify-center min-h-[30vh]">
+        <div className="pt-[12vh] pb-4">
           <h1 className="text-4xl sm:text-6xl font-bold text-center px-4">
             <ShimmerTitle>Contact Us</ShimmerTitle>
           </h1>
