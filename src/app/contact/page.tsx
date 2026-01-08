@@ -21,10 +21,14 @@ export default function ContactPage() {
     <main className="min-h-screen text-white" style={{ backgroundColor: colors.background.primary }}>
       <div className="container mx-auto p-0 sm:px-6 lg:px-8">
         <Navbar />
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-6xl font-bold text-center mb-8 px-4 pt-8">
+        
+        <div className="pt-[12vh] pb-4">
+          <h1 className="text-4xl sm:text-6xl font-bold text-center px-4">
             <ShimmerTitle>Contact Us</ShimmerTitle>
           </h1>
+        </div>
+        
+        <div className="max-w-4xl mx-auto">
           
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Information */}

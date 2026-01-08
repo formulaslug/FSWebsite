@@ -45,17 +45,20 @@ export default function TeamPage() {
       <div style={{ margin: 0, padding: 0, width: '100%' }}>
         <Navbar />
         
-        <div>
-          <h1 className="text-4xl sm:text-6xl font-bold text-center mb-4 px-4 pt-16">
+        {/* Meet the Team - centered between navbar and captains */}
+        <div className="pt-[12vh] pb-4">
+          <h1 className="text-4xl sm:text-6xl font-bold text-center px-4">
             <ShimmerTitle>Meet the Team</ShimmerTitle>
           </h1>
+        </div>
           
+        <div>
             <div className="flex flex-col">
 
             {/* Captains Section */}
-            <div className="flex flex-col items-center justify-center w-full py-6">
+            <div className="flex flex-col items-center justify-center w-full py-0">
               <h2
-                className="text-5xl font-semibold mb-8 text-center"
+                className="text-5xl font-semibold mb-6 text-center"
                 style={{
                   color: "white",
                   textShadow: `1px 1px 0px ${colors.electricBlue}`,
