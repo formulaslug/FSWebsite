@@ -15,7 +15,7 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       # Checkout the repository
       - name: Checkout code
@@ -84,10 +84,10 @@ jobs:
             --expires 7d \
             --non-interactive \
             --json)
-          
+
           # Extract preview URL from output
           PREVIEW_URL=$(echo "$DEPLOY_OUTPUT" | jq -r '.result[]?.url // empty')
-          
+
           if [ -n "$PREVIEW_URL" ]; then
             echo "url=$PREVIEW_URL" >> $GITHUB_OUTPUT
             echo "✅ Deployed to preview channel: $PREVIEW_URL"
@@ -96,24 +96,24 @@ jobs:
             echo "$DEPLOY_OUTPUT"
             exit 1
           fi
-      
+
       # Add note when deployment is skipped
       - name: Deployment skipped notice
         if: ${{ secrets.FIREBASE_TOKEN == '' || secrets.FIREBASE_PROJECT_ID == '' }}
         run: |
           cat >> $GITHUB_STEP_SUMMARY << 'EOF'
           ## ℹ️ Firebase Deployment Skipped
-          
+
           Firebase deployment was skipped because the required secrets are not available.
           This typically happens for pull requests from forked repositories.
-          
+
           **Build Status:** ✅ Build completed successfully
-          
+
           ### What was tested:
           - ✅ Dependencies installed
           - ✅ Application built successfully
           - ✅ Tests passed
-          
+
           ### Note for maintainers:
           To deploy a preview for this PR, a maintainer needs to either:
           1. Close and reopen the PR from the main repository, or
@@ -127,11 +127,11 @@ jobs:
         run: |
           cat >> $GITHUB_STEP_SUMMARY << EOF
           ## 🚀 Preview Deployment Successful
-          
+
           **Channel:** \`${{ steps.channel.outputs.name }}\`
           **Preview URL:** ${{ steps.firebase-deploy.outputs.url }}
           **Expires:** 7 days from now
-          
+
           ### Quick Actions
           - [🔗 Open Preview](${{ steps.firebase-deploy.outputs.url }})
           - **Branch:** ${{ github.ref_name }}
