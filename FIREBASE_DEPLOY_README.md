@@ -42,3 +42,25 @@ firebase login:ci
 - **Push to any branch**: Creates preview deploy
 - **Pull requests**: Creates preview deploy for PR branch
 - **Concurrency**: Cancels previous deployments for same branch to avoid conflicts
+
+## Important: Pull Requests from Forks
+
+**GitHub Actions does not provide access to repository secrets for pull requests from forked repositories** for security reasons.
+
+### What this means:
+- PRs from forks will **build successfully** but **skip Firebase deployment**
+- The workflow will show a notice explaining why deployment was skipped
+- All other checks (build, tests) will still run to verify code quality
+
+### For maintainers:
+If you need to preview changes from a forked PR:
+1. Review the code changes first for security
+2. Create a branch in the main repository with the changes
+3. Push to that branch to trigger a preview deployment
+4. Alternatively, merge the PR and the deployment will run on the main branch
+
+### For contributors:
+If you're submitting a PR from a fork:
+- Your build will be verified automatically
+- Deployment preview will be created after a maintainer reviews your PR
+- This is a security feature to protect repository secrets
