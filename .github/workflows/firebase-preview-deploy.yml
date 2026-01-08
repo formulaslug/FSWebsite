@@ -68,8 +68,11 @@ jobs:
           echo "Generated channel name: $CHANNEL"
 
       # Install Firebase CLI and deploy to preview channel
+      # Only run if secrets are available (not on forks)
       - name: Deploy to Firebase preview channel
         id: firebase-deploy
+        # Skip deployment for pull requests from forks (secrets are not available)
+        if: ${{ secrets.FIREBASE_TOKEN != '' && secrets.FIREBASE_PROJECT_ID != '' }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
@@ -93,6 +96,30 @@ jobs:
             echo "$DEPLOY_OUTPUT"
             exit 1
           fi
+      
+      # Add note when deployment is skipped
+      - name: Deployment skipped notice
+        if: ${{ secrets.FIREBASE_TOKEN == '' || secrets.FIREBASE_PROJECT_ID == '' }}
+        run: |
+          cat >> $GITHUB_STEP_SUMMARY << 'EOF'
+          ## ℹ️ Firebase Deployment Skipped
+          
+          Firebase deployment was skipped because the required secrets are not available.
+          This typically happens for pull requests from forked repositories.
+          
+          **Build Status:** ✅ Build completed successfully
+          
+          ### What was tested:
+          - ✅ Dependencies installed
+          - ✅ Application built successfully
+          - ✅ Tests passed
+          
+          ### Note for maintainers:
+          To deploy a preview for this PR, a maintainer needs to either:
+          1. Close and reopen the PR from the main repository, or
+          2. Manually trigger a deployment after merging
+          EOF
+          echo "⚠️ Firebase deployment skipped - secrets not available (likely a fork PR)"
 
       # Add preview URL to job summary
       - name: Add deployment summary
