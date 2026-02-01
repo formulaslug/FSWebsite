@@ -97,12 +97,13 @@ export default function SponsorsPage() {
         description: "Enabling innovation through strategic partnerships",
         logo: "IntuitiveFoundation.png",
         website: "https://www.intuitivefoundation.org/"
+      },
 
-     // {
-       // name: "Teledatics",
-       // description: "Providing high-quality racing gear and apparel.",
-       // logo: "TeledaticsLogo.png",
-        //website: "https://www.teledatics.com/"
+      {
+        name: "Teledatics",
+        description: "Providing high-quality racing gear and apparel.",
+        logo: "TeledaticsLogo.png",
+        website: "https://www.teledatics.com/"
       }
       
     ],
