@@ -91,6 +91,12 @@ export default function SponsorsPage() {
         description: "Providing high-quality racing gear and apparel.",
         logo: "BlackStallionLogo.png",
         website: "https://www.blackstallion.com/"
+      },
+      {
+        name: "Intuitive Foundation", 
+        description: "Enabling innovation through strategic partnerships",
+        logo: "IntuitiveFoundation.png",
+        website: "https://www.intuitivefoundation.org/"
       }
       
     ],
