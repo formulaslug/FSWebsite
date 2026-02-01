@@ -97,6 +97,12 @@ export default function SponsorsPage() {
         description: "Enabling innovation through strategic partnerships",
         logo: "IntuitiveFoundation.png",
         website: "https://www.intuitivefoundation.org/"
+
+     // {
+       // name: "Teledatics",
+       // description: "Providing high-quality racing gear and apparel.",
+       // logo: "TeledaticsLogo.png",
+        //website: "https://www.teledatics.com/"
       }
       
     ],
@@ -118,6 +124,29 @@ export default function SponsorsPage() {
         description: "Contributing to our racing success",
         logo: "LightningChartLogo.png",
         website: "#"
+      }
+
+      ,
+      {
+        name: "Andrew Lee"
+      },
+      {
+        name: "Robert Shen"
+      },
+      {
+        name: "Abhishek and Tuhina Lal"
+      },
+      {
+        name: "Ruhmit Sahu"
+      },
+      {
+        name: "Boogie"
+      },
+      //{
+      //  name: "Anthony Aguilar Rosales"
+      //},
+      {        
+        name: "Ivan Kalastirsky"
       }
 
     ],
