@@ -92,12 +92,17 @@ export default function SponsorsPage() {
         logo: "BlackStallionLogo.png",
         website: "https://www.blackstallion.com/"
       },
-
       {
-        name: "Teledatics",
-        description: "Providing high-quality racing gear and apparel.",
-        logo: "TeledaticsLogo.png",
-        website: "https://www.teledatics.com/"
+        name: "Intuitive Foundation", 
+        description: "Enabling innovation through strategic partnerships",
+        logo: "IntuitiveFoundation.png",
+        website: "https://www.intuitivefoundation.org/"
+
+     // {
+       // name: "Teledatics",
+       // description: "Providing high-quality racing gear and apparel.",
+       // logo: "TeledaticsLogo.png",
+        //website: "https://www.teledatics.com/"
       }
       
     ],
