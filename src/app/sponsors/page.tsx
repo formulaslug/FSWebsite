@@ -166,6 +166,12 @@ export default function SponsorsPage() {
         logo: "CableMarkersLogo.jpg",
         website: "#"
       },
+      {
+        name: "Red Bull",
+        description: "gives you wiiings",
+        logo: "RedBullLogo.svg",
+        website: "redbull.com"
+      },
     ]
   };
 
