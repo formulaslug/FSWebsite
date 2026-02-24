@@ -57,11 +57,22 @@ jobs:
           done
           exit $FAILED
 
-      # --- Preview deploy (skipped for fork PRs) ---
+      # --- Preview deploy (skipped when secrets are unavailable, e.g. forks) ---
+
+      - name: Check Firebase credentials
+        id: creds
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: |
+          if [ -n "$FIREBASE_TOKEN" ]; then
+            echo "available=true" >> $GITHUB_OUTPUT
+          else
+            echo "available=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Generate preview channel name
         id: channel
-        if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+        if: steps.creds.outputs.available == 'true'
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             REF="pr-${{ github.event.pull_request.number }}"
@@ -75,7 +86,7 @@ jobs:
 
       - name: Deploy to Firebase preview channel
         id: firebase-deploy
-        if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+        if: steps.creds.outputs.available == 'true'
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
@@ -110,13 +121,14 @@ jobs:
           **Commit:** \`${{ github.sha }}\`
           EOF
 
-      - name: Fork PR notice
-        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
+      - name: Preview deploy skipped notice
+        if: steps.creds.outputs.available == 'false'
         run: |
-          echo "ℹ️ Preview deploy skipped — this PR is from a fork."
+          echo "ℹ️ Preview deploy skipped — Firebase secrets not available."
           cat >> $GITHUB_STEP_SUMMARY << 'EOF'
           ## ℹ️ Preview Deploy Skipped
 
-          This PR is from a forked repository. Firebase secrets are not available for fork PRs,
-          so the preview deployment was skipped. All validation checks passed.
+          Firebase secrets are not available in this context (fork repository or
+          unconfigured secrets), so the preview deployment was skipped.
+          All validation checks passed.
           EOF

@@ -150,7 +150,7 @@ const SubteamCard: React.FC<SubteamCardProps> = ({
               </div>
               {/*Brenner's solution who was an idiot and didn't commit so someone smarter fixed it instead:  */}
               {/* <h1 className={`${getAdaptiveTextSize(blurb)} mt-10 leading-tight`}> */}
-              <h1 className="text-[10px] sm:text-xs md:text-xs lg:text-[10px] xl:text-xs 2xl:text-sm mt-10 leading-tight break-words overflow-hidden">
+              <h1 className="relative z-10 text-[10px] sm:text-xs md:text-xs lg:text-[10px] xl:text-xs 2xl:text-sm leading-tight break-words overflow-hidden">
                 {blurb}
               </h1>
             </div>
