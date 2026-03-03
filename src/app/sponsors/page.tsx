@@ -15,7 +15,7 @@ import Footer from "@/components/Footer";
 import ShimmerTitle from "@/components/ShimmerTitle";
 import { colors } from "@/config/colors";
 import { Metadata } from "next";
-import { SponsorCard } from "./SponsorCard";
+import { SponsorCard, Sponsor } from "./SponsorCard";
 import BecomeSponsorButton from "@/components/BecomeSponsorButton";
 
 export const metadata: Metadata = {
@@ -24,227 +24,212 @@ export const metadata: Metadata = {
 };
 
 export default function SponsorsPage() {
-  const sponsors = {
+  const sponsors: Record<string, Sponsor[]> = {
     gold: [
       {
         name: "Zero Motorcycles",
         description: "Leading the way in electric motorcycle innovation.",
         logo: "zero-motorcycles-wordmark-white.png",
-        website: "https://www.zeromotorcycles.com/"
+        website: "https://www.zeromotorcycles.com/",
       },
       {
         name: "Slugworks",
         description: "Primary support for facilities, equipment, and mentorship.",
         logo: "Slugworks-logo.png",
-        website: "https://www.ucsc.edu/"
+        website: "https://www.ucsc.edu/",
       },
       {
         name: "Baskin Engineering",
         description: "Primary support for facilities, equipment, and mentorship.",
         logo: "BaskinEngineeringLogo.png",
-        website: "https://engineering.ucsc.edu/"
+        website: "https://engineering.ucsc.edu/",
       },
       {
         name: "Tesla",
-        description: "Providing advanced components and technical expertise.",
         logo: "tesla-red-logo.png",
-        website: "https://www.tesla.com/"
-      }
+        website: "https://www.tesla.com/",
+      },
     ],
     silver: [
       {
         name: "Gene Haas Foundation",
         description: "Supporting our mission with materials and resources",
         logo: "genehaasfoundationlogo.png",
-        website: "https://www.ghaasfoundation.org/"
+        website: "https://www.ghaasfoundation.org/",
       },
       {
-        name: "OnShape", 
-        description: "Enabling innovation through strategic partnerships",
+        name: "OnShape",
         logo: "OnShapeLogo.png",
-        website: "https://www.onshape.com/"
+        website: "https://www.onshape.com/",
       },
 
       {
-        name: "Ansys", 
-        description: "Enabling innovation through strategic partnerships",
+        name: "Ansys",
         logo: "ansys_logo.png",
-        website: "https://www.ansys.com/"
+        website: "https://www.ansys.com/",
       },
 
       {
-        name: "DigiKey", 
-        description: "Enabling innovation through strategic partnerships",
+        name: "DigiKey",
         logo: "DigiKey-Logo.png",
-        website: "https://www.digikey.com/"
+        website: "https://www.digikey.com/",
       },
 
       {
-        name: "Hexagon", 
-        description: "Enabling innovation through strategic partnerships",
+        name: "Hexagon",
         logo: "HexagonLogo.png",
-        website: "https://www.hexagon.com/"
+        website: "https://www.hexagon.com/",
       },
 
       {
         name: "Black Stallion",
-        description: "Providing high-quality racing gear and apparel.",
         logo: "BlackStallionLogo.png",
-        website: "https://www.blackstallion.com/"
+        website: "https://www.blackstallion.com/",
       },
       {
-        name: "Intuitive Foundation", 
-        description: "Enabling innovation through strategic partnerships",
+        name: "Intuitive Foundation",
         logo: "IntuitiveFoundation.png",
-        website: "https://www.intuitivefoundation.org/"
+        website: "https://www.intuitivefoundation.org/",
       },
 
       {
         name: "Teledatics",
-        description: "Providing high-quality racing gear and apparel.",
         logo: "TeledaticsLogo.png",
-        website: "https://www.teledatics.com/"
-      }
-      
+        website: "https://www.teledatics.com/",
+      },
     ],
     bronze: [
       {
         name: "CalSpan",
-        description: "Contributing to our racing success",
         logo: "calspanlogo.png",
-        website: "#"
       },
       {
         name: "FrogzSkin",
-        description: "Contributing to our racing success",
         logo: "FrogzSkin.png",
-        website: "#"
       },
       {
         name: "Lightning Chart",
-        description: "Contributing to our racing success",
         logo: "LightningChartLogo.png",
-        website: "#"
-      }
-
-      ,
-      {
-        name: "Andrew Lee"
       },
       {
-        name: "Robert Shen"
+        name: "Total Phase",
+        logo: "totalphase-high-res.png",
       },
       {
-        name: "Abhishek and Tuhina Lal"
+        name: "Andrew Lee",
       },
       {
-        name: "Ruhmit Sahu"
+        name: "Robert Shen",
       },
       {
-        name: "Boogie"
+        name: "Abhishek and Tuhina Lal",
       },
-      //{
-      //  name: "Anthony Aguilar Rosales"
-      //},
-      {        
-        name: "Ivan Kalastirsky"
-      }
-
+      {
+        name: "Ruhmit Sahu",
+      },
+      {
+        name: "Boogie",
+      },
+      {
+        name: "Ivan Kalastirsky",
+      },
     ],
 
     specialThanks: [
       {
         name: "Analog Devices",
-        description: "Essential support for our operations",
         logo: "AnalogDevicesLogo.png",
-        website: "#"
       },
 
       {
         name: "Cable Markers Logo",
-        description: "Essential support for our operations",
         logo: "CableMarkersLogo.jpg",
-        website: "#"
       },
       {
         name: "Red Bull",
-        description: "gives you wiiings",
+        description: "Gives you Wings",
         logo: "RedBullLogo.svg",
-        website: "redbull.com"
+        website: "https://redbull.com",
       },
-    ]
+    ],
   };
 
-  const SponsorTier = ({ title, sponsors, color }: { title: string, sponsors: any[], color: string }) => (
+  const SponsorTier = ({
+    title,
+    sponsors,
+    color,
+  }: {
+    title: string;
+    sponsors: Sponsor[];
+    color: string;
+  }) => (
     <div className="mb-12">
-      <h2 
-        className="text-3xl font-bold text-center mb-8"
-        style={{ color }}
-      >
-        {title.toLowerCase() === 'special thanks' ? title : `${title} Sponsors`}
+      <h2 className="text-3xl font-bold text-center mb-8" style={{ color }}>
+        {title}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {sponsors.map((sponsor, index) => (
-          <SponsorCard key={index} sponsor={sponsor} tier={title.toLowerCase()} />
+          <SponsorCard key={index} sponsor={sponsor} />
         ))}
       </div>
     </div>
   );
 
   return (
-    <main className="min-h-screen text-white" style={{ backgroundColor: colors.background.primary }}>
+    <main
+      className="min-h-screen text-white"
+      style={{ backgroundColor: colors.background.primary }}
+    >
       <div className="container mx-auto p-0 sm:px-6 lg:px-8">
         <Navbar />
-        
+
         {/* Header centered between navbar and content */}
         <div className="pt-[12vh] pb-4">
           <h1 className="text-4xl sm:text-6xl font-bold text-center px-4">
             <ShimmerTitle>Our Sponsors</ShimmerTitle>
           </h1>
         </div>
-        
+
         <div className="max-w-6xl mx-auto">
-          
           <div className="text-center mb-8">
             <p className="text-xl mb-4" style={{ color: colors.textColor }}>
               Thank you to our amazing sponsors who make Formula Slug possible!
             </p>
             <p className="text-lg" style={{ color: colors.gray[300] }}>
-              Your support drives innovation, excellence, and the future of electric racing at UC Santa Cruz.
+              Your support drives innovation, excellence, and the future of
+              electric racing at UC Santa Cruz.
             </p>
           </div>
 
           {/* Sponsor Tiers */}
           <div className="space-y-6">
-
             {/* Become a Sponsor button (matches homepage "About Us" styling) */}
-              {/* Become a Sponsor button (client) */}
-              <BecomeSponsorButton />
+            {/* Become a Sponsor button (client) */}
+            <BecomeSponsorButton />
 
-            <SponsorTier 
-              title="Gold" 
+            <SponsorTier
+              title="Gold Sponsors"
               sponsors={sponsors.gold}
               color={colors.secondary}
             />
-            
-            <SponsorTier 
-              title="Silver" 
+
+            <SponsorTier
+              title="Silver Sponsors"
               sponsors={sponsors.silver}
-              color={colors.gray[400]}
+              color={colors.gray[300]}
             />
-            
-            <SponsorTier 
-              title="Bronze" 
+
+            <SponsorTier
+              title="Bronze Sponsors"
               sponsors={sponsors.bronze}
               color={colors.bronze}
             />
 
-            <SponsorTier 
-              title="Special Thanks" 
+            <SponsorTier
+              title="Special Thanks"
               sponsors={sponsors.specialThanks}
               color={colors.gray[50]}
             />
-
           </div>
 
           {/* Become a Sponsor Section
