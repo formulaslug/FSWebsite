@@ -114,6 +114,12 @@ export default function SponsorsPage() {
       {
         name: "Total Phase",
         logo: "totalphase-high-res.png",
+        website: "https://www.totalphase.com/",
+      },
+      {
+        name: "Edelbrock",
+        logo: "Edelbrock_logo_darkened.png",
+        website: "https://www.edelbrock.com/",
       },
       {
         name: "Andrew Lee",
