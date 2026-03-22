@@ -97,29 +97,59 @@ export default function SponsorsPage() {
         logo: "TeledaticsLogo.png",
         website: "https://www.teledatics.com/",
       },
+
+      {
+        name: "VectorNav",
+        logo: "VectorNavLogo.png", // converted from their SVG logo
+        website: "https://www.vectornav.com",
+      },
+
+      {
+        name: "Hakko",
+        logo: "HAKKO_MAIN logo.png",
+        website: "https://hakkousa.com/",
+      },
     ],
     bronze: [
       {
         name: "CalSpan",
         logo: "calspanlogo.png",
+        website: "https://calspan.com/",
       },
       {
         name: "FrogzSkin",
         logo: "FrogzSkin.png",
+        website: "https://frogzskin.com/"
       },
       {
         name: "Lightning Chart",
         logo: "LightningChartLogo.png",
+        website: "https://lightningchart.com/",
       },
       {
         name: "Total Phase",
-        logo: "totalphase-high-res.png",
+        logo: "totalphase-high-res.png", // converted from their SVG logo
         website: "https://www.totalphase.com/",
       },
       {
         name: "Edelbrock",
         logo: "Edelbrock_logo_darkened.png",
         website: "https://www.edelbrock.com/",
+      },
+      {
+        name: "Optrel",
+        logo: "optrel_logo_white-red.png",
+        website: "https://optrel.us/",
+      },
+      {
+        name: "Rapid Harness",
+        logo: "rapid-harness.png",
+        website: "https://rapidharness.com/",
+      },
+      {
+        name: "Send Cut Send",
+        logo: "sendcutsend-logo-white.png",  // converted from their SVG logo
+        website: "https://sendcutsend.com/",
       },
       {
         name: "Andrew Lee",
@@ -145,6 +175,7 @@ export default function SponsorsPage() {
       {
         name: "Analog Devices",
         logo: "AnalogDevicesLogo.png",
+        website: "https://www.analog.com"
       },
 
       {

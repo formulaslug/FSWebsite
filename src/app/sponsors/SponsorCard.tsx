@@ -35,7 +35,7 @@ export function SponsorCard({
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="flex items-center justify-center w-full h-32 mb-4">
+          <div className="flex items-center justify-center w-full h-32 mb-4 drop-shadow-[5px_5px_10px_rgba(0,0,0,0.30)]">
             {hasLogo && !imgError ? (
               <Image
                 src={`/sponsors/${sponsor.logo}`}
