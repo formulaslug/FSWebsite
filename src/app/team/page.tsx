@@ -194,7 +194,7 @@ export default function TeamPage() {
               <div className="w-full lg:w-1/3">
                 <SubteamCard
                   subteamName="Finance"
-                  photoPaths={["Finance.JPG"]}
+                  photoPaths={["OpenHouseCandid.jpeg"]}
                   blurb={FinanceBlurb}
                   leadName="Max Simonen Luke"
                   leadPhotoPath="MaxLuke.jpg"
