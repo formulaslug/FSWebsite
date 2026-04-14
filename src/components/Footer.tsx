@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         <div className="text-center md:text-left mb-3 md:mb-0">
           <p className="text-gray-300 text-sm">
-            © 2025 Formula Slug | UC Santa Cruz
+            © 2026 Formula Slug | UC Santa Cruz
           </p>
           <p className="text-gray-400 text-xs mt-1">
             Empowering the next generation of engineers
