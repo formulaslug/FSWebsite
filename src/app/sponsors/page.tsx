@@ -93,9 +93,9 @@ export default function SponsorsPage() {
       },
 
       {
-        name: "Teledatics",
-        logo: "TeledaticsLogo.png",
-        website: "https://www.teledatics.com/",
+        name: "Hioki",
+        logo: "hioki-logo.png",
+        website: "https://www.hioki.com/",
       },
 
       {
