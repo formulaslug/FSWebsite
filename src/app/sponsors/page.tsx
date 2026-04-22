@@ -127,6 +127,12 @@ export default function SponsorsPage() {
         website: "https://lightningchart.com/",
       },
       {
+        name: "MakPlate",
+        description: "Contributing to our racing success",
+        logo: "MakPlateLogo.png",
+        website: "#"
+      },
+      {
         name: "Total Phase",
         logo: "totalphase-high-res.png", // converted from their SVG logo
         website: "https://www.totalphase.com/",
@@ -187,6 +193,12 @@ export default function SponsorsPage() {
         description: "Gives you Wings",
         logo: "RedBullLogo.svg",
         website: "https://redbull.com",
+      },
+      {
+        name: "HMS",
+        description: "Essential support for our operations",
+        logo: "HMSLogo.png",
+        website: "#"
       },
     ],
   };
