@@ -129,7 +129,7 @@ export default function SponsorsPage() {
       {
         name: "MakPlate",
         description: "Contributing to our racing success",
-        logo: "MakPlateLogo.png",
+        logo: "MakPlateLogo.svg",
         website: "#"
       },
       {
