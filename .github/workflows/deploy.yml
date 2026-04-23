@@ -57,6 +57,7 @@ jobs:
           exit $FAILED
 
       - name: Deploy to Firebase
+        if: ${{ secrets.FIREBASE_TOKEN != '' }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
@@ -67,6 +68,7 @@ jobs:
             --non-interactive
 
       - name: Deployment summary
+        if: ${{ secrets.FIREBASE_TOKEN != '' }}
         run: |
           cat >> $GITHUB_STEP_SUMMARY << EOF
           ## ✅ Production Deployment Successful
