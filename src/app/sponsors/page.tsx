@@ -89,7 +89,7 @@ export default function SponsorsPage() {
       {
         name: "Intuitive Foundation",
         logo: "IntuitiveFoundation.png",
-        website: "https://www.intuitivefoundation.org/",
+        website: "https://www.intuitive-foundation.org/",
       },
 
       {
