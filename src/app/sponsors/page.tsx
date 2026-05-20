@@ -197,8 +197,8 @@ export default function SponsorsPage() {
       {
         name: "HMS",
         description: "Essential support for our operations",
-        logo: "HMSLogo.png",
-        website: "#"
+        logo: "hms.logo.color.whiteMS.png",
+        website: "https://www.hmsmotorsport.com/collections/hms"
       },
     ],
   };
