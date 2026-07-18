@@ -6,6 +6,89 @@ import Footer from "@/components/Footer";
 import FAQItem from "@/components/FAQItem";
 import { colors } from "@/config/colors";
 import ShimmerTitle from "@/components/ShimmerTitle";
+import StackedCarousel from "@/components/StackedCarousel";
+
+function InteractiveSubteamImage(props: {
+  sectionName: string;
+  photoName: string;
+  isActive: boolean;
+  isMobile: boolean;
+}) {
+  return (
+    <div
+      id={`${props.sectionName}-section`}
+      className="flex-1 h-1/4 md:h-full flex flex-col items-center justify-center relative group cursor-pointer overflow-hidden transition-all duration-500 md:hover:flex-[1.5]"
+      onClick={() => {
+        window.location.href = `/team?scrollTo=${props.sectionName}`;
+      }}
+    >
+      <div
+        className="absolute inset-0 transition-transform duration-300 group-hover:scale-110"
+        style={{
+          backgroundImage: `url(/photos/${props.photoName})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      <div
+        className={`absolute inset-0 transition-opacity duration-300 bg-[#111827] ${
+          props.isMobile
+            ? props.isActive
+              ? "opacity-0"
+              : "opacity-50"
+            : "opacity-50 group-hover:opacity-0"
+        }`}
+      />
+      <h3 className="text-3xl font-bold mb-4 text-white relative z-10">
+        {props.sectionName.charAt(0).toUpperCase() + props.sectionName.slice(1)}
+      </h3>
+    </div>
+  );
+}
+
+function HistoryEntry(props: {
+  carName: string;
+  year: string;
+  paragraphs: string[];
+  imageComponents: React.ReactNode[];
+  imagesOnLeft: boolean;
+}) {
+  return (
+    <section
+      aria-label={props.carName}
+      id={props.carName.toLowerCase()}
+      className="w-full"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div
+          className={`w-full h-full md:order-${props.imagesOnLeft ? "1" : "2"}`}
+        >
+          {/* {props.imageComponents.map((component, i) => ( */}
+          {/*   <React.Fragment key={i}>{component}</React.Fragment> */}
+          {/* ))} */}
+          <StackedCarousel images={props.imageComponents} />
+        </div>
+
+        <div
+          className={`flex flex-col md:order-${props.imagesOnLeft ? "2" : "1"}`}
+        >
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center md:text-left text-yellow-300">
+            {props.carName}
+            <span className="text-gray-300 text-xl px-6">{props.year}</span>
+          </h2>
+          {props.paragraphs.map((p, i) => (
+            <p
+              className="text-sm md:text-lg text-gray-100 leading-relaxed mb-3"
+              key={i}
+            >
+              {p}
+            </p>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   const title = "FORMULA SLUG";
@@ -15,12 +98,6 @@ export default function Home() {
   const [titleVisible, setTitleVisible] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
-
-  // Function to handle team section navigation
-  const handleTeamNavigation = (section: string) => {
-    // Navigate to team page first
-    window.location.href = `/team?scrollTo=${section}`;
-  };
 
   // Configurable delays
   const fallInDelay = 0.02;
@@ -260,110 +337,30 @@ export default function Home() {
       </div>
       <div className="w-screen h-[130vh] md:h-[70vh] relative">
         <div className="flex flex-col md:flex-row w-full h-full z-0">
-          <div
-            id="mechanical-section"
-            className="flex-1 h-1/4 md:h-full flex flex-col items-center justify-center relative group cursor-pointer overflow-hidden transition-all duration-500 md:hover:flex-[2]"
-            onClick={() => handleTeamNavigation("mechanical")}
-          >
-            <div
-              className="absolute inset-0 transition-transform duration-300 group-hover:scale-110"
-              style={{
-                backgroundImage: "url(/photos/FS4_working_hubs_again.jpg)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            />
-            <div
-              className={`absolute inset-0 transition-opacity duration-300 bg-[#111827] ${
-                isMobile
-                  ? activeSection === "mechanical"
-                    ? "opacity-0"
-                    : "opacity-50"
-                  : "opacity-50 group-hover:opacity-0"
-              }`}
-            />
-            <h3 className="text-3xl font-bold mb-4 text-white relative z-10">
-              Mechanical
-            </h3>
-          </div>
-          <div
-            id="electrical-section"
-            className="flex-1 h-1/4 md:h-full flex flex-col items-center justify-center relative group cursor-pointer overflow-hidden transition-all duration-500 md:hover:flex-[2]"
-            onClick={() => handleTeamNavigation("electrical")}
-          >
-            <div
-              className="absolute inset-0 transition-transform duration-300 group-hover:scale-110"
-              style={{
-                backgroundImage: "url(/photos/VCU_in_car_FS4.jpg)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            />
-            <div
-              className={`absolute inset-0 transition-opacity duration-300 bg-[#111827] ${
-                isMobile
-                  ? activeSection === "electrical"
-                    ? "opacity-0"
-                    : "opacity-50"
-                  : "opacity-50 group-hover:opacity-0"
-              }`}
-            />
-            <h3 className="text-3xl font-bold mb-4 text-white relative z-10">
-              Electrical
-            </h3>
-          </div>
-          <div
-            id="software-section"
-            className="flex-1 h-1/4 md:h-full flex flex-col items-center justify-center relative group cursor-pointer overflow-hidden transition-all duration-500 md:hover:flex-[2]"
-            onClick={() => handleTeamNavigation("software")}
-          >
-            <div
-              className="absolute inset-0 transition-transform duration-300 group-hover:scale-110"
-              style={{
-                backgroundImage: "url(/photos/grafana.png)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            />
-            <div
-              className={`absolute inset-0 transition-opacity duration-300 bg-[#111827] ${
-                isMobile
-                  ? activeSection === "software"
-                    ? "opacity-0"
-                    : "opacity-50"
-                  : "opacity-50 group-hover:opacity-0"
-              }`}
-            />
-            <h3 className="text-3xl font-bold mb-4 text-white relative z-10">
-              Software
-            </h3>
-          </div>
-          <div
-            id="business-section"
-            className="flex-1 h-1/4 md:h-full flex flex-col items-center justify-center relative group cursor-pointer overflow-hidden transition-all duration-500 md:hover:flex-[2]"
-            onClick={() => handleTeamNavigation("business")}
-          >
-            <div
-              className="absolute inset-0 transition-transform duration-300 group-hover:scale-110"
-              style={{
-                backgroundImage: "url(/photos/OpenHouseCandid.jpeg)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            />
-            <div
-              className={`absolute inset-0 transition-opacity duration-300 bg-[#111827] ${
-                isMobile
-                  ? activeSection === "business"
-                    ? "opacity-0"
-                    : "opacity-50"
-                  : "opacity-50 group-hover:opacity-0"
-              }`}
-            />
-            <h3 className="text-3xl font-bold mb-4 text-white relative z-10">
-              Business
-            </h3>
-          </div>
+          <InteractiveSubteamImage
+            sectionName="mechanical"
+            photoName="sus_pension_FS4_1974.jpg"
+            isActive={activeSection === "mechanical"}
+            isMobile={isMobile}
+          />
+          <InteractiveSubteamImage
+            sectionName="electrical"
+            photoName="VCU_in_car_FS4.jpg"
+            isActive={activeSection === "electrical"}
+            isMobile={isMobile}
+          />
+          <InteractiveSubteamImage
+            sectionName="software"
+            photoName="grafana.png"
+            isActive={activeSection === "software"}
+            isMobile={isMobile}
+          />
+          <InteractiveSubteamImage
+            sectionName="business"
+            photoName="OpenHouseCandid.jpeg"
+            isActive={activeSection === "business"}
+            isMobile={isMobile}
+          />
         </div>
       </div>
 
@@ -395,70 +392,68 @@ export default function Home() {
 
         {/* History section */}
         <div className="w-full max-w-6xl mx-auto px-4 space-y-12">
-          {/* FS-4 Section */}
-          <section aria-label="FS-4" id="fs-4" className="w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="flex flex-col md:order-2">
-                <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center md:text-left text-yellow-300">
-                  FS-4
-                  <span className="text-gray-300 text-xl px-6">2026</span>
-                </h2>
-                <p className="text-sm md:text-lg text-gray-100 leading-relaxed mb-3">
-                  FS-4 is an ambitious, ground-up redesign following the
-                  successes of FS-3. This car features our first fully custom
-                  battery pack design, a brand new suspension system, an
-                  improved frame, overhauled electrical system, and our first
-                  ever complete aerodynamics package.
-                </p>
-                <p className="text-sm md:text-lg text-gray-100 leading-relaxed mb-3">
-                  Competition faced us with timeline crunches, last-second
-                  critical mechanical failures, firmware issues, and a rain test
-                  failure. Despite these challenges, FS-4 was able to pass every
-                  technical inspection, including Battery, Mechanical, EV
-                  Active, Tilt, and Rain, up until Brakes, which we missed by
-                  just less than 3mph.
-                </p>
-                <p className="text-sm md:text-lg text-gray-100 leading-relaxed">
-                  We couldn't be prouder of what we accomplished with FS-4, and
-                  we can't wait to show the world what we've got with FS-5!
-                </p>
-              </div>
-              <div className="w-full md:order-1">
-                <img
-                  src="/photos/comp_2026_DSC02270.jpg"
-                  alt="FS-2 Team at Competition"
-                  className="w-full h-auto object-cover rounded-lg"
-                  loading="lazy"
-                  style={{ boxShadow: "8px 8px 0px rgb(74, 177, 228)" }}
-                />
-              </div>
-            </div>
-          </section>
+          <HistoryEntry
+            carName={"FS-4"}
+            year={"2026"}
+            paragraphs={[
+              `FS-4 is an ambitious, ground-up redesign following the successes of
+              FS-3. This car features our first fully custom battery pack design,
+              a brand new suspension system, an improved frame, overhauled
+              electrical system, and our first ever complete aerodynamics package.`,
 
-          {/* FS-3 Section */}
-          <section aria-label="FS-3" id="fs-3" className="w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="flex flex-col gap-4">
-                <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center md:text-left text-yellow-300">
-                  FS-3
-                  <span className="text-gray-300 text-xl px-6">2025</span>
-                </h2>
-                <p className="text-sm md:text-lg text-gray-100 leading-relaxed">
-                  Our highest-placing car, FS-3, competed at FSAE Michigan in
-                  June 2025. The car cleared every inspection — mechanical, HV,
-                  EV active, rain, tilt, and brake — and successfully took part
-                  in all dynamic events. In just our third year of official
-                  competition, FS-3 met our ambitious goal of a Top 20 overall
-                  finish and secured a Top 3 placement in efficiency, marking a
-                  new benchmark for Formula Slug's success. The achievements of
-                  FS-3 set a strong foundation for FS-4, inspiring the team to
-                  reach even higher in performance, innovation, and competition.
-                </p>
-              </div>
-              <div
-                className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden mx-auto"
-                style={{ boxShadow: "8px 8px 0px rgb(74, 177, 228)" }}
-              >
+              `Competition faced us with timeline crunches, last-second critical
+              mechanical failures, firmware issues, and a rain test failure.
+              Despite these challenges, FS-4 was able to pass every technical
+              inspection, including Battery, Mechanical, EV Active, Tilt, and
+              Rain, up until Brakes, which we missed by just less than 3mph.`,
+
+              `We couldn't be prouder of what we accomplished with FS-4, and we
+              can't wait to show the world what we've got with FS-5!`,
+            ]}
+            imageComponents={[
+              <img
+                src="/photos/comp_2026_DSC02270.jpg"
+                alt="FS-4 During our One and Only Brakes Test Attempt"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />,
+              <img
+                src="/photos/FS4_comp_team_photo.png"
+                alt="FS-4 Team Photo at Competition"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />,
+              <img
+                src="/photos/crew_pushing_dan_fs4.jpg"
+                alt="FS-4 Photo During Competition"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />,
+              <img
+                src="/photos/FS-4_front_of_car.jpg"
+                alt="FS-4 Front Left Photo"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />,
+            ]}
+            imagesOnLeft={true}
+          />
+          <HistoryEntry
+            carName={"FS-3"}
+            year={"2025"}
+            paragraphs={[
+              `Our highest-placing car, FS-3, competed at FSAE Michigan in
+              June 2025. The car cleared every inspection — mechanical, HV,
+              EV active, rain, tilt, and brake — and successfully took part
+              in all dynamic events. In just our third year of official
+              competition, FS-3 met our ambitious goal of a Top 20 overall
+              finish and secured a Top 3 placement in efficiency, marking a
+              new benchmark for Formula Slug's success. The achievements of
+              FS-3 set a strong foundation for FS-4, inspiring the team to
+              reach even higher in performance, innovation, and competition.`,
+            ]}
+            imageComponents={[
+              <div className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden mx-auto">
                 <iframe
                   className="w-full h-full"
                   src="https://www.youtube.com/embed/xwFrdFvr7uU"
@@ -466,110 +461,98 @@ export default function Home() {
                   frameBorder="0"
                   allowFullScreen
                 ></iframe>
-              </div>
-            </div>
-          </section>
-
-          {/* FS-2 Section */}
-          <section aria-label="FS-2" id="fs-2" className="w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="flex flex-col gap-4 md:order-2">
-                <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center md:text-left text-yellow-300">
-                  FS-2
-                  <span className="text-gray-300 text-xl px-6">2019-2024</span>
-                </h2>
-                <p className="text-sm md:text-lg text-gray-100 leading-relaxed">
-                  FS-2 marked a major milestone as our first car to compete at
-                  the Formula SAE Electric competition in Michigan. Building on
-                  the foundation of FS-1, the team passed mechanical technical
-                  inspection and placed 56th overall — a significant step
-                  forward for Formula Slug. This era was opened due to new
-                  opportunities with the support of Baskin Engineering,
-                  including closer collaboration with Slugworks and the
-                  resources to rebuild the team after the challenges of the
-                  pandemic. FS-2 not only advanced our technical capabilities
-                  but also strengthened our community, setting the stage for the
-                  achievements of FS-3.
-                </p>
-              </div>
-              <div className="w-full md:order-1">
-                <img
-                  src="/photos/FS2AtComp.jpg"
-                  alt="FS-2 Team at Competition"
-                  className="w-full h-auto object-cover rounded-lg"
-                  loading="lazy"
-                  style={{ boxShadow: "8px 8px 0px rgb(74, 177, 228)" }}
-                />
-              </div>
-            </div>
-          </section>
-
-          {/* FS-1 Section */}
-          <section aria-label="FS-1" id="fs-1" className="w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="flex flex-col gap-4 md:order-1">
-                <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center md:text-left text-yellow-300">
-                  FS-1
-                  <span className="text-gray-300 text-xl px-6">2016-2018</span>
-                </h2>
-                <p className="text-sm md:text-lg text-gray-100 leading-relaxed">
-                  Building on the progress and experience gained from FS-0, FS-1
-                  became the first Formula Slug vehicle to compete at the
-                  Formula SAE Electric competition in Lincoln, Nebraska.
-                  Although the car did not pass technical inspection, it marked
-                  a milestone for the team by earning our very first points
-                  through the static events. This experience proved that we
-                  could compete on the international stage and provided
-                  invaluable lessons that shaped the design and engineering of
-                  every car that followed.
-                </p>
-              </div>
-              <div className="w-full md:order-2">
-                <img
-                  src="/photos/FS1.jpg"
-                  alt="FS-1 Formula Slug Vehicle"
-                  className="w-full h-auto object-cover rounded-lg"
-                  loading="lazy"
-                  style={{ boxShadow: "8px 8px 0px rgb(74, 177, 228)" }}
-                />
-              </div>
-            </div>
-          </section>
-
-          {/* FS-0 Section */}
-          <section aria-label="FS-0" id="fs-0" className="w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="flex flex-col gap-4 md:order-2">
-                <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center md:text-left text-yellow-300">
-                  FS-0
-                  <span className="text-gray-300 text-xl px-6">2014-2016</span>
-                </h2>
-                <p className="text-sm md:text-lg text-gray-100 leading-relaxed">
-                  Founded in 2014, Formula Slug was founded on the premise of
-                  renewable energy in electric vehicles. This led to our first
-                  vehicle, FS-0. We raised over $16,000 and put in countless
-                  hours of work. While it didn't go to competition, it served as
-                  the springboard for Formula Slug's ventures into electric
-                  vehicle engineering and catalyzed the team's growth and
-                  guiding principles.
-                </p>
-              </div>
-              <div
-                className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden mx-auto md:order-1"
-                style={{ boxShadow: "8px 8px 0px rgb(74, 177, 228)" }}
-              >
+              </div>,
+              <img
+                src="/photos/FS2026-3_small_cropped.jpg"
+                alt="FS-3 at the 2026 Formula Slug Opon House in the Baskin Engineering Courtyard"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />,
+            ]}
+            imagesOnLeft={false}
+          />
+          <HistoryEntry
+            carName={"FS-2"}
+            year={"2019-2024"}
+            paragraphs={[
+              `FS-2 marked a major milestone as our first car to compete at
+              the Formula SAE Electric competition in Michigan. Building on
+              the foundation of FS-1, the team passed mechanical technical
+              inspection and placed 56th overall — a significant step
+              forward for Formula Slug. This era was opened due to new
+              opportunities with the support of Baskin Engineering,
+              including closer collaboration with Slugworks and the
+              resources to rebuild the team after the challenges of the
+              pandemic. FS-2 not only advanced our technical capabilities
+              but also strengthened our community, setting the stage for the
+              achievements of FS-3.`,
+            ]}
+            imageComponents={[
+              <img
+                src="/photos/FS2AtComp.jpg"
+                alt="FS-2 Team at Competition"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />,
+              <img
+                src="/photos/FS2_on_ground.JPG"
+                alt="FS-2 Team at Competition"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />,
+            ]}
+            imagesOnLeft={true}
+          />
+          <HistoryEntry
+            carName={"FS-1"}
+            year={"2016-2018"}
+            paragraphs={[
+              `Building on the progress and experience gained from FS-0, FS-1
+              became the first Formula Slug vehicle to compete at the
+              Formula SAE Electric competition in Lincoln, Nebraska.
+              Although the car did not pass technical inspection, it marked
+              a milestone for the team by earning our very first points
+              through the static events. This experience proved that we
+              could compete on the international stage and provided
+              invaluable lessons that shaped the design and engineering of
+              every car that followed.`,
+            ]}
+            imageComponents={[
+              <img
+                src="/photos/FS1.jpg"
+                alt="FS-1 Formula Slug Vehicle"
+                className="w-full h-auto object-cover rounded-lg"
+                loading="lazy"
+              />,
+            ]}
+            imagesOnLeft={false}
+          />
+          <HistoryEntry
+            carName={"FS-0"}
+            year={"2014-2016"}
+            paragraphs={[
+              `Founded in 2014, Formula Slug was founded on the premise of
+              renewable energy in electric vehicles. This led to our first
+              vehicle, FS-0. We raised over $16,000 and put in countless
+              hours of work. While it didn't go to competition, it served as
+              the springboard for Formula Slug's ventures into electric
+              vehicle engineering and catalyzed the team's growth and
+              guiding principles.`,
+            ]}
+            imageComponents={[
+              <div className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden mx-auto md:order-1">
                 <iframe
                   className="w-full h-full"
                   src="https://www.youtube.com/embed/W2YDWzCsP7c?si=YlAYGXaJvxtaGviR"
                   title="We Are Formula Slug Documentary"
-                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 ></iframe>
-              </div>
-            </div>
-          </section>
+              </div>,
+            ]}
+            imagesOnLeft={true}
+          />
         </div>
 
         {/* NEW MEMBER TIMELINE SECTION */}
@@ -583,7 +566,7 @@ export default function Home() {
           >
             New Member Timeline
           </h2>
-          <div className="text-center">
+          <div className="text-center text-white">
             {/* Timeline line */}
             <p>
               Coming soon! Check back in a month or two, and in the meantime,

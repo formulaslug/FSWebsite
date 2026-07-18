@@ -38,7 +38,7 @@ export default function TeamPage() {
   const AerodynamicsBlurb =
     "The aerodynamics subteam develops high-performance wings and bodywork to optimize downforce and minimize drag for maximum lap times. Join us to gain hands-on experience with CFD analysis, wind tunnel testing, and composite manufacturing while designing the aerodynamic package that gives our car its competitive edge.";
   const ChassisBlurb =
-    "The Chassis is the glue that holds the car together. As a member of the chassis team you will learn top level system integration, how to work with complex CAD structures in Onshape, create complex simulations using Ansys to create lightweight & rigid steel tub frame frame";
+    "The Chassis is the glue that holds the car together. As a member of the chassis team you will learn top level system integration, how to work with complex CAD structures in Onshape, and perform simulations using Ansys to create lightweight & rigid steel tube frame";
   const ManufacturingBlurb =
     "Have you ever wanted to manufacture a car? To be hands on with almost every part? On Manufacturing, you’ll get experience making parts with industry-grade machines like mills and routers. You’ll learn not just how to use the tools, but the theory and decision-making behind them. With opportunities to pursue CAM, material science, and cost logistics—skills that translate directly into future careers. If you're unfamiliar, we’ll guide you through the path to expertise; all we’re looking for is dedicated people to go the distance!";
   const WeldingBlurb =
@@ -57,8 +57,10 @@ export default function TeamPage() {
   //   "The software team develops tools and systems that support vehicle simulation and autonomous driving. We build models to predict performance, design algorithms for control and perception, and ensure the car can make real-time decisions on and off the track. Our work connects data, software, and hardware to improve both driver and vehicle performance. The software team will be a big commitment and we expect dedication and curiosity whether you come in with no experience or lots of experience.";
   const AutonomousBlurb =
     "Autonomous is a challenge that involves racing without a driver, creating challenging computer vision and vehicle dynamics problems. This requires combining multiple types of sensors, such as cameras, lidar, and inertial measurement to interpret the vehicle’s surroundings and determine optimal control. This is a multidisciplinary effort spanning machine learning, vehicle dynamics modeling, as well as electrical and mechanical design to extract maximum performance from our race car.";
-  const DataBlurb = "TODO";
-  const SimsBlurb = "TODO";
+  const DataBlurb =
+    "The Software Data team is focused on analyzing the data that helps drive our team's decisions. We develop telemetry systems, data logging pipelines, and validation tools to help evaluate the car's performance and guide future designs. We work closely with the Electrical team, Firmware team, and Mechanical team to design reliable data acquisition systems and turn it into meaningful insights. If you're interested in programming, data analytics, or building software that supports the team, the Data team is the place for you!";
+  const SimsBlurb =
+    "The simulation team focuses on modeling different aspects of the car to predict and improve its performance. We simulate everything from the tires to the battery to the suspension and more. If you enjoy physics, coding, and want to help design the car, this is the sub-team for you!";
 
   return (
     <main
@@ -153,7 +155,7 @@ export default function TeamPage() {
                   <CaptainCard
                     captainName="Jack Nystrom"
                     team="Electrical Captain"
-                    photoPath="JackNystrom.JPG"
+                    photoPath="JackNystrom.jpg"
                     aspectRatio={3 / 4}
                   />
                 </div>
@@ -161,7 +163,7 @@ export default function TeamPage() {
                   <CaptainCard
                     captainName="Daniel Rhee"
                     team="Software Captain"
-                    photoPath="DanielRhee.JPG"
+                    photoPath="DanielRhee.jpg"
                     aspectRatio={3 / 4}
                   />
                 </div>
@@ -289,7 +291,7 @@ export default function TeamPage() {
                 <div className="w-full lg:w-1/3">
                   <SubteamCard
                     subteamName="Power Electronics"
-                    photoPaths={["InverterBoxFS4.jpg"]}
+                    photoPaths={["Battery_FS4_IMG_7599.jpg"]}
                     blurb={PowerElectronicsBlurb}
                     leadName="Edmund Lai"
                     leadPhotoPath="EdmundLai.jpg"
@@ -384,7 +386,7 @@ export default function TeamPage() {
                     photoPaths={["BatteryFS4.jpg"]}
                     blurb={BatteryBlurb}
                     leadName="Aethlyn Lim"
-                    leadPhotoPath="AethlynLim.JPG"
+                    leadPhotoPath="AethlynLim.jpg"
                     aspectRatio={16 / 9}
                   />
                 </div>
@@ -425,7 +427,7 @@ export default function TeamPage() {
                 <div className="w-full lg:w-1/3">
                   <SubteamCard
                     subteamName="Suspension"
-                    photoPaths={["Suspension.jpg"]}
+                    photoPaths={["sus_pension_FS4_1950.jpg"]}
                     blurb={SuspensionBlurb}
                     leadName="Joseph Sena"
                     leadPhotoPath="JosephSena.jpg"
@@ -435,7 +437,7 @@ export default function TeamPage() {
                 <div className="w-full lg:w-1/3">
                   <SubteamCard
                     subteamName="Powertrain"
-                    photoPaths={["DrivetrainFS4.jpg"]}
+                    photoPaths={["FS4_drivetrain_comp.jpg"]}
                     blurb={PowertrainBlurb}
                     leadName="Cameron Bannasch"
                     leadPhotoPath="CameronBannasch.jpg"
@@ -459,7 +461,7 @@ export default function TeamPage() {
                 <div className="w-full lg:w-1/3">
                   <SubteamCard
                     subteamName="Welding"
-                    photoPaths={["Welding.jpg"]}
+                    photoPaths={["FS4_welding.jpg"]}
                     blurb={WeldingBlurb}
                     leadName="Liza Orekhova"
                     leadPhotoPath="LizaOrekhova.jpg"
@@ -494,7 +496,6 @@ export default function TeamPage() {
                 <div className="w-full lg:w-1/3"></div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
