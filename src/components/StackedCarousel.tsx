@@ -3,10 +3,18 @@
 
 import React, { ReactNode, useState } from "react";
 import Image from "next/image";
-import chevronLeft from "./chevron-left.svg";
-import chevronRight from "./chevron-right.svg";
 
-function StackedCarousel(props: { images: ReactNode[] }) {
+function ChevronLeft(props: {width: number, height: number, className?: string}) {
+  // prettier-ignore
+  return (<svg xmlns="http://www.w3.org/2000/svg" width={props.width} height={props.height} className={props.className} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m15 18-6-6 6-6" /> </svg>);
+}
+
+function ChevronRight(props: {width: number, height: number, className?: string}) {
+  // prettier-ignore
+  return (<svg xmlns="http://www.w3.org/2000/svg" width={props.width} height={props.height} className={props.className} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m9 18 6-6-6-6" /> </svg>);
+}
+
+function StackedCarousel(props: { images: ReactNode[], aspectRatio?: number }) {
   const images = props.images;
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -16,18 +24,19 @@ function StackedCarousel(props: { images: ReactNode[] }) {
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1) < 0 ? images.length-1 : prev-1);
+    setCurrentIndex((prev) => (prev - 1 < 0 ? images.length - 1 : prev - 1));
   };
 
   // We only render the current card and the next 2 cards behind it
   const visibleDepth = 3;
 
   return (
-    <div className="flex flex-col items-center justify-center p-4 pr-10 pb-6 w-full ">
+    // TODO(Jack N): Do we really want to hardcode an aspect ratio for all
+    // cards? This means a lot of images are cropped vertically... but it does
+    // seem to eliminate the page scrolling on click for different card sizes.
+    <div className="w-full flex flex-col items-center justify-center p-4 pr-10 pb-6">
       {/* Container for the stack - height and width must be explicit to handle absolute positioning */}
-      <div
-        className={`relative w-full h-full rounded-lg`}
-      >
+      <div className={`relative w-full h-full rounded-lg`}>
         {images.map((imgComponent, idx) => {
           // Calculate the relative position in the current visible stack (0 is top, 1 is middle, 2 is bottom)
           let relativeIndex = (idx - currentIndex) % images.length;
@@ -36,7 +45,7 @@ function StackedCarousel(props: { images: ReactNode[] }) {
             relativeIndex += images.length;
 
           // Offset calculation
-          const offsetScaleByIndex = [0, 0.65, 0.9 /*, 1*/];
+          const offsetScaleByIndex = [0, 0.65, 0.95 /*, 1*/];
           const xOffsetPx = offsetScaleByIndex[relativeIndex] * 24;
           const yOffsetPx = relativeIndex * 6;
 
@@ -56,6 +65,7 @@ function StackedCarousel(props: { images: ReactNode[] }) {
                 ${isTopCard ? "relative w-full h-full" : "absolute inset-0"}
               `}
               style={{
+                aspectRatio: props.aspectRatio,
                 transform: `translate(${xOffsetPx}px, ${yOffsetPx}px)`,
                 zIndex: zIndex,
                 opacity: relativeIndex === 0 ? 1 : 1.0 - relativeIndex * 0.2,
@@ -77,15 +87,19 @@ function StackedCarousel(props: { images: ReactNode[] }) {
               onClick={prevSlide}
               className={`
                 flex items-center justify-center w-12 h-12
-                rounded-full bg-slate-800 drop-shadow-black
-                drop-shadow-sm hover:bg-slate-700
+                rounded-full bg-slate-700 drop-shadow-black drop-shadow-xs
+                hover:bg-yellow-400 hover:text-black
                 scale-100 active:scale-90 transition-all
                 opacity-85 pointer-events-auto
                 -ml-5
               `}
               aria-label="Previous slide"
             >
-              <Image src={chevronLeft} width={36} height={36} alt={"ChevronLeft"} />
+              <ChevronLeft
+                width={36}
+                height={36}
+                className="pr-[2px]"
+              />
             </button>
           ) : null}
 
@@ -95,15 +109,19 @@ function StackedCarousel(props: { images: ReactNode[] }) {
               onClick={nextSlide}
               className={`
                 flex items-center justify-center w-12 h-12
-                rounded-full bg-slate-800 drop-shadow-black
-                drop-shadow-sm hover:bg-slate-700
+                rounded-full bg-slate-700 drop-shadow-black drop-shadow-xs
+                hover:bg-yellow-400 hover:text-black
                 scale-100 active:scale-90 transition-all
                 opacity-85 pointer-events-auto
                 -mr-7
               `}
               aria-label="Next slide"
             >
-              <Image src={chevronRight} width={36} height={36} alt={"ChevronRight"} />
+              <ChevronRight
+                width={36}
+                height={36}
+                className="pl-[2px]"
+              />
             </button>
           ) : null}
         </div>

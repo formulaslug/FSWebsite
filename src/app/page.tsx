@@ -52,6 +52,7 @@ function HistoryEntry(props: {
   paragraphs: string[];
   imageComponents: React.ReactNode[];
   imagesOnLeft: boolean;
+  imageAspectRatio?: number;
 }) {
   return (
     <section
@@ -63,10 +64,10 @@ function HistoryEntry(props: {
         <div
           className={`w-full h-full flex items-center justify-center md:order-${props.imagesOnLeft ? "1" : "2"}`}
         >
-          {/* {props.imageComponents.map((component, i) => ( */}
-          {/*   <React.Fragment key={i}>{component}</React.Fragment> */}
-          {/* ))} */}
-          <StackedCarousel images={props.imageComponents} />
+          <StackedCarousel
+            images={props.imageComponents}
+            aspectRatio={props.imageAspectRatio}
+          />
         </div>
 
         <div
@@ -413,28 +414,24 @@ export default function Home() {
             imageComponents={[
               <img
                 src="/photos/comp_2026_DSC02270.jpg"
-                alt="FS-4 During our One and Only Brakes Test Attempt"
                 className="w-full h-full object-cover"
                 loading="lazy"
                 key={1}
               />,
               <img
                 src="/photos/FS4_comp_team_photo.png"
-                alt="FS-4 Team Photo at Competition"
                 className="w-full h-full object-cover"
                 loading="lazy"
                 key={2}
               />,
               <img
-                src="/photos/FS-4_front_of_car.jpg"
-                alt="FS-4 Front Left Photo"
+                src="/photos/crew_pushing_dan_fs4.jpg"
                 className="w-full h-full object-cover"
                 loading="lazy"
                 key={3}
               />,
               <img
-                src="/photos/crew_pushing_dan_fs4.jpg"
-                alt="FS-4 Photo During Competition"
+                src="/photos/FS-4_front_of_car.jpg"
                 className="w-full h-full object-cover"
                 loading="lazy"
                 key={4}
@@ -461,19 +458,24 @@ export default function Home() {
                 className="w-full aspect-video block overflow-hidden rounded-2xl"
                 src="https://www.youtube.com/embed/xwFrdFvr7uU"
                 title="Formula Slug 2025 FSAE EV Michigan Competition"
-                frameBorder="0"
                 allowFullScreen
                 key={1}
               ></iframe>,
               <img
                 src="/photos/FS2026-3_small_cropped.jpg"
-                alt="FS-3 at the 2026 Formula Slug Opon House in the Baskin Engineering Courtyard"
                 className="w-full h-full object-cover"
                 loading="lazy"
                 key={2}
               />,
+              <img
+                src="/photos/20250615 MIS UCSC SAE E slug for web-114.jpg"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                key={3}
+              />,
             ]}
             imagesOnLeft={false}
+            imageAspectRatio={16/9} // YouTube embed is 16:9
           />
           <HistoryEntry
             carName={"FS-2"}
@@ -494,20 +496,25 @@ export default function Home() {
             imageComponents={[
               <img
                 src="/photos/FS2AtComp.jpg"
-                alt="FS-2 Team at Competition"
                 className="w-full h-full object-cover"
                 loading="lazy"
                 key={1}
               />,
               <img
                 src="/photos/FS2_on_ground.JPG"
-                alt="FS-2 Team at Competition"
                 className="w-full h-full object-cover"
                 loading="lazy"
                 key={2}
               />,
+              <img
+                src="/photos/IMG_3812.jpg"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                key={3}
+              />,
             ]}
             imagesOnLeft={true}
+            imageAspectRatio={1327/822} // FS2AtComp photo is a weird ratio
           />
           <HistoryEntry
             carName={"FS-1"}
@@ -802,19 +809,16 @@ export default function Home() {
             />
             <FAQItem
               question="How much experience do I need to join the club?"
-              answer="You don't need experience to join Formula Slug! All we ask for is a willingness to learn and to put in time when things get tough! We provide a lot of opportunities and resources to learn the skills new members need to get started, but we've found that successful new members often learn on their own and bring their own ideas to the table."
+              answer="You don't need experience to join Formula Slug! All we ask for is a willingness to learn and to put in time when things get tough! We provide a lot of opportunities and resources to learn the skills new members need to get started, but we've found that successful new members often learn on their own and bring their own ideas to the table. In general, successful members are passionate about what they're working on, learning much of their skills and knowledge through their work!"
             />
-
             <FAQItem
               question="How much time commitment is required?"
               answer="The time commitment varies based on the task provided to you by your subteam lead. Typically, we see that students that put in more time tend to feel more fulfilled at the end of the season. We encourage new members to communicate with their leads and captains regarding the amount of time they are able to commit."
             />
-
             <FAQItem
               question="Who gets to drive the car?"
               answer="Drivers for competition are chosen through a driver selection process and are members who have worked on the car throughout the year. While most do not drive at competition, we host track days to allow the season's team roster to drive that year's car."
             />
-
             <FAQItem
               question="What are the major requirements for this club?"
               answer="Regardless of the major, we welcome all UCSC students and majors to the club. We do not restrict members from joining if they are not an engineering major! We have a ton of non-Baskin majors including environmental science, applied physics, economics, bioinformatics, etc!"
@@ -823,16 +827,13 @@ export default function Home() {
               question="What type of work do new members get to work on?"
               answer="We would like all members of the team to feel that they have contributed to the car! So, many of the tasks new members work on are directly on the car or directly impact the car - even as a new member, you may be working on a car critical component!"
             />
-
             <FAQItem
               question="Do you test on campus?"
               answer="Due to space constraints and uneven grounds, testing in Santa Cruz is difficult. We have been lucky to work with Blue Max Kart Club in Davis who allow us to test on their track."
             />
-
             <FAQItem
               question="How can this club help my career?"
-              answer="Our team, and FSAE as a whole, emphasizes building engineers. We hold design reviews, work under constraints, and learn various design skills required for our competition and industry as a whole. Many of these skills, technical and non-technical, help our team members and alumni land jobs and internships at companies such as Zero Motorcycles, Tesla, Apple, etc. With the wide network that comes with being a part of FSAE, students are also given the chance to network with other schools and industry professionals."
-            />
+              answer="Our team, and FSAE as a whole, emphasizes building engineers. We hold design reviews, work under constraints, and learn various design skills required for our competition and industry as a whole. Many of these skills, technical and non-technical, help our team members and alumni land jobs and internships at companies such as Zero Motorcycles, Tesla, Rivian, Apple, etc. With the wide network that comes with being a part of FSAE, students are also given the chance to network with other schools and industry professionals." />
             <FAQItem
               question="How do I get access to the lab space?"
               answer="All team members are required to complete the Slugworks (Baskin Engineering's makerspace) canvas course to get access to the club space. The canvas is not out yet but the team will be notified on slack for when it is released!"
