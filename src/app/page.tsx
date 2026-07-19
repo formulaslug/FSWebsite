@@ -463,6 +463,7 @@ export default function Home() {
                 title="Formula Slug 2025 FSAE EV Michigan Competition"
                 frameBorder="0"
                 allowFullScreen
+                key={1}
               ></iframe>,
               <img
                 src="/photos/FS2026-3_small_cropped.jpg"
