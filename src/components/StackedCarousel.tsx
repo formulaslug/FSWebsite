@@ -23,7 +23,7 @@ function StackedCarousel(props: { images: ReactNode[] }) {
   const visibleDepth = 3;
 
   return (
-    <div className="flex flex-col items-center justify-center p-4 pr-10 w-full h-full">
+    <div className="flex flex-col items-center justify-center p-4 pr-10 pb-6 w-full ">
       {/* Container for the stack - height and width must be explicit to handle absolute positioning */}
       <div
         className={`relative w-full h-full rounded-lg`}
@@ -36,9 +36,9 @@ function StackedCarousel(props: { images: ReactNode[] }) {
             relativeIndex += images.length;
 
           // Offset calculation
-          const offsetScaleByIndex = [0, 0.65, 1];
-          const xOffsetPx = offsetScaleByIndex[relativeIndex] * 32;
-          const yOffsetPx = relativeIndex * 8;
+          const offsetScaleByIndex = [0, 0.65, 0.9 /*, 1*/];
+          const xOffsetPx = offsetScaleByIndex[relativeIndex] * 24;
+          const yOffsetPx = relativeIndex * 6;
 
           // Reverse z-index so the current index is always on top
           const zIndex = visibleDepth - relativeIndex;
@@ -50,7 +50,7 @@ function StackedCarousel(props: { images: ReactNode[] }) {
             <div
               key={idx}
               className={`
-                absolute inset-0 bg-white
+                absolute inset-0 bg-[--background]
                 rounded-2xl shadow-xl overflow-hidden
                 transition-all duration-300 ease-out
                 ${isTopCard ? "relative w-full h-full" : "absolute inset-0"}
