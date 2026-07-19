@@ -61,7 +61,7 @@ function HistoryEntry(props: {
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div
-          className={`w-full h-full md:order-${props.imagesOnLeft ? "1" : "2"}`}
+          className={`w-full h-full flex items-center justify-center md:order-${props.imagesOnLeft ? "1" : "2"}`}
         >
           {/* {props.imageComponents.map((component, i) => ( */}
           {/*   <React.Fragment key={i}>{component}</React.Fragment> */}
@@ -416,24 +416,28 @@ export default function Home() {
                 alt="FS-4 During our One and Only Brakes Test Attempt"
                 className="w-full h-full object-cover"
                 loading="lazy"
+                key={1}
               />,
               <img
                 src="/photos/FS4_comp_team_photo.png"
                 alt="FS-4 Team Photo at Competition"
                 className="w-full h-full object-cover"
                 loading="lazy"
-              />,
-              <img
-                src="/photos/crew_pushing_dan_fs4.jpg"
-                alt="FS-4 Photo During Competition"
-                className="w-full h-full object-cover"
-                loading="lazy"
+                key={2}
               />,
               <img
                 src="/photos/FS-4_front_of_car.jpg"
                 alt="FS-4 Front Left Photo"
                 className="w-full h-full object-cover"
                 loading="lazy"
+                key={3}
+              />,
+              <img
+                src="/photos/crew_pushing_dan_fs4.jpg"
+                alt="FS-4 Photo During Competition"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                key={4}
               />,
             ]}
             imagesOnLeft={true}
@@ -453,20 +457,19 @@ export default function Home() {
               reach even higher in performance, innovation, and competition.`,
             ]}
             imageComponents={[
-              <div className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden mx-auto">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/xwFrdFvr7uU"
-                  title="Formula Slug 2025 FSAE EV Michigan Competition"
-                  frameBorder="0"
-                  allowFullScreen
-                ></iframe>
-              </div>,
+              <iframe
+                className="w-full aspect-video block overflow-hidden rounded-2xl"
+                src="https://www.youtube.com/embed/xwFrdFvr7uU"
+                title="Formula Slug 2025 FSAE EV Michigan Competition"
+                frameBorder="0"
+                allowFullScreen
+              ></iframe>,
               <img
                 src="/photos/FS2026-3_small_cropped.jpg"
                 alt="FS-3 at the 2026 Formula Slug Opon House in the Baskin Engineering Courtyard"
                 className="w-full h-full object-cover"
                 loading="lazy"
+                key={2}
               />,
             ]}
             imagesOnLeft={false}
@@ -493,12 +496,14 @@ export default function Home() {
                 alt="FS-2 Team at Competition"
                 className="w-full h-full object-cover"
                 loading="lazy"
+                key={1}
               />,
               <img
                 src="/photos/FS2_on_ground.JPG"
                 alt="FS-2 Team at Competition"
                 className="w-full h-full object-cover"
                 loading="lazy"
+                key={2}
               />,
             ]}
             imagesOnLeft={true}
@@ -523,6 +528,7 @@ export default function Home() {
                 alt="FS-1 Formula Slug Vehicle"
                 className="w-full h-auto object-cover rounded-lg"
                 loading="lazy"
+                key={1}
               />,
             ]}
             imagesOnLeft={false}
@@ -540,7 +546,10 @@ export default function Home() {
               guiding principles.`,
             ]}
             imageComponents={[
-              <div className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden mx-auto md:order-1">
+              <div
+                className="w-full max-w-2xl aspect-video rounded-lg overflow-hidden mx-auto md:order-1"
+                key={1}
+              >
                 <iframe
                   className="w-full h-full"
                   src="https://www.youtube.com/embed/W2YDWzCsP7c?si=YlAYGXaJvxtaGviR"

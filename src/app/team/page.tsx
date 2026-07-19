@@ -72,13 +72,14 @@ export default function TeamPage() {
       <div className="m-0 p-0 w-full">
         <Navbar />
         <div className="grid grid-cols-1 grid-rows-1 pb-5">
-          {/* The ::after element is used to create a gradient fade-out on the top portion of the image */}
+          {/* The ::after and ::before elements are used to create gradient
+          fade-outs on the top and bottom portions of the image */}
           <div
             className={`
               col-start-1 row-start-1 relative overflow-hidden
               before:absolute before:w-full before:h-1/4
               before:top-0 before:left-0 before:bg-linear-to-t
-              before:from-neutral-800/0 before:to-neutral-800/60
+              before:from-neutral-800/0 before:to-neutral-800/70
               after:absolute after:w-full after:h-1/4
               after:bottom-0 after:left-0 after:bg-linear-to-b
               after:from-gray-900/0 after:to-gray-900/60
@@ -89,6 +90,9 @@ export default function TeamPage() {
               alt={"Team Photo"}
               width={2048}
               height={1152}
+              sizes="100vw"
+              priority
+              className="w-full h-auto block"
             />
           </div>
 

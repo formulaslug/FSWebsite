@@ -14,6 +14,23 @@ export const metadata: Metadata = {
   description: "Formula Slug's Website - Photo Gallery",
 };
 
+function shuffleArray(array: any[]) {
+  let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    const randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+}
+
+
 export default async function PhotosPage() {
   // Read the /public/photos directory at build time (server-side only)
   const photosDir = path.join(process.cwd(), "public", "photos");
@@ -23,7 +40,7 @@ export default async function PhotosPage() {
       .filter(f =>
         /^[^.].*\.(jpe?g|png|webp|gif)$/i.test(f)
       );
-  } catch (e) {
+  } catch (_) {
     // Directory may not exist yet
   }
 
@@ -51,8 +68,9 @@ export default async function PhotosPage() {
     })
   );
 
-  // Sort by dateTaken, newest first
-  photoData.sort((a, b) => b.dateTaken.getTime() - a.dateTaken.getTime());
+  // // Sort by dateTaken, newest first
+  // photoData.sort((a, b) => b.dateTaken.getTime() - a.dateTaken.getTime());
+  shuffleArray(photoData);
 
   return (
     <AutoScrollOnIdle>
