@@ -197,6 +197,7 @@ export default function Home() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
             style={{ zIndex: -2 }}
+            poster="/photos/Through_a_Window_small.jpg"
           >
             <source
               src="/videos/FSDynamicWallpaper_2026_720_noaudio_small.mp4"
@@ -475,7 +476,7 @@ export default function Home() {
               />,
             ]}
             imagesOnLeft={false}
-            imageAspectRatio={16/9} // YouTube embed is 16:9
+            imageAspectRatio={16 / 9} // YouTube embed is 16:9
           />
           <HistoryEntry
             carName={"FS-2"}
@@ -514,7 +515,7 @@ export default function Home() {
               />,
             ]}
             imagesOnLeft={true}
-            imageAspectRatio={1327/822} // FS2AtComp photo is a weird ratio
+            imageAspectRatio={1327 / 822} // FS2AtComp photo is a weird ratio
           />
           <HistoryEntry
             carName={"FS-1"}
@@ -833,7 +834,8 @@ export default function Home() {
             />
             <FAQItem
               question="How can this club help my career?"
-              answer="Our team, and FSAE as a whole, emphasizes building engineers. We hold design reviews, work under constraints, and learn various design skills required for our competition and industry as a whole. Many of these skills, technical and non-technical, help our team members and alumni land jobs and internships at companies such as Zero Motorcycles, Tesla, Rivian, Apple, etc. With the wide network that comes with being a part of FSAE, students are also given the chance to network with other schools and industry professionals." />
+              answer="Our team, and FSAE as a whole, emphasizes building engineers. We hold design reviews, work under constraints, and learn various design skills required for our competition and industry as a whole. Many of these skills, technical and non-technical, help our team members and alumni land jobs and internships at companies such as Zero Motorcycles, Tesla, Rivian, Apple, etc. With the wide network that comes with being a part of FSAE, students are also given the chance to network with other schools and industry professionals."
+            />
             <FAQItem
               question="How do I get access to the lab space?"
               answer="All team members are required to complete the Slugworks (Baskin Engineering's makerspace) canvas course to get access to the club space. The canvas is not out yet but the team will be notified on slack for when it is released!"
