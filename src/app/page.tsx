@@ -373,15 +373,14 @@ export default function Home() {
         <p className="text-lg text-gray-100 mb-4 text-center max-w-6xl">
           Formula Slug is UC Santa Cruz's premier student-run electric vehicle
           team, proudly competing each June in the international Formula SAE
-          Electric competition in Michigan. There, we put our student-built
-          racecar to the test against teams from around the world in a rigorous
-          series of technical inspections, static events (design, cost, and
-          business presentations), and dynamic events measuring acceleration,
-          handling, endurance, and overall performance.
+          Electric competition in Michigan. We put our student-built racecar to
+          the test against teams from around the world in a rigorous series of
+          technical inspections, static events (design, cost, and business
+          presentations), and dynamic events measuring acceleration, handling,
+          endurance, and overall performance.
         </p>
         <p className="text-lg text-gray-100 mb-4 text-center max-w-6xl">
-          Our student-led team of aspiring engineers are more than just a
-          college organization — we're a team built on collaboration, technical
+          Our student-led engineering team is built on collaboration, technical
           excellence, and ambition. Formula Slug members take on real
           engineering challenges, grow into leaders, and work as one cohesive
           team to push the boundaries of electric racecar design through Formula
@@ -469,10 +468,16 @@ export default function Home() {
                 key={2}
               />,
               <img
-                src="/photos/20250615 MIS UCSC SAE E slug for web-114.jpg"
+                src="/photos/fsae_ev_25_03850.jpg"
                 className="w-full h-full object-cover"
                 loading="lazy"
                 key={3}
+              />,
+              <img
+                src="/photos/20250615 MIS UCSC SAE E slug for web-114.jpg"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                key={4}
               />,
             ]}
             imagesOnLeft={false}
