@@ -409,8 +409,10 @@ export default function TeamPage() {
                     subteamName="Ergonomics"
                     photoPaths={["egress_cockpit_FS4.jpg"]}
                     blurb={ErgonomicsBlurb}
-                    leadName="Ruhan Gianchandani"
-                    leadPhotoPath="RuhanGianchandani.jpg"
+                    leadName="Athena Won"
+                    leadPhotoPath="AthenaWon.jpg"
+                    // leadName="Ruhan Gianchandani"
+                    // leadPhotoPath="RuhanGianchandani.jpg"
                     aspectRatio={16 / 9}
                   />
                 </div>

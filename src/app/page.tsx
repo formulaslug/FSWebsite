@@ -7,6 +7,7 @@ import FAQItem from "@/components/FAQItem";
 import { colors } from "@/config/colors";
 import ShimmerTitle from "@/components/ShimmerTitle";
 import StackedCarousel from "@/components/StackedCarousel";
+import { Timeline } from "@/components/Timeline";
 
 function InteractiveSubteamImage(props: {
   sectionName: string;
@@ -187,7 +188,7 @@ export default function Home() {
     >
       <div
         style={{ height: "100vh", width: "100%" }}
-        className="relative flex flex-col items-center justify-between"
+        className="relative flex flex-col items-center justify-around"
       >
         <div className="absolute inset-0 -z-10 w-full h-full">
           <video
@@ -268,7 +269,7 @@ export default function Home() {
           ))}
         </h1>
         {/* video section */}
-        <div className="w-full max-w-6xl mt-12 md:mt-20 mb-8 md:mb-10 px-4 md:px-0 mx-auto flex justify-center">
+        <div className="max-w-6xl my-8 px-4 md:px-0 mx-auto pb-12 flex flex-col justify-between gap-10">
           <button
             className="px-6 py-3 border-4 border-white bg-transparent shadow-lg transition-colors duration-200 hover:bg-white hover:text-yellow-400 rounded"
             style={{
@@ -301,8 +302,6 @@ export default function Home() {
               About Us
             </span>
           </button>
-        </div>
-        <div className="w-full max-w-6xl mt-8 md:mt-10 mb-20 md:mb-40 px-4 md:px-0 mx-auto flex justify-center">
           <button
             className="px-6 py-3 border-4 border-white bg-transparent shadow-lg transition-colors duration-200 hover:bg-white hover:text-yellow-400 rounded"
             style={{
@@ -310,12 +309,14 @@ export default function Home() {
               color: "var(--text-color)",
               padding: "12px 20px",
             }}
-            onClick={() =>
-              window.open(
-                "https://fsae.slack.com/join/signup#/domain-signup",
-                "_blank",
-              )
-            }
+            onClick={() => {
+              const aboutSection = document.querySelector(
+                "#new-member-timeline",
+              );
+              if (aboutSection) {
+                aboutSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLButtonElement).style.color =
                 colors.electricBlue;
@@ -579,222 +580,132 @@ export default function Home() {
         </div>
 
         {/* NEW MEMBER TIMELINE SECTION */}
+
         <div
+          className="w-full max-w-6xl mx-auto px-4 py-8 text-center"
           id="new-member-timeline"
-          className="w-full max-w-4xl mx-auto mt-16 mb-8"
         >
           <h2
-            className="text-3xl sm:text-4xl font-bold mb-8 text-center"
+            className="text-3xl sm:text-4xl font-bold my-8 text-center"
             style={{ color: colors.slugYellow }}
           >
-            New Member Timeline
+            New Members
           </h2>
-          <div className="text-center text-white">
-            {/* Timeline line */}
-            <p>
-              Coming soon! Check back in a month or two, and in the meantime,
-              join our Slack!
-            </p>
-          </div>
-          {/*   <div */}
-          {/*     className="absolute left-1/2 transform -translate-x-1/2 w-1 rounded-full hidden md:block" */}
-          {/*     style={{ */}
-          {/*       height: "calc(100% - 2rem)", */}
-          {/*       top: "1rem", */}
-          {/*       background: `linear-gradient(to bottom, ${colors.slugYellow}, ${colors.electricBlue}, ${colors.slugYellow})`, */}
-          {/*     }} */}
-          {/*   ></div> */}
-          {/**/}
-          {/* Timeline Events */}
-          {/*   <div className="space-y-12"> */}
-          {/* Intro Meeting 1 */}
-          {/*     <div className="flex items-center justify-between"> */}
-          {/*       <div className="w-1/12 md:w-5/12"></div> */}
-          {/*       <div className="w-2/12 flex justify-center"> */}
-          {/*         <div */}
-          {/*           className="w-4 h-4 rounded-full z-10" */}
-          {/*           style={{ */}
-          {/*             backgroundColor: colors.slugYellow, */}
-          {/*             border: `4px solid ${colors.electricBlue}`, */}
-          {/*           }} */}
-          {/*         ></div> */}
-          {/*       </div> */}
-          {/*       <div className="w-9/12 md:w-5/12 text-left pl-4 md:pl-8"> */}
-          {/*         <div */}
-          {/*           className="text-white p-4 rounded-xl shadow-lg" */}
-          {/*           style={{ */}
-          {/*             background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})`, */}
-          {/*           }} */}
-          {/*         > */}
-          {/*           <h3 className="text-lg font-bold mb-2">Intro Meeting #1</h3> */}
-          {/*           <p className="text-sm opacity-90"> */}
-          {/*             Come to one of our information meetings! */}
-          {/*           </p> */}
-          {/*           <div */}
-          {/*             className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" */}
-          {/*             style={{ */}
-          {/*               backgroundColor: colors.slugYellow, */}
-          {/*               color: colors.primary, */}
-          {/*             }} */}
-          {/*           > */}
-          {/*             September 25 @ 7:00pm in E2-180 */}
-          {/*           </div> */}
-          {/*         </div> */}
-          {/*       </div> */}
-          {/*     </div> */}
-          {/* Intro Meeting 2*/}
-          {/*     <div className="flex items-center justify-between"> */}
-          {/*       <div className="w-9/12 md:w-5/12 text-right pr-4 md:pr-8"> */}
-          {/*         <div */}
-          {/*           className="text-white p-4 rounded-xl shadow-lg" */}
-          {/*           style={{ */}
-          {/*             background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})`, */}
-          {/*           }} */}
-          {/*         > */}
-          {/*           <h3 className="text-lg font-bold mb-2">Intro Meeting #2</h3> */}
-          {/*           <p className="text-sm opacity-90"> */}
-          {/*             Come to one of our information meetings! */}
-          {/*           </p> */}
-          {/*           <div */}
-          {/*             className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" */}
-          {/*             style={{ */}
-          {/*               backgroundColor: colors.slugYellow, */}
-          {/*               color: colors.primary, */}
-          {/*             }} */}
-          {/*           > */}
-          {/*             September 28 @ 4:00pm in E2-180 */}
-          {/*           </div> */}
-          {/*         </div> */}
-          {/*       </div> */}
-          {/*       <div className="w-2/12 flex justify-center"> */}
-          {/*         <div */}
-          {/*           className="w-4 h-4 rounded-full z-10" */}
-          {/*           style={{ */}
-          {/*             backgroundColor: colors.slugYellow, */}
-          {/*             border: `4px solid ${colors.electricBlue}`, */}
-          {/*           }} */}
-          {/*         ></div> */}
-          {/*       </div> */}
-          {/*       <div className="w-1/12 md:w-5/12"></div> */}
-          {/*     </div> */}
-          {/**/}
-          {/* Event 3 */}
-          {/*     <div className="flex items-center justify-between"> */}
-          {/*       <div className="w-1/12 md:w-5/12"></div> */}
-          {/*       <div className="w-2/12 flex justify-center"> */}
-          {/*         <div */}
-          {/*           className="w-4 h-4 rounded-full z-10" */}
-          {/*           style={{ */}
-          {/*             backgroundColor: colors.slugYellow, */}
-          {/*             border: `4px solid ${colors.electricBlue}`, */}
-          {/*           }} */}
-          {/*         ></div> */}
-          {/*       </div> */}
-          {/*       <div className="w-9/12 md:w-5/12 text-left pl-4 md:pl-8"> */}
-          {/*         <div */}
-          {/*           className="text-white p-4 rounded-xl shadow-lg" */}
-          {/*           style={{ */}
-          {/*             background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})`, */}
-          {/*           }} */}
-          {/*         > */}
-          {/*           <h3 className="text-lg font-bold mb-2"> */}
-          {/*             Individual Subteam Meetings & Workshops */}
-          {/*           </h3> */}
-          {/*           <p className="text-sm opacity-90"> */}
-          {/*             Choose your subteam and start working on real projects */}
-          {/*             with experienced members. */}
-          {/*           </p> */}
-          {/*           <div */}
-          {/*             className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" */}
-          {/*             style={{ */}
-          {/*               backgroundColor: colors.slugYellow, */}
-          {/*               color: colors.primary, */}
-          {/*             }} */}
-          {/*           > */}
-          {/*             October 5th - 17th */}
-          {/*           </div> */}
-          {/*         </div> */}
-          {/*       </div> */}
-          {/*     </div> */}
-          {/**/}
-          {/* Event 4 */}
-          {/*     <div className="flex items-center justify-between"> */}
-          {/*       <div className="w-9/12 md:w-5/12 text-right pr-4 md:pr-8"> */}
-          {/*         <div */}
-          {/*           className="text-white p-4 rounded-xl shadow-lg" */}
-          {/*           style={{ */}
-          {/*             background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})`, */}
-          {/*           }} */}
-          {/*         > */}
-          {/*           <h3 className="text-lg font-bold mb-2"> */}
-          {/*             Subteam Onboarding Projects Due */}
-          {/*           </h3> */}
-          {/*           <p className="text-sm opacity-90"> */}
-          {/*             All projects for subteam and major subteams are due */}
-          {/*           </p> */}
-          {/*           <div */}
-          {/*             className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" */}
-          {/*             style={{ */}
-          {/*               backgroundColor: colors.slugYellow, */}
-          {/*               color: colors.primary, */}
-          {/*             }} */}
-          {/*           > */}
-          {/*             October 17th */}
-          {/*           </div> */}
-          {/*         </div> */}
-          {/*       </div> */}
-          {/*       <div className="w-2/12 flex justify-center"> */}
-          {/*         <div */}
-          {/*           className="w-4 h-4 rounded-full z-10" */}
-          {/*           style={{ */}
-          {/*             backgroundColor: colors.slugYellow, */}
-          {/*             border: `4px solid ${colors.electricBlue}`, */}
-          {/*           }} */}
-          {/*         ></div> */}
-          {/*       </div> */}
-          {/*       <div className="w-1/12 md:w-5/12"></div> */}
-          {/*     </div> */}
-          {/**/}
-          {/* Event 5 */}
-          {/*     <div className="flex items-center justify-between"> */}
-          {/*       <div className="w-9/12 md:w-5/12 text-right pr-4 md:pr-8"> */}
-          {/*         <div */}
-          {/*           className="text-white p-4 rounded-xl shadow-lg" */}
-          {/*           style={{ */}
-          {/*             background: `linear-gradient(to right, ${colors.electricBlue}, ${colors.titleBlue})`, */}
-          {/*           }} */}
-          {/*         > */}
-          {/*           <h2 className="text-lg font-bold mb-2"> */}
-          {/*             Member Roster Released */}
-          {/*           </h2> */}
-          {/*           <p className="text-sm opacity-90"> */}
-          {/*             New members are assigned to their subteams and onboarding */}
-          {/*             is complete! */}
-          {/*           </p> */}
-          {/*           <div */}
-          {/*             className="text-xs mt-2 px-2 py-1 rounded-full inline-block font-semibold" */}
-          {/*             style={{ */}
-          {/*               backgroundColor: colors.slugYellow, */}
-          {/*               color: colors.primary, */}
-          {/*             }} */}
-          {/*           > */}
-          {/*             October 19th */}
-          {/*           </div> */}
-          {/*         </div> */}
-          {/*       </div> */}
-          {/*       <div className="w-2/12 flex justify-center"> */}
-          {/*         <div */}
-          {/*           className="w-4 h-4 rounded-full z-10" */}
-          {/*           style={{ */}
-          {/*             backgroundColor: colors.slugYellow, */}
-          {/*             border: `4px solid ${colors.electricBlue}`, */}
-          {/*           }} */}
-          {/*         ></div> */}
-          {/*       </div> */}
-          {/*       <div className="w-1/12 md:w-5/12"></div> */}
-          {/*     </div> */}
-          {/*   </div> */}
-          {/* </div> */}
+
+          <a
+            href="https://fsae.slack.com/join/signup"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 mb-8 mt-4 rounded-lg font-bold text-base transition-opacity duration-200 hover:opacity-85"
+            style={{
+              backgroundColor: colors.electricBlue,
+              color: "#fff",
+            }}
+          >
+            Join our Slack!
+          </a>
+
+          <p>
+            And add the shared Formula Slug{" "}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://calendar.google.com/calendar/embed?src=formulaslug%40gmail.com&ctz=America%2FLos_Angeles"
+              style={{ color: colors.electricBlue }}
+            >
+              Google Calendar
+            </a>{" "}
+            to your UCSC account, which has all important events & meetings in
+            one place.
+          </p>
+
+          <Timeline
+            events={[
+              {
+                title: "Find us tabling!",
+                body: (
+                  <>
+                    <p key={0}>
+                      Come meet us at Cornucopia during the whole-school club
+                      fair!
+                    </p>
+                    <br key={1} />
+                    <p key={2}>
+                      Or, at the Baskin Major Meet & Greet, on Sept. 23rd from
+                      10-12!
+                    </p>
+                  </>
+                ),
+                date: "Thursday September 22, 3-6pm at East Field",
+                align: "right",
+              },
+              {
+                title: "Intro Meeting #1",
+                body: <p>Come to either of our information meetings!</p>,
+                date: "Thursday September 24, 7-9pm in E2-180",
+                align: "left",
+              },
+              {
+                title: "Intro Meeting #2",
+                body: <p>Come to either of our information meetings!</p>,
+                date: "Saturday September 26, 3-5pm in Jack Baskin Auditorium",
+                align: "left",
+              },
+              {
+                title: "Attend Subteam Meetings & Workshops",
+                body: (
+                  <>
+                    <p>
+                      Choose a subteam, learn about its subsystems, and start
+                      working on projects. Subteam meetings will have more
+                      details and will annouce workshops to be hosted.
+                    </p>
+                    <br />
+                    <ul className="list-disc list-inside">
+                      <li>General Meeting (weekly): Mondays 7-9PM in E2-180</li>
+                      <li>
+                        Electrical Meeting (weekly): Tuesdays 7:30-8:30PM in
+                        E2-180
+                      </li>
+                      <li>
+                        Mechanical Meeting (weekly): Wednesdays 7-8PM in E2-180
+                      </li>
+                      <li>
+                        Software Meeting (weekly): Fridays 7-8PM in E2-180
+                      </li>
+                      <li>
+                        Business Intro Meeting: Thursday 10/1 7-8pm in BE-109
+                      </li>
+                    </ul>
+                  </>
+                ),
+                date: "First 3 weeks of fall quarter (starting week of 9/28)",
+                align: "right",
+              },
+              {
+                title: "Onboarding Projects Due",
+                body: (
+                  <p>
+                    Projects for subsystems / subteams should be done or
+                    presentable.
+                  </p>
+                ),
+                date: "October 17th",
+                align: "left",
+              },
+              {
+                title: "Member Roster Released",
+                body: (
+                  <p>
+                    New members are assigned to their subteams and onboarding is
+                    complete!
+                  </p>
+                ),
+                date: "October 19th",
+                align: "right",
+              },
+            ]}
+          />
         </div>
 
         {/* NEW MEMBER FAQ SECTION */}
@@ -848,7 +759,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* NEW MEMBER TIMELINE SECTION */}
         <p
           className="text-xs mt-8 md:mt-12"
           style={{
