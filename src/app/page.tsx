@@ -690,7 +690,7 @@ export default function Home() {
                     presentable.
                   </p>
                 ),
-                date: "October 17th",
+                date: "October 16th",
                 align: "left",
               },
               {
