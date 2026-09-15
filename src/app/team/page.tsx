@@ -222,7 +222,7 @@ export default function TeamPage() {
                     <CaptainCard
                       captainName="Jack Nystrom"
                       team="Electrical Captain"
-                      photoPath="JackNystrom.JPG"
+                      photoPath="JackNystrom.jpg"
                       aspectRatio={3 / 4}
                     />
                   </div>
@@ -230,7 +230,7 @@ export default function TeamPage() {
                     <CaptainCard
                       captainName="Daniel Rhee"
                       team="Software Captain"
-                      photoPath="DanielRhee.JPG"
+                      photoPath="DanielRhee.jpg"
                       aspectRatio={3 / 4}
                     />
                   </div>
