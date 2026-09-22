@@ -685,7 +685,7 @@ export default function Home() {
               {
                 title: "Women of Formula Slug",
                 body: (
-                  <p>Meet the Women of Formula Slug! Learn about the experiences, logistics, and more directly from the women behind FS. Join us for a chill conversation!</p>
+                  <p>Come meet the women of Formula Slug! Talk to the women on our team to learn what it’s like to be part of FS, hear about their experiences + advice, and ask any and all questions!</p>
                 ),
                 date: "October 6th, 4-5pm in E2-215",
                 align: "right",
