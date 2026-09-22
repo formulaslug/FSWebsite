@@ -589,7 +589,7 @@ export default function Home() {
             className="text-3xl sm:text-4xl font-bold my-8 text-center"
             style={{ color: colors.slugYellow }}
           >
-            New Members
+            Join the Team
           </h2>
 
           <a
@@ -680,6 +680,14 @@ export default function Home() {
                   </>
                 ),
                 date: "First 3 weeks of fall quarter (starting week of 9/28)",
+                align: "right",
+              },
+              {
+                title: "Women of Formula Slug",
+                body: (
+                  <p>Meet the Women of Formula Slug! Learn about the experiences, logistics, and more directly from the women behind FS. Join us for a chill conversation!</p>
+                ),
+                date: "October 6th, 4-5pm in E2-215",
                 align: "right",
               },
               {
