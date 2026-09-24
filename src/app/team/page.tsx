@@ -324,7 +324,7 @@ export default function TeamPage() {
               className="flex flex-col items-center justify-center w-full py-6 mt-10"
             >
               <h2
-                className="text-5xl font-semibold mb-8 text-center"
+                className="text-5xl font-semibold mb-3 text-center"
                 style={{
                   color: "white",
                   textShadow: `1px 2px 0px ${colors.electricBlue}`,
@@ -332,6 +332,9 @@ export default function TeamPage() {
               >
                 Software Team
               </h2>
+              <p className="mb-8 text-center text-lg">
+                Software meetings: Mondays, 6–7 p.m. in BE 105
+              </p>
 
               <div className="flex flex-col lg:flex-row justify-center w-full px-4 gap-6">
                 <div className="w-full lg:w-1/3">
