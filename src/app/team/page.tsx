@@ -339,8 +339,8 @@ export default function TeamPage() {
                     subteamName="Autonomous"
                     photoPaths={["ConeRecognition.png"]}
                     blurb={AutonomousBlurb}
-                    leadName="Abhi Adari"
-                    leadPhotoPath="AbhiAdari.jpg"
+                    leadName="Dylan Price"
+                    leadPhotoPath="DylanPrice.jpg"
                     aspectRatio={16 / 9}
                   />
                 </div>
