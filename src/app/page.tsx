@@ -671,7 +671,7 @@ export default function Home() {
                         Mechanical Meeting (weekly): Wednesdays 7-8PM in E2-180
                       </li>
                       <li>
-                        Software Meeting (weekly): Fridays 7-8PM in E2-180
+                        Software Meeting (weekly): Mondays 6-7PM in E2-180
                       </li>
                       <li>
                         Business Intro Meeting: Thursday 10/1 7-8pm in BE-109
