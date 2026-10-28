@@ -80,11 +80,6 @@ export default function SponsorsPage() {
         logo: "BlackStallionLogo.png",
         website: "https://www.blackstallion.com/",
       },
-      {
-        name: "Intuitive Foundation",
-        logo: "IntuitiveFoundation.png",
-        website: "https://www.intuitive-foundation.org/",
-      },
 
       {
         name: "Hioki",
