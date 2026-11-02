@@ -70,12 +70,6 @@ export default function SponsorsPage() {
       },
 
       {
-        name: "DigiKey",
-        logo: "DigiKey-Logo.png",
-        website: "https://www.digikey.com/",
-      },
-
-      {
         name: "Black Stallion",
         logo: "BlackStallionLogo.png",
         website: "https://www.blackstallion.com/",
