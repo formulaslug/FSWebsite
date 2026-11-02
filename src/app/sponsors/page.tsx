@@ -163,11 +163,6 @@ export default function SponsorsPage() {
         logo: "hms.logo.color.whiteMS.png",
         website: "https://www.hmsmotorsport.com/collections/hms",
       },
-      {
-        name: "College 9 Senate",
-        logo: "ucsc-logo-blue.jpg",
-        website: "https://collegenine.ucsc.edu/",
-      },
     ],
 
     specialThanks: [
